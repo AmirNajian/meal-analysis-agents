@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 # Shared literal for recommendation and ingredient impact (assignment: green | yellow | orange | red).
 RecommendationLevel = Literal["green", "yellow", "orange", "red"]
@@ -97,9 +97,23 @@ class EvalSample(BaseModel):
         return self.image_path.stem
 
 
+class EvalSampleResult(BaseModel):
+    """Per-sample result from running the pipeline in the eval runner (for persistence)."""
+
+    sample_id: str
+    latency_ms: float = Field(ge=0, description="End-to-end pipeline latency in milliseconds")
+    success: bool = Field(description="True if pipeline returned AnalysisResponse without rejection/error")
+    response: AnalysisResponse | None = Field(default=None, description="Pipeline output when success=True")
+    error_class: str | None = Field(default=None, description="Exception type name when success=False")
+    error_message: str | None = Field(default=None, description="Exception message when success=False")
+    input_tokens: int | None = Field(default=None, ge=0, description="Total prompt tokens (if available)")
+    output_tokens: int | None = Field(default=None, ge=0, description="Total completion tokens (if available)")
+
+
 __all__ = [
     "AnalysisResponse",
     "EvalSample",
+    "EvalSampleResult",
     "GroundTruthRecord",
     "GuardrailCheck",
     "Ingredient",
