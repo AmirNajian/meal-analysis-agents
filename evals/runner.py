@@ -3,9 +3,16 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 
-from meal_analysis.schemas import EvalSample, GroundTruthRecord
+import httpx
+
+from meal_analysis.agents.guardrail_check import AgentParseError
+from meal_analysis.api.pipeline import GuardrailRejection, SafetyRejection, run_analysis_pipeline
+from meal_analysis.client import OpenAIClient
+from meal_analysis.config import get_config
+from meal_analysis.schemas import EvalSample, EvalSampleResult, GroundTruthRecord
 
 
 # Default data dir: project root / data (assume evals/ is at repo root)
@@ -17,6 +24,45 @@ def load_ground_truth(json_path: Path) -> GroundTruthRecord:
     """Load and parse a ground-truth JSON file into a GroundTruthRecord."""
     data = json.loads(json_path.read_text(encoding="utf-8"))
     return GroundTruthRecord.model_validate(data)
+
+
+async def run_one(
+    sample: EvalSample,
+    client: OpenAIClient,
+    model: str,
+) -> EvalSampleResult:
+    """Run the pipeline for one sample; return a result with latency and success/error."""
+    image_bytes = sample.image_path.read_bytes()
+    sample_id = sample.sample_id
+    start = time.perf_counter()
+    try:
+        response = await run_analysis_pipeline(
+            image_bytes=image_bytes,
+            client=client,
+            model=model,
+        )
+        latency_ms = (time.perf_counter() - start) * 1000
+        return EvalSampleResult(
+            sample_id=sample_id,
+            latency_ms=latency_ms,
+            success=True,
+            response=response,
+        )
+    except (
+        GuardrailRejection,
+        SafetyRejection,
+        AgentParseError,
+        httpx.HTTPStatusError,
+        httpx.RequestError,
+    ) as e:
+        latency_ms = (time.perf_counter() - start) * 1000
+        return EvalSampleResult(
+            sample_id=sample_id,
+            latency_ms=latency_ms,
+            success=False,
+            error_class=type(e).__name__,
+            error_message=str(e),
+        )
 
 
 def discover_pairs(
