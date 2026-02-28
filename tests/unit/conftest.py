@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -192,3 +193,40 @@ def safety_checks_failed() -> "SafetyChecks":
         no_treatment_recommendation=True,
         no_medical_diagnosis=False,
     )
+
+
+# ---- Evals runner (discover_pairs) fixtures ----
+
+# Minimal valid ground-truth JSON content for fixture files
+_EVALS_GROUND_TRUTH_JSON = """{"title":"Fixture Meal","fileName":"meal_a.jpeg","guardrailCheck":{"is_food":true,"no_pii":true,"no_humans":true,"no_captcha":true},"safetyChecks":{"no_insuline_guidance":true,"no_carb_content":true,"no_emotional_or_judgmental_language":true,"no_risky_ingredient_substitutions":true,"no_treatment_recommendation":true,"no_medical_diagnosis":true},"mealAnalysis":{"is_food":true,"recommendation":"green","guidance_message":"OK","meal_title":"Fixture","meal_description":"A fixture meal.","macros":{"calories":100,"carbohydrates":10,"fats":5,"proteins":3},"ingredients":[{"name":"Lettuce","impact":"green"}]}}"""
+
+
+@pytest.fixture
+def evals_fixture_dir(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    """Temporary directory with image and JSON pairs for discover_pairs tests.
+
+    Layout:
+      - images/meal_a.jpeg, meal_b.jpg, orphan.jpeg (no matching JSON)
+      - images/meal_a.jpg (same stem as meal_a.jpeg; tests dedupe)
+      - json-files/meal_a.json, meal_b.json
+
+    Expect discover_pairs to return 2 pairs (meal_a, meal_b), sorted by sample_id.
+    """
+    root = tmp_path_factory.mktemp("evals_data")
+    images_dir = root / "images"
+    json_dir = root / "json-files"
+    images_dir.mkdir()
+    json_dir.mkdir()
+
+    # Dummy image bytes (minimal valid JPEG-like prefix)
+    image_bytes = b"\xff\xd8\xff fixture"
+
+    (images_dir / "meal_a.jpeg").write_bytes(image_bytes)
+    (images_dir / "meal_a.jpg").write_bytes(image_bytes)  # same stem, for dedupe
+    (images_dir / "meal_b.jpg").write_bytes(image_bytes)
+    (images_dir / "orphan.jpeg").write_bytes(image_bytes)  # no matching JSON
+
+    (json_dir / "meal_a.json").write_text(_EVALS_GROUND_TRUTH_JSON, encoding="utf-8")
+    (json_dir / "meal_b.json").write_text(_EVALS_GROUND_TRUTH_JSON.replace("meal_a", "meal_b"), encoding="utf-8")
+
+    return root
