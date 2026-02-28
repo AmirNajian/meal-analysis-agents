@@ -1,5 +1,6 @@
 """Pydantic schemas for guardrails, meal analysis, safety, and pipeline response."""
 
+from pathlib import Path
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict
@@ -82,8 +83,23 @@ class GroundTruthRecord(BaseModel):
     mealAnalysis: MealAnalysis
 
 
+class EvalSample(BaseModel):
+    """A single eval sample: one image path and its matching ground-truth JSON path."""
+
+    model_config = ConfigDict(frozen=True)
+
+    image_path: Path
+    json_path: Path
+
+    @property
+    def sample_id(self) -> str:
+        """Stable id (stem of image filename)."""
+        return self.image_path.stem
+
+
 __all__ = [
     "AnalysisResponse",
+    "EvalSample",
     "GroundTruthRecord",
     "GuardrailCheck",
     "Ingredient",
