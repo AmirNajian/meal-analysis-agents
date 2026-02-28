@@ -24,6 +24,10 @@ class Settings(BaseSettings):
         default="http://localhost:8000",
         description="Base URL for this API (e.g. used by Gradio UI)",
     )
+    openai_model: str = Field(
+        default="gpt-4o",
+        description="OpenAI model used for pipeline agents (guardrail, meal, safety)",
+    )
 
 
 @lru_cache(maxsize=1)
