@@ -102,3 +102,38 @@ def ground_truth_record_dict(
             ],
         },
     }
+
+
+# ---- Client (OpenAI) fixtures ----
+
+@pytest.fixture
+def openai_chat_response(openai_chat_content: str) -> dict[str, Any]:
+    """Minimal successful OpenAI chat completions response with usage."""
+    return {
+        "choices": [
+            {"message": {"content": openai_chat_content, "role": "assistant"}, "index": 0}
+        ],
+        "usage": {"prompt_tokens": 10, "completion_tokens": 20},
+    }
+
+
+@pytest.fixture
+def openai_chat_content() -> str:
+    """Default content string for mocked OpenAI chat response."""
+    return '{"is_food": true, "no_pii": true}'
+
+
+@pytest.fixture
+def openai_chat_response_no_usage(openai_chat_content: str) -> dict[str, Any]:
+    """OpenAI response without usage (client should default tokens to 0)."""
+    return {
+        "choices": [
+            {"message": {"content": openai_chat_content, "role": "assistant"}, "index": 0}
+        ],
+    }
+
+
+@pytest.fixture
+def openai_chat_response_empty_choices() -> dict[str, Any]:
+    """OpenAI response with no choices (client should raise ValueError)."""
+    return {"choices": [], "usage": {"prompt_tokens": 1, "completion_tokens": 0}}
