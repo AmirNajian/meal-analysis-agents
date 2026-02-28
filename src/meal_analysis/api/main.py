@@ -1,10 +1,25 @@
 """FastAPI application entrypoint."""
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+
+from meal_analysis.client import OpenAIClient
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Create OpenAIClient at startup, close it at shutdown."""
+    client = OpenAIClient()
+    app.state.openai_client = client
+    yield
+    await client.aclose()
+
 
 app = FastAPI(
     title="meal-analysis-agents",
     description="Agentic meal-analysis pipeline with guardrail, inference, and safety agents.",
+    lifespan=lifespan,
 )
 
 
