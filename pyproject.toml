@@ -23,6 +23,7 @@ packages = ["src/meal_analysis"]
 dev = [
     "pytest",
     "pytest-asyncio",
+    "pytest-cov",
 ]
 ui = [
     "gradio",
