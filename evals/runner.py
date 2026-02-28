@@ -2,14 +2,21 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
-from meal_analysis.schemas import EvalSample
+from meal_analysis.schemas import EvalSample, GroundTruthRecord
 
 
 # Default data dir: project root / data (assume evals/ is at repo root)
 def _default_data_dir() -> Path:
     return Path(__file__).resolve().parent.parent / "data"
+
+
+def load_ground_truth(json_path: Path) -> GroundTruthRecord:
+    """Load and parse a ground-truth JSON file into a GroundTruthRecord."""
+    data = json.loads(json_path.read_text(encoding="utf-8"))
+    return GroundTruthRecord.model_validate(data)
 
 
 def discover_pairs(
