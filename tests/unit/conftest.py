@@ -137,3 +137,58 @@ def openai_chat_response_no_usage(openai_chat_content: str) -> dict[str, Any]:
 def openai_chat_response_empty_choices() -> dict[str, Any]:
     """OpenAI response with no choices (client should raise ValueError)."""
     return {"choices": [], "usage": {"prompt_tokens": 1, "completion_tokens": 0}}
+
+
+# ---- Pipeline (api/pipeline) fixtures ----
+
+@pytest.fixture
+def pipeline_image_bytes() -> bytes:
+    """Sample image bytes for pipeline tests (no real image needed)."""
+    return b"\xff\xd8\xff fake jpeg bytes"
+
+
+@pytest.fixture
+def guardrail_check_passed(guardrail_check_dict: dict[str, Any]) -> "GuardrailCheck":
+    """GuardrailCheck instance with all checks passed."""
+    from meal_analysis.schemas import GuardrailCheck
+    return GuardrailCheck.model_validate(guardrail_check_dict)
+
+
+@pytest.fixture
+def guardrail_check_not_food() -> "GuardrailCheck":
+    """GuardrailCheck with is_food=False (triggers short-circuit)."""
+    from meal_analysis.schemas import GuardrailCheck
+    return GuardrailCheck(
+        is_food=False,
+        no_pii=True,
+        no_humans=True,
+        no_captcha=True,
+    )
+
+
+@pytest.fixture
+def meal_analysis_result(meal_analysis_dict: dict[str, Any]) -> "MealAnalysis":
+    """MealAnalysis instance for pipeline success path."""
+    from meal_analysis.schemas import MealAnalysis
+    return MealAnalysis.model_validate(meal_analysis_dict)
+
+
+@pytest.fixture
+def safety_checks_passed(safety_checks_dict: dict[str, Any]) -> "SafetyChecks":
+    """SafetyChecks instance with all checks passed."""
+    from meal_analysis.schemas import SafetyChecks
+    return SafetyChecks.model_validate(safety_checks_dict)
+
+
+@pytest.fixture
+def safety_checks_failed() -> "SafetyChecks":
+    """SafetyChecks with one check failed (triggers SafetyRejection)."""
+    from meal_analysis.schemas import SafetyChecks
+    return SafetyChecks(
+        no_insuline_guidance=True,
+        no_carb_content=True,
+        no_emotional_or_judgmental_language=True,
+        no_risky_ingredient_substitutions=True,
+        no_treatment_recommendation=True,
+        no_medical_diagnosis=False,
+    )
