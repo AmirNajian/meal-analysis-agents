@@ -9,6 +9,7 @@ dependencies = [
     "uvicorn[standard]",
     "httpx",
     "pydantic>=2",
+    "pydantic-settings>=2",
 ]
 
 [build-system]
