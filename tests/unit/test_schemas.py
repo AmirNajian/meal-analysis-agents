@@ -5,6 +5,8 @@ from pydantic import ValidationError
 
 from meal_analysis.schemas import (
     AnalysisResponse,
+    EvalSample,
+    EvalSampleResult,
     GroundTruthRecord,
     GuardrailCheck,
     Ingredient,
@@ -112,6 +114,52 @@ def test_analysis_response_parses_valid(analysis_response_dict: dict) -> None:
     assert r.guardrailCheck.is_food is True
     assert r.mealAnalysis.meal_title == "Salad"
     assert r.safetyChecks.no_medical_diagnosis is True
+
+
+# ---- EvalSample ----
+def test_eval_sample_sample_id(tmp_path) -> None:
+    """EvalSample.sample_id is the image path stem."""
+    img = tmp_path / "meal_abc.jpeg"
+    js = tmp_path / "meal_abc.json"
+    img.touch()
+    js.touch()
+    s = EvalSample(image_path=img, json_path=js)
+    assert s.sample_id == "meal_abc"
+
+
+# ---- EvalSampleResult ----
+def test_eval_sample_result_parses_minimal() -> None:
+    """EvalSampleResult accepts required fields and defaults for optional."""
+    r = EvalSampleResult(sample_id="x", latency_ms=50.0, success=True)
+    assert r.sample_id == "x"
+    assert r.latency_ms == 50.0
+    assert r.success is True
+    assert r.response is None
+    assert r.error_class is None
+    assert r.input_tokens is None
+    assert r.output_tokens is None
+
+
+def test_eval_sample_result_rejects_negative_latency() -> None:
+    with pytest.raises(ValidationError):
+        EvalSampleResult(sample_id="x", latency_ms=-1.0, success=False)
+
+
+def test_eval_sample_result_accepts_optional_tokens(analysis_response_dict: dict) -> None:
+    """EvalSampleResult accepts input_tokens, output_tokens, and response."""
+    resp = AnalysisResponse.model_validate(analysis_response_dict)
+    r = EvalSampleResult(
+        sample_id="y",
+        latency_ms=100.0,
+        success=True,
+        response=resp,
+        input_tokens=10,
+        output_tokens=20,
+    )
+    assert r.input_tokens == 10
+    assert r.output_tokens == 20
+    assert r.response is not None
+    assert r.response.mealAnalysis.meal_title == "Salad"
 
 
 # ---- GroundTruthRecord ----
