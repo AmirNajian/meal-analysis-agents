@@ -11,10 +11,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import time
 from pathlib import Path
 
 from evals.runner import compute_metrics_from_file
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler())
 
 
 def _sanitize_model_for_path(model: str) -> str:
@@ -91,7 +96,7 @@ def main() -> None:
         slug = _sanitize_model_for_path(model)
         result_path = results_dir / f"{args.output_prefix}_{slug}.json"
         if not result_path.is_file():
-            print(f"Skip {model}: {result_path} not found")
+            logger.info(f"Skip {model}: {result_path} not found")
             continue
         metrics = compute_metrics_from_file(
             result_path,
@@ -100,10 +105,10 @@ def main() -> None:
             json_dir=args.json_dir,
         )
         summary["models"][model] = metrics
-        print(f"Collected {model}: run_composite={metrics['run_composite']}, p50_latency_ms={metrics['p50_latency_ms']}")
+        logger.info(f"Collected {model}: run_composite={metrics['run_composite']}, p50_latency_ms={metrics['p50_latency_ms']}")
 
     args.metrics_out.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-    print(f"Wrote {len(summary['models'])} model(s) to {args.metrics_out}")
+    logger.info(f"Wrote {len(summary['models'])} model(s) to {args.metrics_out}")
 
 
 if __name__ == "__main__":
