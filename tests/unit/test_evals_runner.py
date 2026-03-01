@@ -224,6 +224,27 @@ async def test_run_all_returns_one_result_per_sample(evals_fixture_dir: Path) ->
 
 
 @pytest.mark.asyncio
+async def test_run_all_uses_passed_model(evals_fixture_dir: Path) -> None:
+    """run_all(..., model=X) passes model X to run_one."""
+    samples = [
+        EvalSample(image_path=evals_fixture_dir / "images" / "meal_a.jpeg", json_path=evals_fixture_dir / "json-files" / "meal_a.json"),
+    ]
+    seen_models: list[str] = []
+
+    async def capture_model(sample: EvalSample, client: object, model: str) -> EvalSampleResult:
+        seen_models.append(model)
+        return EvalSampleResult(sample_id=sample.sample_id, latency_ms=1.0, success=True)
+
+    mock_cm = AsyncMock()
+    mock_cm.__aenter__.return_value = MagicMock()
+    mock_cm.__aexit__.return_value = None
+    with patch("evals.runner.OpenAIClient", return_value=mock_cm):
+        with patch("evals.runner.run_one", side_effect=capture_model):
+            await run_all(samples, max_concurrency=1, model="gpt-4o-mini")
+    assert seen_models == ["gpt-4o-mini"]
+
+
+@pytest.mark.asyncio
 async def test_run_all_converts_gather_exception_to_result(evals_fixture_dir: Path) -> None:
     """When run_one raises an unexpected exception, run_all turns it into an EvalSampleResult."""
     samples = [
