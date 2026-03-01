@@ -12,6 +12,7 @@ import asyncio
 import json
 import time
 from pathlib import Path
+from typing import Callable
 
 import httpx
 
@@ -125,20 +126,33 @@ async def run_all(
     samples: list[EvalSample],
     *,
     max_concurrency: int = 5,
+    on_progress: Callable[[int, int], None] | None = None,
 ) -> list[EvalSampleResult]:
     """Run the pipeline for all samples with a semaphore-limited concurrency.
 
     Uses a single shared OpenAIClient (created and closed inside this function).
     Any unexpected exception from run_one is turned into an EvalSampleResult
     with success=False so the returned list has one result per sample.
+
+    If on_progress(completed, total) is given, it is called after each sample
+    completes (e.g. for CLI progress output).
     """
     model = get_config().openai_model
     semaphore = asyncio.Semaphore(max_concurrency)
+    total = len(samples)
+    progress_lock = asyncio.Lock()
+    completed: list[int] = [0]
 
     async with OpenAIClient() as client:
         async def run_with_sem(sample: EvalSample) -> EvalSampleResult | BaseException:
             async with semaphore:
-                return await run_one(sample, client, model)
+                try:
+                    return await run_one(sample, client, model)
+                finally:
+                    if on_progress is not None:
+                        async with progress_lock:
+                            completed[0] += 1
+                            on_progress(completed[0], total)
 
         raw = await asyncio.gather(
             *[run_with_sem(s) for s in samples],
@@ -238,7 +252,11 @@ def main() -> None:
         return
     print(f"Running pipeline on {len(samples)} samples (max_concurrency={args.max_concurrency})...")
     results = asyncio.run(
-        run_all(samples, max_concurrency=args.max_concurrency),
+        run_all(
+            samples,
+            max_concurrency=args.max_concurrency,
+            on_progress=lambda n, total: print(f"  Completed {n}/{total}..."),
+        ),
     )
     write_results(
         results,
