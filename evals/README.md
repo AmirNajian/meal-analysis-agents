@@ -21,12 +21,27 @@ uv run python -m evals.runner [OPTIONS]
 | `--images-dir` | `data_dir/images` | Meal images directory |
 | `--json-dir` | `data_dir/json-files` | Ground-truth JSON directory |
 | `--max-concurrency` | `5` | Max concurrent pipeline runs |
-| `--output`, `-o` | `eval_results.json` | Output JSON path |
+| `--output`, `-o` | `eval_results.json` | Output JSON path; with `--models`, used as prefix for per-model files |
+| `--model` | from config | Override model for a single run |
+| `--models` | — | Run evals for each listed model; writes `<output_stem>_<model_slug>.json` per model |
 
-Example:
+Example (single run):
 
 ```bash
 uv run python -m evals.runner --max-concurrency 2 -o my_results.json
+```
+
+Run evals for 2+ models (single invocation):
+
+```bash
+uv run python -m evals.runner --models gpt-4o gpt-4o-mini -o eval_results.json
+```
+
+This writes `eval_results_gpt4o.json` and `eval_results_gpt4o-mini.json` and prints metrics for each. Alternatively, run twice with a fixed output path per model:
+
+```bash
+uv run python -m evals.runner --model gpt-4o -o eval_results_gpt4o.json
+uv run python -m evals.runner --model gpt-4o-mini -o eval_results_gpt4o_mini.json
 ```
 
 The CLI prints progress as each sample completes (e.g. `Completed 15/72...`), a final success count, and **metrics** (run composite, guardrails %, safety %, meal %, P50 latency ms) computed from the written results and ground truth.
