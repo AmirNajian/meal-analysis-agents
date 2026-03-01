@@ -1,12 +1,13 @@
-"""Unit tests for evals.runner (discover_pairs, run_one)."""
+"""Unit tests for evals.runner (discover_pairs, run_one, run_all, write_results)."""
 
+import json
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from evals.runner import discover_pairs, load_ground_truth, run_one
-from meal_analysis.schemas import EvalSample
+from evals.runner import discover_pairs, load_ground_truth, run_all, run_one, write_results
+from meal_analysis.schemas import EvalSample, EvalSampleResult
 
 
 def test_discover_pairs_finds_matching_pairs(evals_fixture_dir: Path) -> None:
@@ -184,3 +185,74 @@ async def test_run_one_request_error(evals_fixture_dir: Path) -> None:
     assert result.success is False
     assert result.error_class == "RequestError"
     assert result.latency_ms >= 0
+
+
+# ---- run_all ----
+
+@pytest.mark.asyncio
+async def test_run_all_returns_one_result_per_sample(evals_fixture_dir: Path) -> None:
+    """run_all runs each sample and returns a result per sample (mocked run_one)."""
+    samples = [
+        EvalSample(image_path=evals_fixture_dir / "images" / "meal_a.jpeg", json_path=evals_fixture_dir / "json-files" / "meal_a.json"),
+        EvalSample(image_path=evals_fixture_dir / "images" / "meal_b.jpg", json_path=evals_fixture_dir / "json-files" / "meal_b.json"),
+    ]
+    results_by_id = {
+        "meal_a": EvalSampleResult(sample_id="meal_a", latency_ms=100.0, success=True),
+        "meal_b": EvalSampleResult(sample_id="meal_b", latency_ms=200.0, success=False, error_class="GuardrailRejection", error_message="not food"),
+    }
+
+    async def mock_run_one(sample: EvalSample, client: object, model: str) -> EvalSampleResult:
+        return results_by_id[sample.sample_id]
+
+    mock_cm = AsyncMock()
+    mock_cm.__aenter__.return_value = MagicMock()
+    mock_cm.__aexit__.return_value = None
+    with patch("evals.runner.OpenAIClient", return_value=mock_cm):
+        with patch("evals.runner.run_one", side_effect=mock_run_one):
+            got = await run_all(samples, max_concurrency=2)
+    assert len(got) == 2
+    assert got[0].sample_id == "meal_a" and got[0].success is True
+    assert got[1].sample_id == "meal_b" and got[1].success is False
+
+
+@pytest.mark.asyncio
+async def test_run_all_converts_gather_exception_to_result(evals_fixture_dir: Path) -> None:
+    """When run_one raises an unexpected exception, run_all turns it into an EvalSampleResult."""
+    samples = [
+        EvalSample(image_path=evals_fixture_dir / "images" / "meal_a.jpeg", json_path=evals_fixture_dir / "json-files" / "meal_a.json"),
+    ]
+
+    async def mock_run_one_raises(*args: object, **kwargs: object) -> None:
+        raise ValueError("unexpected")
+
+    mock_cm = AsyncMock()
+    mock_cm.__aenter__.return_value = MagicMock()
+    mock_cm.__aexit__.return_value = None
+    with patch("evals.runner.OpenAIClient", return_value=mock_cm):
+        with patch("evals.runner.run_one", side_effect=mock_run_one_raises):
+            got = await run_all(samples, max_concurrency=1)
+    assert len(got) == 1
+    assert got[0].sample_id == "meal_a"
+    assert got[0].success is False
+    assert got[0].error_class == "ValueError"
+    assert "unexpected" in (got[0].error_message or "")
+
+
+# ---- write_results ----
+
+def test_write_results_writes_valid_json(tmp_path: Path) -> None:
+    """write_results writes a JSON file with results and optional meta."""
+    results = [
+        EvalSampleResult(sample_id="a", latency_ms=50.0, success=True),
+        EvalSampleResult(sample_id="b", latency_ms=100.0, success=False, error_class="GuardrailRejection", error_message="not food"),
+    ]
+    out = tmp_path / "out.json"
+    write_results(results, out, model="gpt-4o", max_concurrency=2)
+    data = json.loads(out.read_text())
+    assert "results" in data
+    assert len(data["results"]) == 2
+    assert data["results"][0]["sample_id"] == "a" and data["results"][0]["success"] is True
+    assert data["results"][1]["sample_id"] == "b" and data["results"][1]["error_class"] == "GuardrailRejection"
+    assert data["meta"]["model"] == "gpt-4o"
+    assert data["meta"]["max_concurrency"] == 2
+    assert "timestamp" in data["meta"]
