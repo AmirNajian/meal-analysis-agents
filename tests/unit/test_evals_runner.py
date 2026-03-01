@@ -77,6 +77,21 @@ def test_load_ground_truth(evals_fixture_dir: Path) -> None:
     assert gt.mealAnalysis.ingredients[0].name == "Lettuce"
 
 
+def test_load_ground_truth_empty_nested_objects_coerced_to_none(tmp_path: Path) -> None:
+    """Ground-truth JSON with empty guardrailCheck/safetyChecks/mealAnalysis loads with those as None."""
+    json_path = tmp_path / "partial.json"
+    json_path.write_text(
+        '{"title": "Partial", "fileName": "partial.jpg", '
+        '"guardrailCheck": {}, "safetyChecks": {}, "mealAnalysis": {}}'
+    )
+    gt = load_ground_truth(json_path)
+    assert gt.title == "Partial"
+    assert gt.fileName == "partial.jpg"
+    assert gt.guardrailCheck is None
+    assert gt.safetyChecks is None
+    assert gt.mealAnalysis is None
+
+
 # ---- run_one (mocked pipeline) ----
 
 
