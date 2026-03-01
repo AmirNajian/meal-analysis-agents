@@ -29,7 +29,7 @@ Example:
 uv run python -m evals.runner --max-concurrency 2 -o my_results.json
 ```
 
-The CLI prints progress as each sample completes (e.g. `Completed 15/72...`) and a final success count.
+The CLI prints progress as each sample completes (e.g. `Completed 15/72...`), a final success count, and **metrics** (run composite, guardrails %, safety %, meal %, P50 latency ms) computed from the written results and ground truth.
 
 ## Output
 
@@ -56,5 +56,7 @@ write_results(results, Path("eval_results.json"), model="gpt-4o", max_concurrenc
 - **`run_one(sample, client, model)`** – run pipeline for one sample (async)
 - **`run_all(samples, max_concurrency=5, on_progress=None)`** – run all samples with semaphore-limited concurrency (async); optional `on_progress(completed, total)` for progress output
 - **`write_results(results, path, model=..., max_concurrency=...)`** – write JSON file
+- **`load_results(path)`** – load a results JSON file back into `list[EvalSampleResult]`
+- **`compute_metrics_from_file(results_path, data_dir=..., images_dir=..., json_dir=...)`** – load results, build ground truth from discovered pairs, return metrics dict (`guardrails_pct`, `safety_pct`, `meal_pct`, `run_composite`, `p50_latency_ms`)
 
-Results can be fed into a separate metrics step (guardrails, safety, meal composite, P50 latency) as in the assignment spec.
+Metrics (see `evals/metrics.py`) are wired to runner output: the CLI computes and prints them after each run; you can also call `compute_metrics_from_file` on an existing results file to re-run metrics without re-running the pipeline.

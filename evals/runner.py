@@ -22,6 +22,8 @@ from meal_analysis.client import OpenAIClient
 from meal_analysis.config import get_config
 from meal_analysis.schemas import EvalSample, EvalSampleResult, GroundTruthRecord
 
+from evals.metrics import compute_metrics
+
 
 # Default data dir: project root / data (assume evals/ is at repo root)
 def _default_data_dir() -> Path:
@@ -199,6 +201,29 @@ def write_results(
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def load_results(path: Path) -> list[EvalSampleResult]:
+    """Load EvalSampleResult list from a JSON file written by write_results."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    results_data = data.get("results", data) if isinstance(data, dict) else data
+    return [EvalSampleResult.model_validate(d) for d in results_data]
+
+
+def compute_metrics_from_file(
+    results_path: Path,
+    *,
+    data_dir: Path | None = None,
+    images_dir: Path | None = None,
+    json_dir: Path | None = None,
+) -> dict[str, float]:
+    """Load results from a JSON file, build ground truth from discovered pairs, return metrics."""
+    results = load_results(results_path)
+    samples = discover_pairs(data_dir=data_dir, images_dir=images_dir, json_dir=json_dir)
+    gt_by_id: dict[str, GroundTruthRecord] = {}
+    for s in samples:
+        gt_by_id[s.sample_id] = load_ground_truth(s.json_path)
+    return compute_metrics(results, gt_by_id)
+
+
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run meal-analysis pipeline on image–JSON pairs and write results.",
@@ -267,6 +292,18 @@ def main() -> None:
     print(f"Wrote {len(results)} results to {args.output}")
     success_count = sum(1 for r in results if r.success)
     print(f"Success: {success_count}/{len(results)}")
+    # Wire metrics to runner output
+    metrics = compute_metrics_from_file(
+        args.output,
+        data_dir=args.data_dir,
+        images_dir=args.images_dir,
+        json_dir=args.json_dir,
+    )
+    print(
+        f"Metrics: run_composite={metrics['run_composite']}, "
+        f"guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, "
+        f"meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}"
+    )
 
 
 if __name__ == "__main__":
