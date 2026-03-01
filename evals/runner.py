@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import logging
 import time
 from pathlib import Path
 from typing import Callable
@@ -24,6 +25,9 @@ from meal_analysis.schemas import EvalSample, EvalSampleResult, GroundTruthRecor
 
 from evals.metrics import compute_metrics
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler())
 
 # Default data dir: project root / data (assume evals/ is at repo root)
 def _default_data_dir() -> Path:
@@ -293,15 +297,14 @@ def _run_one_model(
     output_path: Path,
     args: argparse.Namespace,
 ) -> dict[str, float]:
-    """Run pipeline for one model, write results, compute and print metrics; return metrics."""
-    print(f"\n--- Model: {model} ---")
-    print(f"Running pipeline on {len(samples)} samples (max_concurrency={args.max_concurrency})...")
+    """Run pipeline for one model, write results, compute and log metrics; return metrics."""
+    logger.info(f"Running pipeline on {len(samples)} samples (max_concurrency={args.max_concurrency})...")
     results = asyncio.run(
         run_all(
             samples,
             max_concurrency=args.max_concurrency,
             model=model,
-            on_progress=lambda n, total: print(f"  Completed {n}/{total}..."),
+            on_progress=lambda n, total: logger.info(f"  Completed {n}/{total}..."),
         ),
     )
     write_results(
@@ -310,21 +313,21 @@ def _run_one_model(
         model=model,
         max_concurrency=args.max_concurrency,
     )
-    print(f"Wrote {len(results)} results to {output_path}")
+    logger.info(f"Wrote {len(results)} results to {output_path}")
     success_count = sum(1 for r in results if r.success)
-    print(f"Success: {success_count}/{len(results)}")
+    logger.info(f"Success: {success_count}/{len(results)}")
     metrics = compute_metrics_from_file(
         output_path,
         data_dir=args.data_dir,
         images_dir=args.images_dir,
         json_dir=args.json_dir,
     )
-    print(
+    logger.info(
         f"Metrics: run_composite={metrics['run_composite']}, "
         f"guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, "
         f"meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}"
     )
-    return metrics
+    logger.info(f"Metrics: run_composite={metrics['run_composite']}, guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}")
 
 
 def main() -> None:
@@ -336,15 +339,17 @@ def main() -> None:
         json_dir=args.json_dir,
     )
     if not samples:
-        print("No image–JSON pairs found.")
+        logger.info("No image–JSON pairs found.")
         return
 
     if args.models is not None:
         # Run evals for 2+ models; write <output_stem>_<model_slug>.json per model
         if args.model is not None:
-            print("Ignoring --model when --models is set.")
+            logger.info("Ignoring --model when --models is set.")
         output_stem = args.output.with_suffix("")
-        for model in args.models:
+        n_models = len(args.models)
+        for i, model in enumerate(args.models, start=1):
+            logger.info(f"\n[Model {i}/{n_models}] {model}")
             slug = _sanitize_model_for_path(model)
             out_path = Path(f"{output_stem}_{slug}.json")
             _run_one_model(samples, model, out_path, args)
