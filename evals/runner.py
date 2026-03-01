@@ -1,4 +1,9 @@
-"""Eval runner: discover image–JSON pairs, run pipeline per sample with asyncio."""
+"""Eval runner: discover image–JSON pairs, run pipeline per sample with asyncio.
+
+Token usage (input_tokens/output_tokens) is not collected in this version:
+EvalSampleResult fields remain None until run_analysis_pipeline or a client
+wrapper exposes per-call usage. See step 5 in the eval runner plan.
+"""
 
 from __future__ import annotations
 
@@ -33,7 +38,12 @@ async def run_one(
     client: OpenAIClient,
     model: str,
 ) -> EvalSampleResult:
-    """Run the pipeline for one sample; return a result with latency and success/error."""
+    """Run the pipeline for one sample; return a result with latency and success/error.
+
+    Token usage (input_tokens, output_tokens) is not populated; the pipeline
+    does not return it. To add later: extend run_analysis_pipeline to aggregate
+    and return usage, or use a client wrapper that records it.
+    """
     image_bytes = sample.image_path.read_bytes()
     sample_id = sample.sample_id
     start = time.perf_counter()
