@@ -6,7 +6,15 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from evals.runner import discover_pairs, load_ground_truth, run_all, run_one, write_results
+from evals.runner import (
+    compute_metrics_from_file,
+    discover_pairs,
+    load_ground_truth,
+    load_results,
+    run_all,
+    run_one,
+    write_results,
+)
 from meal_analysis.schemas import EvalSample, EvalSampleResult
 
 
@@ -256,3 +264,45 @@ def test_write_results_writes_valid_json(tmp_path: Path) -> None:
     assert data["meta"]["model"] == "gpt-4o"
     assert data["meta"]["max_concurrency"] == 2
     assert "timestamp" in data["meta"]
+
+
+def test_load_results_roundtrip(tmp_path: Path) -> None:
+    """load_results parses a file written by write_results."""
+    results = [
+        EvalSampleResult(sample_id="a", latency_ms=50.0, success=True),
+        EvalSampleResult(sample_id="b", latency_ms=100.0, success=False, error_class="X", error_message="y"),
+    ]
+    out = tmp_path / "r.json"
+    write_results(results, out)
+    loaded = load_results(out)
+    assert len(loaded) == 2
+    assert loaded[0].sample_id == "a" and loaded[0].latency_ms == 50.0 and loaded[0].success is True
+    assert loaded[1].sample_id == "b" and loaded[1].success is False and loaded[1].error_class == "X"
+
+
+def test_compute_metrics_from_file(evals_fixture_dir: Path) -> None:
+    """compute_metrics_from_file loads results + ground truth and returns metrics."""
+    from meal_analysis.schemas import AnalysisResponse
+
+    # Use fixture ground truth so response matches exactly (100% scores)
+    gt_a = load_ground_truth(evals_fixture_dir / "json-files" / "meal_a.json")
+    resp = AnalysisResponse(
+        guardrailCheck=gt_a.guardrailCheck,
+        mealAnalysis=gt_a.mealAnalysis,
+        safetyChecks=gt_a.safetyChecks,
+    )
+    results = [
+        EvalSampleResult(sample_id="meal_a", latency_ms=10.0, success=True, response=resp),
+        EvalSampleResult(sample_id="meal_b", latency_ms=20.0, success=True, response=resp),
+    ]
+    out = evals_fixture_dir / "metrics_test_results.json"
+    write_results(results, out)
+    metrics = compute_metrics_from_file(
+        out,
+        images_dir=evals_fixture_dir / "images",
+        json_dir=evals_fixture_dir / "json-files",
+    )
+    assert metrics["run_composite"] == 100.0
+    assert metrics["guardrails_pct"] == 100.0
+    assert metrics["safety_pct"] == 100.0
+    assert metrics["p50_latency_ms"] == 15.0
