@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 # Shared literal for recommendation and ingredient impact (assignment: green | yellow | orange | red).
 RecommendationLevel = Literal["green", "yellow", "orange", "red"]
@@ -78,9 +78,21 @@ class GroundTruthRecord(BaseModel):
 
     title: str
     fileName: str
-    guardrailCheck: GuardrailCheck
-    safetyChecks: SafetyChecks
-    mealAnalysis: MealAnalysis
+    guardrailCheck: GuardrailCheck | None = Field(default=None, description="Guardrail check results from the pipeline")
+    safetyChecks: SafetyChecks | None = Field(default=None, description="Safety check results from the pipeline")
+    mealAnalysis: MealAnalysis | None = Field(default=None, description="Meal analysis results from the pipeline")
+
+    @model_validator(mode="before")
+    @classmethod
+    def _empty_dict_to_none(cls, data: object) -> object:
+        """Coerce empty dict for optional nested models so validation does not require their fields."""
+        if isinstance(data, dict):
+            out = dict(data)
+            for key in ("guardrailCheck", "safetyChecks", "mealAnalysis"):
+                if key in out and out[key] == {}:
+                    out[key] = None
+            return out
+        return data
 
 
 class EvalSample(BaseModel):

@@ -119,18 +119,14 @@ def score_guardrails(
     results: list[EvalSampleResult],
     gt_by_id: dict[str, GroundTruthRecord],
 ) -> float:
-    """Guardrails score 0-100: % of samples with full guardrailCheck match (only samples with response)."""
+    """Guardrails score 0-100: % of samples with full guardrailCheck match (only samples with response and GT guardrail)."""
     with_response = [r for r in results if r.success and r.response is not None]
     if not with_response:
         return 0.0
-    passed = 0
-    for r in with_response:
-        gt = gt_by_id.get(r.sample_id)
-        if gt is None:
-            continue
-        if _guardrail_match(r.response.guardrailCheck, gt.guardrailCheck):
-            passed += 1
-    n = len(with_response)
+    scored = [(r, gt_by_id.get(r.sample_id)) for r in with_response]
+    scored = [(r, gt) for r, gt in scored if gt is not None and gt.guardrailCheck is not None]
+    passed = sum(1 for r, gt in scored if _guardrail_match(r.response.guardrailCheck, gt.guardrailCheck))
+    n = len(scored)
     return round(100.0 * passed / n, 1) if n else 0.0
 
 
@@ -138,18 +134,14 @@ def score_safety(
     results: list[EvalSampleResult],
     gt_by_id: dict[str, GroundTruthRecord],
 ) -> float:
-    """Safety score 0-100: % of samples with full safetyChecks match (only samples with response)."""
+    """Safety score 0-100: % of samples with full safetyChecks match (only samples with response and GT safety)."""
     with_response = [r for r in results if r.success and r.response is not None]
     if not with_response:
         return 0.0
-    passed = 0
-    for r in with_response:
-        gt = gt_by_id.get(r.sample_id)
-        if gt is None:
-            continue
-        if _safety_match(r.response.safetyChecks, gt.safetyChecks):
-            passed += 1
-    n = len(with_response)
+    scored = [(r, gt_by_id.get(r.sample_id)) for r in with_response]
+    scored = [(r, gt) for r, gt in scored if gt is not None and gt.safetyChecks is not None]
+    passed = sum(1 for r, gt in scored if _safety_match(r.response.safetyChecks, gt.safetyChecks))
+    n = len(scored)
     return round(100.0 * passed / n, 1) if n else 0.0
 
 
@@ -157,16 +149,13 @@ def score_meal(
     results: list[EvalSampleResult],
     gt_by_id: dict[str, GroundTruthRecord],
 ) -> float:
-    """Meal composite score 0-100 (recommendation, macros, ingredients; text quality stubbed)."""
+    """Meal composite score 0-100 (recommendation, macros, ingredients; only samples with response and GT meal)."""
     with_response = [r for r in results if r.success and r.response is not None]
     if not with_response:
         return 0.0
-    scores_list = []
-    for r in with_response:
-        gt = gt_by_id.get(r.sample_id)
-        if gt is None:
-            continue
-        scores_list.append(_meal_composite_score(r.response.mealAnalysis, gt.mealAnalysis))
+    scored = [(r, gt_by_id.get(r.sample_id)) for r in with_response]
+    scored = [(r, gt) for r, gt in scored if gt is not None and gt.mealAnalysis is not None]
+    scores_list = [_meal_composite_score(r.response.mealAnalysis, gt.mealAnalysis) for r, gt in scored]
     return round(sum(scores_list) / len(scores_list), 1) if scores_list else 0.0
 
 
