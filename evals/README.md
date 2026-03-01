@@ -29,6 +29,8 @@ Example:
 uv run python -m evals.runner --max-concurrency 2 -o my_results.json
 ```
 
+The CLI prints progress as each sample completes (e.g. `Completed 15/72...`) and a final success count.
+
 ## Output
 
 A single JSON file with:
@@ -52,7 +54,7 @@ write_results(results, Path("eval_results.json"), model="gpt-4o", max_concurrenc
 - **`discover_pairs(images_dir=..., json_dir=..., data_dir=...)`** – find image–JSON pairs by stem
 - **`load_ground_truth(json_path)`** – parse a ground-truth JSON into `GroundTruthRecord`
 - **`run_one(sample, client, model)`** – run pipeline for one sample (async)
-- **`run_all(samples, max_concurrency=5)`** – run all samples with semaphore-limited concurrency (async)
+- **`run_all(samples, max_concurrency=5, on_progress=None)`** – run all samples with semaphore-limited concurrency (async); optional `on_progress(completed, total)` for progress output
 - **`write_results(results, path, model=..., max_concurrency=...)`** – write JSON file
 
 Results can be fed into a separate metrics step (guardrails, safety, meal composite, P50 latency) as in the assignment spec.
