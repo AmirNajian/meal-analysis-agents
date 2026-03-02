@@ -50,18 +50,12 @@ async def safety_checks(
     text: str,
     client: OpenAIClient,
     model: str,
-) -> SafetyChecks:
-    """Run output safety checks on meal guidance text and return structured booleans.
+) -> tuple[SafetyChecks, int, int]:
+    """Run output safety checks on meal guidance text and return structured booleans plus token usage.
 
-    Parameters
-    ----------
-    text :
-        Concatenated meal analysis text to evaluate (e.g. guidance_message +
-        meal_title + meal_description).
-    client :
-        Shared OpenAIClient instance for making chat calls.
-    model :
-        OpenAI model name (e.g. gpt-4o or gpt-4o-mini).
+    Returns
+    -------
+    tuple of (SafetyChecks, input_tokens, output_tokens)
     """
     messages: list[dict[str, Any]] = [
         {"role": "system", "content": _SYSTEM_PROMPT},
@@ -91,7 +85,8 @@ async def safety_checks(
         ) from exc
 
     try:
-        return SafetyChecks.model_validate(payload)
+        parsed = SafetyChecks.model_validate(payload)
+        return (parsed, result.input_tokens, result.output_tokens)
     except ValidationError as exc:
         raise AgentParseError(
             agent_name="safety_checks",

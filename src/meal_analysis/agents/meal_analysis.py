@@ -59,8 +59,13 @@ async def meal_analysis(
     image_bytes: bytes,
     client: OpenAIClient,
     model: str,
-) -> MealAnalysis:
-    """Run meal analysis on an image and return structured inference."""
+) -> tuple[MealAnalysis, int, int]:
+    """Run meal analysis on an image and return structured inference plus token usage.
+
+    Returns
+    -------
+    tuple of (MealAnalysis, input_tokens, output_tokens)
+    """
     data_url = image_bytes_to_data_url(image_bytes, media_type="image/jpeg")
 
     messages: list[dict[str, Any]] = [
@@ -102,7 +107,8 @@ async def meal_analysis(
         ) from exc
 
     try:
-        return MealAnalysis.model_validate(payload)
+        parsed = MealAnalysis.model_validate(payload)
+        return (parsed, result.input_tokens, result.output_tokens)
     except ValidationError as exc:
         raise AgentParseError(
             agent_name="meal_analysis",

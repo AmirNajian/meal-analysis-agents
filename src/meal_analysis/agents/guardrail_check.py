@@ -49,17 +49,12 @@ async def guardrail_check(
     image_bytes: bytes,
     client: OpenAIClient,
     model: str,
-) -> GuardrailCheck:
-    """Run input guardrails on an image and return structured booleans.
+) -> tuple[GuardrailCheck, int, int]:
+    """Run input guardrails on an image and return structured booleans plus token usage.
 
-    Parameters
-    ----------
-    image_bytes:
-        Raw bytes of the meal image (e.g. JPEG).
-    client:
-        Shared OpenAIClient instance for making chat/vision calls.
-    model:
-        OpenAI model name (e.g. gpt-4o or a vision-capable variant).
+    Returns
+    -------
+    tuple of (GuardrailCheck, input_tokens, output_tokens)
     """
     data_url = image_bytes_to_data_url(image_bytes, media_type="image/jpeg")
 
@@ -102,7 +97,8 @@ async def guardrail_check(
         ) from exc
 
     try:
-        return GuardrailCheck.model_validate(payload)
+        parsed = GuardrailCheck.model_validate(payload)
+        return (parsed, result.input_tokens, result.output_tokens)
     except ValidationError as exc:
         raise AgentParseError(
             agent_name="guardrail_check",
