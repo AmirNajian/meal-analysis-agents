@@ -52,7 +52,7 @@ async def run_analysis_pipeline(
     -------
     PipelineResult
         response: combined AnalysisResponse; input_tokens/output_tokens aggregated
-        from all three agent calls (0 until agents expose usage).
+        from all three agent calls.
 
     Raises
     ------
@@ -61,7 +61,7 @@ async def run_analysis_pipeline(
     SafetyRejection
         If any output safety check is False.
     """
-    guardrail = await guardrail_check(
+    guardrail, g_in, g_out = await guardrail_check(
         image_bytes=image_bytes,
         client=client,
         model=model,
@@ -75,14 +75,14 @@ async def run_analysis_pipeline(
     if not guardrail.no_captcha:
         raise GuardrailRejection("Input guardrails failed: captcha detected", guardrail)
 
-    meal = await meal_analysis(
+    meal, m_in, m_out = await meal_analysis(
         image_bytes=image_bytes,
         client=client,
         model=model,
     )
 
     text = f"{meal.guidance_message}\nTitle: {meal.meal_title}\nDescription: {meal.meal_description}"
-    safety = await safety_checks(
+    safety, s_in, s_out = await safety_checks(
         text=text,
         client=client,
         model=model,
@@ -104,8 +104,8 @@ async def run_analysis_pipeline(
             mealAnalysis=meal,
             safetyChecks=safety,
         ),
-        input_tokens=0,
-        output_tokens=0,
+        input_tokens=g_in + m_in + s_in,
+        output_tokens=g_out + m_out + s_out,
     )
 
 
