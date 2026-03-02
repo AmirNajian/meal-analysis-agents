@@ -54,11 +54,12 @@ async def analyze(
     model = get_config().openai_model
 
     try:
-        return await run_analysis_pipeline(
+        result = await run_analysis_pipeline(
             image_bytes=image_bytes,
             client=client,
             model=model,
         )
+        return result.response
     except GuardrailRejection as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
     except SafetyRejection as e:
