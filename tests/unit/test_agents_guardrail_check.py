@@ -34,17 +34,19 @@ async def test_guardrail_check_happy_path(guardrail_check_dict: dict[str, Any]) 
     )
     client = _DummyClient(result)
 
-    out = await guardrail_check(
+    parsed, in_tok, out_tok = await guardrail_check(
         image_bytes=b"fake-bytes",
         client=client,  # type: ignore[arg-type]
         model="gpt-4o",
     )
 
-    assert isinstance(out, GuardrailCheck)
-    assert out.is_food is True
-    assert out.no_pii is True
-    assert out.no_humans is True
-    assert out.no_captcha is True
+    assert isinstance(parsed, GuardrailCheck)
+    assert parsed.is_food is True
+    assert parsed.no_pii is True
+    assert parsed.no_humans is True
+    assert parsed.no_captcha is True
+    assert in_tok == 5
+    assert out_tok == 3
 
     # Ensure messages and response_format were passed to chat_completion
     assert client.calls, "chat_completion should have been called exactly once"
