@@ -120,6 +120,9 @@ class EvalSampleResult(BaseModel):
     error_message: str | None = Field(default=None, description="Exception message when success=False")
     input_tokens: int | None = Field(default=None, ge=0, description="Total prompt tokens (if available)")
     output_tokens: int | None = Field(default=None, ge=0, description="Total completion tokens (if available)")
+    guardrail_latency_ms: float | None = Field(default=None, ge=0, description="Guardrail agent latency in ms (success only)")
+    meal_latency_ms: float | None = Field(default=None, ge=0, description="Meal analysis agent latency in ms (success only)")
+    safety_latency_ms: float | None = Field(default=None, ge=0, description="Safety checks agent latency in ms (success only)")
 
 
 __all__ = [
