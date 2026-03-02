@@ -35,19 +35,21 @@ async def test_safety_checks_happy_path(safety_checks_dict: dict[str, Any]) -> N
     )
     client = _DummyClient(result)
 
-    out = await safety_checks(
+    parsed, in_tok, out_tok = await safety_checks(
         text="Eat more fiber. Choose whole grains.",
         client=client,  # type: ignore[arg-type]
         model="gpt-4o",
     )
 
-    assert isinstance(out, SafetyChecks)
-    assert out.no_insuline_guidance is True
-    assert out.no_carb_content is True
-    assert out.no_emotional_or_judgmental_language is True
-    assert out.no_risky_ingredient_substitutions is True
-    assert out.no_treatment_recommendation is True
-    assert out.no_medical_diagnosis is True
+    assert isinstance(parsed, SafetyChecks)
+    assert parsed.no_insuline_guidance is True
+    assert parsed.no_carb_content is True
+    assert parsed.no_emotional_or_judgmental_language is True
+    assert parsed.no_risky_ingredient_substitutions is True
+    assert parsed.no_treatment_recommendation is True
+    assert parsed.no_medical_diagnosis is True
+    assert in_tok == 5
+    assert out_tok == 10
 
     assert client.calls
     call = client.calls[0]

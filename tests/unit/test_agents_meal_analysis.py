@@ -36,18 +36,20 @@ async def test_meal_analysis_happy_path(meal_analysis_dict: dict[str, Any]) -> N
     )
     client = _DummyClient(result)
 
-    out = await meal_analysis(
+    parsed, in_tok, out_tok = await meal_analysis(
         image_bytes=b"fake-image",
         client=client,  # type: ignore[arg-type]
         model="gpt-4o",
     )
 
-    assert isinstance(out, MealAnalysis)
-    assert out.is_food is True
-    assert out.recommendation in {"green", "yellow", "orange", "red"}
-    assert out.meal_title == meal_analysis_dict["meal_title"]
-    assert out.macros.calories == meal_analysis_dict["macros"]["calories"]
-    assert len(out.ingredients) == len(meal_analysis_dict["ingredients"])
+    assert isinstance(parsed, MealAnalysis)
+    assert parsed.is_food is True
+    assert parsed.recommendation in {"green", "yellow", "orange", "red"}
+    assert parsed.meal_title == meal_analysis_dict["meal_title"]
+    assert parsed.macros.calories == meal_analysis_dict["macros"]["calories"]
+    assert len(parsed.ingredients) == len(meal_analysis_dict["ingredients"])
+    assert in_tok == 10
+    assert out_tok == 15
 
     # Ensure messages and response_format were passed to chat_completion
     assert client.calls, "chat_completion should have been called exactly once"

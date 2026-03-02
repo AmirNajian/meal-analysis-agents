@@ -103,21 +103,25 @@ async def test_run_one_success(
     safety_checks_passed,
 ) -> None:
     """run_one returns EvalSampleResult with success=True and response when pipeline succeeds."""
+    from meal_analysis.api.pipeline import PipelineResult
     from meal_analysis.schemas import AnalysisResponse
 
     sample = _run_one_sample(evals_fixture_dir)
     mock_client = MagicMock()
-    expected = AnalysisResponse(
+    expected_resp = AnalysisResponse(
         guardrailCheck=guardrail_check_passed,
         mealAnalysis=meal_analysis_result,
         safetyChecks=safety_checks_passed,
     )
-    with patch("evals.runner.run_analysis_pipeline", new_callable=AsyncMock, return_value=expected):
+    pipeline_result = PipelineResult(response=expected_resp, input_tokens=0, output_tokens=0)
+    with patch("evals.runner.run_analysis_pipeline", new_callable=AsyncMock, return_value=pipeline_result):
         result = await run_one(sample, mock_client, "gpt-4o")
     assert result.sample_id == "meal_a"
     assert result.success is True
     assert result.response is not None
     assert result.response.mealAnalysis.meal_title == meal_analysis_result.meal_title
+    assert result.input_tokens == 0
+    assert result.output_tokens == 0
     assert result.latency_ms >= 0
     assert result.error_class is None
     assert result.error_message is None
