@@ -7,6 +7,23 @@ from meal_analysis.client import OpenAIClient
 from meal_analysis.schemas import AnalysisResponse, GuardrailCheck, MealAnalysis, SafetyChecks
 
 
+class PipelineResult:
+    """Result of a successful pipeline run: response plus aggregated token usage."""
+
+    __slots__ = ("response", "input_tokens", "output_tokens")
+
+    def __init__(
+        self,
+        response: AnalysisResponse,
+        *,
+        input_tokens: int = 0,
+        output_tokens: int = 0,
+    ) -> None:
+        self.response = response
+        self.input_tokens = input_tokens
+        self.output_tokens = output_tokens
+
+
 class GuardrailRejection(Exception):
     """Raised when input guardrails fail (not food, PII, humans, or captcha)."""
 
@@ -28,8 +45,14 @@ async def run_analysis_pipeline(
     image_bytes: bytes,
     client: OpenAIClient,
     model: str,
-) -> AnalysisResponse:
+) -> PipelineResult:
     """Run guardrail → meal analysis → safety checks; short-circuit on failure.
+
+    Returns
+    -------
+    PipelineResult
+        response: combined AnalysisResponse; input_tokens/output_tokens aggregated
+        from all three agent calls (0 until agents expose usage).
 
     Raises
     ------
@@ -75,15 +98,20 @@ async def run_analysis_pipeline(
     ]):
         raise SafetyRejection("Output safety check failed", safety)
 
-    return AnalysisResponse(
-        guardrailCheck=guardrail,
-        mealAnalysis=meal,
-        safetyChecks=safety,
+    return PipelineResult(
+        response=AnalysisResponse(
+            guardrailCheck=guardrail,
+            mealAnalysis=meal,
+            safetyChecks=safety,
+        ),
+        input_tokens=0,
+        output_tokens=0,
     )
 
 
 __all__ = [
     "GuardrailRejection",
+    "PipelineResult",
     "SafetyRejection",
     "run_analysis_pipeline",
 ]
