@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import logging
 import time
 from pathlib import Path
 from typing import Callable
@@ -24,6 +25,9 @@ from meal_analysis.schemas import EvalSample, EvalSampleResult, GroundTruthRecor
 
 from evals.metrics import compute_metrics
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler())
 
 # Default data dir: project root / data (assume evals/ is at repo root)
 def _default_data_dir() -> Path:
@@ -124,10 +128,16 @@ def discover_pairs(
     return pairs
 
 
+def _sanitize_model_for_path(model: str) -> str:
+    """Return a filename-safe slug for the model (e.g. gpt-4o -> gpt4o)."""
+    return model.replace("/", "-").replace(" ", "_")
+
+
 async def run_all(
     samples: list[EvalSample],
     *,
     max_concurrency: int = 5,
+    model: str | None = None,
     on_progress: Callable[[int, int], None] | None = None,
 ) -> list[EvalSampleResult]:
     """Run the pipeline for all samples with a semaphore-limited concurrency.
@@ -136,10 +146,12 @@ async def run_all(
     Any unexpected exception from run_one is turned into an EvalSampleResult
     with success=False so the returned list has one result per sample.
 
+    If model is None, uses get_config().openai_model. Pass model to override
+    (e.g. for running evals for 2+ models).
     If on_progress(completed, total) is given, it is called after each sample
     completes (e.g. for CLI progress output).
     """
-    model = get_config().openai_model
+    model = model if model is not None else get_config().openai_model
     semaphore = asyncio.Semaphore(max_concurrency)
     total = len(samples)
     progress_lock = asyncio.Lock()
@@ -259,13 +271,67 @@ def _parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("eval_results.json"),
         metavar="FILE",
-        help="Output JSON file path (default: eval_results.json)",
+        help="Output JSON file path (default: eval_results.json); with --models, used as prefix for per-model files",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        metavar="NAME",
+        help="Override model for this run (default: from config / OPENAI_MODEL)",
+    )
+    parser.add_argument(
+        "--models",
+        nargs="+",
+        type=str,
+        default=None,
+        metavar="NAME",
+        help="Run evals for each model and write <output_stem>_<model>.json per model",
     )
     return parser.parse_args()
 
 
+def _run_one_model(
+    samples: list[EvalSample],
+    model: str,
+    output_path: Path,
+    args: argparse.Namespace,
+) -> dict[str, float]:
+    """Run pipeline for one model, write results, compute and log metrics; return metrics."""
+    logger.info(f"Running pipeline on {len(samples)} samples (max_concurrency={args.max_concurrency})...")
+    results = asyncio.run(
+        run_all(
+            samples,
+            max_concurrency=args.max_concurrency,
+            model=model,
+            on_progress=lambda n, total: logger.info(f"  Completed {n}/{total}..."),
+        ),
+    )
+    write_results(
+        results,
+        output_path,
+        model=model,
+        max_concurrency=args.max_concurrency,
+    )
+    logger.info(f"Wrote {len(results)} results to {output_path}")
+    success_count = sum(1 for r in results if r.success)
+    logger.info(f"Success: {success_count}/{len(results)}")
+    metrics = compute_metrics_from_file(
+        output_path,
+        data_dir=args.data_dir,
+        images_dir=args.images_dir,
+        json_dir=args.json_dir,
+    )
+    logger.info(
+        f"Metrics: run_composite={metrics['run_composite']}, "
+        f"guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, "
+        f"meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}"
+    )
+    logger.info(f"Metrics: run_composite={metrics['run_composite']}, guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}")
+
+
 def main() -> None:
-    """CLI entry: discover pairs, run_all, write results."""
+    """CLI entry: discover pairs, run_all (single or multiple models), write results."""
     args = _parse_args()
     samples = discover_pairs(
         data_dir=args.data_dir,
@@ -273,37 +339,25 @@ def main() -> None:
         json_dir=args.json_dir,
     )
     if not samples:
-        print("No image–JSON pairs found.")
+        logger.info("No image–JSON pairs found.")
         return
-    print(f"Running pipeline on {len(samples)} samples (max_concurrency={args.max_concurrency})...")
-    results = asyncio.run(
-        run_all(
-            samples,
-            max_concurrency=args.max_concurrency,
-            on_progress=lambda n, total: print(f"  Completed {n}/{total}..."),
-        ),
-    )
-    write_results(
-        results,
-        args.output,
-        model=get_config().openai_model,
-        max_concurrency=args.max_concurrency,
-    )
-    print(f"Wrote {len(results)} results to {args.output}")
-    success_count = sum(1 for r in results if r.success)
-    print(f"Success: {success_count}/{len(results)}")
-    # Wire metrics to runner output
-    metrics = compute_metrics_from_file(
-        args.output,
-        data_dir=args.data_dir,
-        images_dir=args.images_dir,
-        json_dir=args.json_dir,
-    )
-    print(
-        f"Metrics: run_composite={metrics['run_composite']}, "
-        f"guardrails={metrics['guardrails_pct']}%, safety={metrics['safety_pct']}%, "
-        f"meal={metrics['meal_pct']}%, P50_latency_ms={metrics['p50_latency_ms']}"
-    )
+
+    if args.models is not None:
+        # Run evals for 2+ models; write <output_stem>_<model_slug>.json per model
+        if args.model is not None:
+            logger.info("Ignoring --model when --models is set.")
+        output_stem = args.output.with_suffix("")
+        n_models = len(args.models)
+        for i, model in enumerate(args.models, start=1):
+            logger.info(f"\n[Model {i}/{n_models}] {model}")
+            slug = _sanitize_model_for_path(model)
+            out_path = Path(f"{output_stem}_{slug}.json")
+            _run_one_model(samples, model, out_path, args)
+        return
+
+    # Single run (with optional --model override)
+    model = args.model if args.model is not None else get_config().openai_model
+    _run_one_model(samples, model, args.output, args)
 
 
 if __name__ == "__main__":

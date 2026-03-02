@@ -21,15 +21,30 @@ uv run python -m evals.runner [OPTIONS]
 | `--images-dir` | `data_dir/images` | Meal images directory |
 | `--json-dir` | `data_dir/json-files` | Ground-truth JSON directory |
 | `--max-concurrency` | `5` | Max concurrent pipeline runs |
-| `--output`, `-o` | `eval_results.json` | Output JSON path |
+| `--output`, `-o` | `eval_results.json` | Output JSON path; with `--models`, used as prefix for per-model files |
+| `--model` | from config | Override model for a single run |
+| `--models` | — | Run evals for each listed model; writes `<output_stem>_<model_slug>.json` per model |
 
-Example:
+Example (single run):
 
 ```bash
 uv run python -m evals.runner --max-concurrency 2 -o my_results.json
 ```
 
-The CLI prints progress as each sample completes (e.g. `Completed 15/72...`), a final success count, and **metrics** (run composite, guardrails %, safety %, meal %, P50 latency ms) computed from the written results and ground truth.
+Run evals for 2+ models (single invocation):
+
+```bash
+uv run python -m evals.runner --models gpt-4o gpt-4o-mini -o eval_results.json
+```
+
+This writes `eval_results_gpt4o.json` and `eval_results_gpt4o-mini.json` and logs metrics for each. Alternatively, run twice with a fixed output path per model:
+
+```bash
+uv run python -m evals.runner --model gpt-4o -o eval_results_gpt4o.json
+uv run python -m evals.runner --model gpt-4o-mini -o eval_results_gpt4o_mini.json
+```
+
+The CLI logs progress as each sample completes (e.g. `Completed 15/72...`), a final success count, and **metrics** (run composite, guardrails %, safety %, meal %, P50 latency ms) computed from the written results and ground truth.
 
 ## Output
 
@@ -59,4 +74,4 @@ write_results(results, Path("eval_results.json"), model="gpt-4o", max_concurrenc
 - **`load_results(path)`** – load a results JSON file back into `list[EvalSampleResult]`
 - **`compute_metrics_from_file(results_path, data_dir=..., images_dir=..., json_dir=...)`** – load results, build ground truth from discovered pairs, return metrics dict (`guardrails_pct`, `safety_pct`, `meal_pct`, `run_composite`, `p50_latency_ms`)
 
-Metrics (see `evals/metrics.py`) are wired to runner output: the CLI computes and prints them after each run; you can also call `compute_metrics_from_file` on an existing results file to re-run metrics without re-running the pipeline.
+Metrics (see `evals/metrics.py`) are wired to runner output: the CLI computes and logs them after each run; you can also call `compute_metrics_from_file` on an existing results file to re-run metrics without re-running the pipeline.

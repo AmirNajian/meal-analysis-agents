@@ -77,6 +77,21 @@ def test_load_ground_truth(evals_fixture_dir: Path) -> None:
     assert gt.mealAnalysis.ingredients[0].name == "Lettuce"
 
 
+def test_load_ground_truth_empty_nested_objects_coerced_to_none(tmp_path: Path) -> None:
+    """Ground-truth JSON with empty guardrailCheck/safetyChecks/mealAnalysis loads with those as None."""
+    json_path = tmp_path / "partial.json"
+    json_path.write_text(
+        '{"title": "Partial", "fileName": "partial.jpg", '
+        '"guardrailCheck": {}, "safetyChecks": {}, "mealAnalysis": {}}'
+    )
+    gt = load_ground_truth(json_path)
+    assert gt.title == "Partial"
+    assert gt.fileName == "partial.jpg"
+    assert gt.guardrailCheck is None
+    assert gt.safetyChecks is None
+    assert gt.mealAnalysis is None
+
+
 # ---- run_one (mocked pipeline) ----
 
 
@@ -221,6 +236,27 @@ async def test_run_all_returns_one_result_per_sample(evals_fixture_dir: Path) ->
     assert len(got) == 2
     assert got[0].sample_id == "meal_a" and got[0].success is True
     assert got[1].sample_id == "meal_b" and got[1].success is False
+
+
+@pytest.mark.asyncio
+async def test_run_all_uses_passed_model(evals_fixture_dir: Path) -> None:
+    """run_all(..., model=X) passes model X to run_one."""
+    samples = [
+        EvalSample(image_path=evals_fixture_dir / "images" / "meal_a.jpeg", json_path=evals_fixture_dir / "json-files" / "meal_a.json"),
+    ]
+    seen_models: list[str] = []
+
+    async def capture_model(sample: EvalSample, client: object, model: str) -> EvalSampleResult:
+        seen_models.append(model)
+        return EvalSampleResult(sample_id=sample.sample_id, latency_ms=1.0, success=True)
+
+    mock_cm = AsyncMock()
+    mock_cm.__aenter__.return_value = MagicMock()
+    mock_cm.__aexit__.return_value = None
+    with patch("evals.runner.OpenAIClient", return_value=mock_cm):
+        with patch("evals.runner.run_one", side_effect=capture_model):
+            await run_all(samples, max_concurrency=1, model="gpt-4o-mini")
+    assert seen_models == ["gpt-4o-mini"]
 
 
 @pytest.mark.asyncio
