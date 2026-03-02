@@ -10,7 +10,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from meal_analysis.api.main import app
-from meal_analysis.api.pipeline import GuardrailRejection, SafetyRejection, run_analysis_pipeline
+from meal_analysis.api.pipeline import GuardrailRejection, PipelineResult, SafetyRejection, run_analysis_pipeline
 from meal_analysis.agents.guardrail_check import AgentParseError
 from meal_analysis.schemas import AnalysisResponse
 
@@ -40,10 +40,12 @@ def test_analyze_success(
 ) -> None:
     """POST /analyze with valid file returns 200 and AnalysisResponse."""
     with patch("meal_analysis.api.main.run_analysis_pipeline", new_callable=AsyncMock) as m_run:
-        m_run.return_value = AnalysisResponse(
-            guardrailCheck=guardrail_check_passed,
-            mealAnalysis=meal_analysis_result,
-            safetyChecks=safety_checks_passed,
+        m_run.return_value = PipelineResult(
+            response=AnalysisResponse(
+                guardrailCheck=guardrail_check_passed,
+                mealAnalysis=meal_analysis_result,
+                safetyChecks=safety_checks_passed,
+            ),
         )
         response = client.post(
             "/analyze",
@@ -56,6 +58,34 @@ def test_analyze_success(
     assert "safetyChecks" in data
     assert data["guardrailCheck"]["is_food"] is True
     m_run.assert_called_once()
+
+
+def test_analyze_success_response_does_not_expose_tokens(
+    client: TestClient,
+    valid_image_bytes: bytes,
+    guardrail_check_passed,
+    meal_analysis_result,
+    safety_checks_passed,
+) -> None:
+    """POST /analyze returns only result.response; token fields are not in the response body."""
+    with patch("meal_analysis.api.main.run_analysis_pipeline", new_callable=AsyncMock) as m_run:
+        m_run.return_value = PipelineResult(
+            response=AnalysisResponse(
+                guardrailCheck=guardrail_check_passed,
+                mealAnalysis=meal_analysis_result,
+                safetyChecks=safety_checks_passed,
+            ),
+            input_tokens=100,
+            output_tokens=50,
+        )
+        response = client.post(
+            "/analyze",
+            files={"file": ("meal.jpg", valid_image_bytes, "image/jpeg")},
+        )
+    assert response.status_code == 200
+    data = response.json()
+    assert "input_tokens" not in data
+    assert "output_tokens" not in data
 
 
 def test_analyze_missing_filename_returns_422(client: TestClient) -> None:
