@@ -67,7 +67,7 @@ def render_table(summary_path: Path, recommended_model: str | None = None) -> st
     # Header: overall metrics first, then each agent's score and P50 next to each other
     lines = [
         "| Model | Run composite | P50 latency (ms) | Avg input tokens | Avg output tokens | Guardrails % | P50 guardrail (ms) | Safety % | P50 safety (ms) | Meal % | P50 meal (ms) |",
-        "| ----- | ------------- | ---------------- | ---------------- | ----------------- | ------------ | ------------------ | -------- | --------------- | ------ | ------------- |",
+        "| ------------ | ------------- | ---------------- | ---------------- | ----------------- | ------------ | ------------------ | -------- | --------------- | ------ | ------------- |",
     ]
     for model_name, run_composite, guardrails_pct, safety_pct, meal_pct, p50_guardrail, p50_meal, p50_safety, avg_in, avg_out, p50 in rows:
         cells = [
