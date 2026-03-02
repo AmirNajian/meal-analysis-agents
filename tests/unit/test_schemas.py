@@ -138,6 +138,9 @@ def test_eval_sample_result_parses_minimal() -> None:
     assert r.error_class is None
     assert r.input_tokens is None
     assert r.output_tokens is None
+    assert r.guardrail_latency_ms is None
+    assert r.meal_latency_ms is None
+    assert r.safety_latency_ms is None
 
 
 def test_eval_sample_result_rejects_negative_latency() -> None:
@@ -146,7 +149,7 @@ def test_eval_sample_result_rejects_negative_latency() -> None:
 
 
 def test_eval_sample_result_accepts_optional_tokens(analysis_response_dict: dict) -> None:
-    """EvalSampleResult accepts input_tokens, output_tokens, and response."""
+    """EvalSampleResult accepts input_tokens, output_tokens, per-agent latencies, and response."""
     resp = AnalysisResponse.model_validate(analysis_response_dict)
     r = EvalSampleResult(
         sample_id="y",
@@ -155,9 +158,15 @@ def test_eval_sample_result_accepts_optional_tokens(analysis_response_dict: dict
         response=resp,
         input_tokens=10,
         output_tokens=20,
+        guardrail_latency_ms=50.0,
+        meal_latency_ms=200.0,
+        safety_latency_ms=80.0,
     )
     assert r.input_tokens == 10
     assert r.output_tokens == 20
+    assert r.guardrail_latency_ms == 50.0
+    assert r.meal_latency_ms == 200.0
+    assert r.safety_latency_ms == 80.0
     assert r.response is not None
     assert r.response.mealAnalysis.meal_title == "Salad"
 
