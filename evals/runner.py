@@ -55,7 +55,7 @@ async def run_one(
     sample_id = sample.sample_id
     start = time.perf_counter()
     try:
-        response = await run_analysis_pipeline(
+        result = await run_analysis_pipeline(
             image_bytes=image_bytes,
             client=client,
             model=model,
@@ -65,7 +65,9 @@ async def run_one(
             sample_id=sample_id,
             latency_ms=latency_ms,
             success=True,
-            response=response,
+            response=result.response,
+            input_tokens=result.input_tokens,
+            output_tokens=result.output_tokens,
         )
     except (
         GuardrailRejection,
