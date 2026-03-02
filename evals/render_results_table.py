@@ -40,14 +40,17 @@ def render_table(summary_path: Path, recommended_model: str | None = None) -> st
     if not models_data:
         return "# Eval results\n\nNo model data in summary.\n"
 
-    # Build rows: (model_name, run_composite, avg_input_tokens, avg_output_tokens, p50_latency_ms)
+    # Build rows: (model_name, run_composite, guardrails_pct, safety_pct, meal_pct, avg_in, avg_out, p50)
     rows = []
     for model_name, m in models_data.items():
         run_composite = m.get("run_composite")
+        guardrails_pct = m.get("guardrails_pct")
+        safety_pct = m.get("safety_pct")
+        meal_pct = m.get("meal_pct")
         avg_in = m.get("avg_input_tokens")
         avg_out = m.get("avg_output_tokens")
         p50 = m.get("p50_latency_ms")
-        rows.append((model_name, run_composite, avg_in, avg_out, p50))
+        rows.append((model_name, run_composite, guardrails_pct, safety_pct, meal_pct, avg_in, avg_out, p50))
 
     # Sort by run_composite descending (best first); put recommended first if set
     def sort_key(item: tuple) -> tuple:
@@ -58,15 +61,18 @@ def render_table(summary_path: Path, recommended_model: str | None = None) -> st
 
     rows.sort(key=sort_key)
 
-    # Header and alignment
+    # Header and alignment (agent-specific: guardrails, safety, meal)
     lines = [
-        "| Model | Run composite | Avg input tokens | Avg output tokens | P50 latency (ms) |",
-        "| ----- | ------------- | ---------------- | ----------------- | ---------------- |",
+        "| Model | Run composite | Guardrails % | Safety % | Meal % | Avg input tokens | Avg output tokens | P50 latency (ms) |",
+        "| ----- | ------------- | ------------ | -------- | ------ | ---------------- | ----------------- | ---------------- |",
     ]
-    for model_name, run_composite, avg_in, avg_out, p50 in rows:
+    for model_name, run_composite, guardrails_pct, safety_pct, meal_pct, avg_in, avg_out, p50 in rows:
         cells = [
             model_name,
             _format_cell(run_composite),
+            _format_cell(guardrails_pct),
+            _format_cell(safety_pct),
+            _format_cell(meal_pct),
             _format_cell(avg_in),
             _format_cell(avg_out),
             _format_cell(p50),
