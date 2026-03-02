@@ -52,7 +52,8 @@ def test_render_table_missing_tokens_shows_em_dash(tmp_path: Path) -> None:
     )
     table = render_table(summary)
     assert "—" in table
-    assert "| m | 100.0 | — | — | 1000 |" in table
+    # Table has Model | Run composite | Guardrails % | Safety % | Meal % | Avg in | Avg out | P50
+    assert "| m | 100.0 | — | — | — | — | — | 1000 |" in table
 
 
 def test_render_table_with_tokens(tmp_path: Path) -> None:
@@ -64,7 +65,22 @@ def test_render_table_with_tokens(tmp_path: Path) -> None:
         encoding="utf-8",
     )
     table = render_table(summary)
-    assert "| m | 95.0 | 500 | 100 | 2000 |" in table
+    assert "| m | 95.0 | — | — | — | 500 | 100 | 2000 |" in table
+
+
+def test_render_table_includes_agent_metrics(tmp_path: Path) -> None:
+    """Table includes Guardrails %, Safety %, Meal % columns from summary."""
+    summary = tmp_path / "summary.json"
+    summary.write_text(
+        '{"models": {"m": {"run_composite": 94.0, "guardrails_pct": 100.0, '
+        '"safety_pct": 88.0, "meal_pct": 96.0, "p50_latency_ms": 5000}}}',
+        encoding="utf-8",
+    )
+    table = render_table(summary)
+    assert "Guardrails %" in table
+    assert "Safety %" in table
+    assert "Meal %" in table
+    assert "| m | 94.0 | 100.0 | 88.0 | 96.0 | — | — | 5000 |" in table
 
 
 def test_render_table_empty_models(tmp_path: Path) -> None:
