@@ -175,7 +175,14 @@ def compute_metrics(
     results: list[EvalSampleResult],
     gt_by_id: dict[str, GroundTruthRecord],
 ) -> dict[str, float | None]:
-    """Compute all metrics; return dict with guardrails_pct, safety_pct, meal_pct, run_composite, p50_latency_ms, avg_input_tokens, avg_output_tokens."""
+    """Compute all metrics.
+
+    Returns a dict with:
+    - guardrails_pct, safety_pct, meal_pct, run_composite
+    - p50_latency_ms (end-to-end)
+    - avg_input_tokens, avg_output_tokens (over results with token data)
+    - p50_guardrail_latency_ms, p50_meal_latency_ms, p50_safety_latency_ms (per-agent latencies over results with data)
+    """
     g = score_guardrails(results, gt_by_id)
     s = score_safety(results, gt_by_id)
     m = score_meal(results, gt_by_id)
@@ -190,6 +197,14 @@ def compute_metrics(
         avg_input_tokens = None
         avg_output_tokens = None
 
+    guardrail_latencies = [r.guardrail_latency_ms for r in results if r.guardrail_latency_ms is not None]
+    meal_latencies = [r.meal_latency_ms for r in results if r.meal_latency_ms is not None]
+    safety_latencies = [r.safety_latency_ms for r in results if r.safety_latency_ms is not None]
+
+    p50_guardrail_latency_ms = round(statistics.median(guardrail_latencies), 1) if guardrail_latencies else None
+    p50_meal_latency_ms = round(statistics.median(meal_latencies), 1) if meal_latencies else None
+    p50_safety_latency_ms = round(statistics.median(safety_latencies), 1) if safety_latencies else None
+
     return {
         "guardrails_pct": g,
         "safety_pct": s,
@@ -198,6 +213,9 @@ def compute_metrics(
         "p50_latency_ms": p50,
         "avg_input_tokens": avg_input_tokens,
         "avg_output_tokens": avg_output_tokens,
+        "p50_guardrail_latency_ms": p50_guardrail_latency_ms,
+        "p50_meal_latency_ms": p50_meal_latency_ms,
+        "p50_safety_latency_ms": p50_safety_latency_ms,
     }
 
 
