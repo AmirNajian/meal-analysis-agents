@@ -174,19 +174,30 @@ def p50_latency_ms(results: list[EvalSampleResult]) -> float:
 def compute_metrics(
     results: list[EvalSampleResult],
     gt_by_id: dict[str, GroundTruthRecord],
-) -> dict[str, float]:
-    """Compute all metrics; return dict with guardrails_pct, safety_pct, meal_pct, run_composite, p50_latency_ms."""
+) -> dict[str, float | None]:
+    """Compute all metrics; return dict with guardrails_pct, safety_pct, meal_pct, run_composite, p50_latency_ms, avg_input_tokens, avg_output_tokens."""
     g = score_guardrails(results, gt_by_id)
     s = score_safety(results, gt_by_id)
     m = score_meal(results, gt_by_id)
     run = run_level_composite(g, m, s)
     p50 = p50_latency_ms(results)
+
+    with_tokens = [r for r in results if r.input_tokens is not None and r.output_tokens is not None]
+    if with_tokens:
+        avg_input_tokens = round(statistics.mean(r.input_tokens for r in with_tokens), 1)
+        avg_output_tokens = round(statistics.mean(r.output_tokens for r in with_tokens), 1)
+    else:
+        avg_input_tokens = None
+        avg_output_tokens = None
+
     return {
         "guardrails_pct": g,
         "safety_pct": s,
         "meal_pct": m,
         "run_composite": run,
         "p50_latency_ms": p50,
+        "avg_input_tokens": avg_input_tokens,
+        "avg_output_tokens": avg_output_tokens,
     }
 
 
