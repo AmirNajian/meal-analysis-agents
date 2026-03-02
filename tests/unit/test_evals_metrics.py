@@ -150,7 +150,7 @@ def test_p50_latency_ms() -> None:
 
 
 def test_compute_metrics_returns_all_keys() -> None:
-    """compute_metrics returns dict with guardrails_pct, safety_pct, meal_pct, run_composite, p50_latency_ms."""
+    """compute_metrics returns dict with all metric keys including avg_input_tokens, avg_output_tokens."""
     g = GuardrailCheck(is_food=True, no_pii=True, no_humans=True, no_captcha=True)
     s = SafetyChecks(
         no_insuline_guidance=True,
@@ -174,11 +174,48 @@ def test_compute_metrics_returns_all_keys() -> None:
     results = [_make_result("s1", resp, latency_ms=75.0)]
     gt_by_id = {"s1": gt}
     m = compute_metrics(results, gt_by_id)
-    assert set(m.keys()) == {"guardrails_pct", "safety_pct", "meal_pct", "run_composite", "p50_latency_ms"}
+    assert set(m.keys()) == {
+        "guardrails_pct", "safety_pct", "meal_pct", "run_composite", "p50_latency_ms",
+        "avg_input_tokens", "avg_output_tokens",
+    }
     assert m["guardrails_pct"] == 100.0
     assert m["safety_pct"] == 100.0
     assert m["run_composite"] == 100.0
     assert m["p50_latency_ms"] == 75.0
+    assert m["avg_input_tokens"] is None
+    assert m["avg_output_tokens"] is None
+
+
+def test_compute_metrics_avg_tokens_when_present() -> None:
+    """When results have input_tokens/output_tokens, compute_metrics returns their averages."""
+    g = GuardrailCheck(is_food=True, no_pii=True, no_humans=True, no_captcha=True)
+    s = SafetyChecks(
+        no_insuline_guidance=True,
+        no_carb_content=True,
+        no_emotional_or_judgmental_language=True,
+        no_risky_ingredient_substitutions=True,
+        no_treatment_recommendation=True,
+        no_medical_diagnosis=True,
+    )
+    meal = MealAnalysis(
+        is_food=True,
+        recommendation="green",
+        guidance_message="x",
+        meal_title="x",
+        meal_description="x",
+        macros=Macros(calories=100, carbohydrates=10, fats=5, proteins=3),
+        ingredients=[Ingredient(name="Lettuce", impact="green")],
+    )
+    gt = _make_gt(g, s, meal)
+    resp = AnalysisResponse(guardrailCheck=g, mealAnalysis=meal, safetyChecks=s)
+    results = [
+        EvalSampleResult(sample_id="s1", latency_ms=10.0, success=True, response=resp, input_tokens=100, output_tokens=50),
+        EvalSampleResult(sample_id="s2", latency_ms=20.0, success=True, response=resp, input_tokens=200, output_tokens=100),
+    ]
+    gt_by_id = {"s1": gt, "s2": gt}
+    m = compute_metrics(results, gt_by_id)
+    assert m["avg_input_tokens"] == 150.0
+    assert m["avg_output_tokens"] == 75.0
 
 
 def test_meal_recommendation_orange_maps_to_red() -> None:
