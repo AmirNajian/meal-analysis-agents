@@ -18,7 +18,7 @@ EVAL_OUTPUT_PREFIX="${EVAL_OUTPUT_PREFIX:-eval_results}"
 EVAL_METRICS_FILE="${EVAL_METRICS_FILE:-$EVAL_RESULTS_DIR/eval_metrics_summary.json}"
 EVAL_MAX_CONCURRENCY="${EVAL_MAX_CONCURRENCY:-10}"
 # Default: 4 production VLMs (smaller set for speed). 
-# Full set: gpt-5.2 gpt-5.1 gpt-5 gpt-5-mini gpt-4o gpt-4o-mini gpt-4.1 gpt-4.1-mini gpt-4-turbo
+# Full set: gpt-5.2 gpt-5.2-pro gpt-5.1 gpt-5 gpt-5-mini gpt-4o gpt-4o-mini gpt-4.1 gpt-4.1-mini gpt-4-turbo
 EVAL_MODELS="${EVAL_MODELS:-gpt-5.2 gpt-5.1 gpt-4o gpt-4o-mini}"
 
 METRICS_ONLY=false
