@@ -35,9 +35,9 @@ async def test_run_analysis_pipeline_success(
         patch("meal_analysis.api.pipeline.meal_analysis", new_callable=AsyncMock) as m_meal,
         patch("meal_analysis.api.pipeline.safety_checks", new_callable=AsyncMock) as m_safety,
     ):
-        m_guard.return_value = guardrail_check_passed
-        m_meal.return_value = meal_analysis_result
-        m_safety.return_value = safety_checks_passed
+        m_guard.return_value = (guardrail_check_passed, 100, 50)
+        m_meal.return_value = (meal_analysis_result, 200, 100)
+        m_safety.return_value = (safety_checks_passed, 300, 150)
 
         result = await run_analysis_pipeline(
             image_bytes=pipeline_image_bytes,
@@ -49,8 +49,8 @@ async def test_run_analysis_pipeline_success(
     assert result.response.guardrailCheck is guardrail_check_passed
     assert result.response.mealAnalysis is meal_analysis_result
     assert result.response.safetyChecks is safety_checks_passed
-    assert result.input_tokens == 0
-    assert result.output_tokens == 0
+    assert result.input_tokens == 600
+    assert result.output_tokens == 300
 
     m_guard.assert_called_once()
     m_meal.assert_called_once()
@@ -69,15 +69,15 @@ async def test_run_analysis_pipeline_success_returns_pipeline_result_with_token_
     meal_analysis_result,
     safety_checks_passed,
 ) -> None:
-    """Pipeline success returns PipelineResult with response, input_tokens, and output_tokens (tokens 0 until agents expose usage)."""
+    """Pipeline success returns PipelineResult with response and aggregated token counts."""
     with (
         patch("meal_analysis.api.pipeline.guardrail_check", new_callable=AsyncMock) as m_guard,
         patch("meal_analysis.api.pipeline.meal_analysis", new_callable=AsyncMock) as m_meal,
         patch("meal_analysis.api.pipeline.safety_checks", new_callable=AsyncMock) as m_safety,
     ):
-        m_guard.return_value = guardrail_check_passed
-        m_meal.return_value = meal_analysis_result
-        m_safety.return_value = safety_checks_passed
+        m_guard.return_value = (guardrail_check_passed, 10, 5)
+        m_meal.return_value = (meal_analysis_result, 20, 10)
+        m_safety.return_value = (safety_checks_passed, 30, 15)
 
         result = await run_analysis_pipeline(
             image_bytes=pipeline_image_bytes,
@@ -90,8 +90,8 @@ async def test_run_analysis_pipeline_success_returns_pipeline_result_with_token_
     assert hasattr(result, "input_tokens")
     assert hasattr(result, "output_tokens")
     assert isinstance(result.response, AnalysisResponse)
-    assert isinstance(result.input_tokens, int) and result.input_tokens >= 0
-    assert isinstance(result.output_tokens, int) and result.output_tokens >= 0
+    assert result.input_tokens == 60
+    assert result.output_tokens == 30
 
 
 @pytest.mark.asyncio
@@ -106,7 +106,7 @@ async def test_run_analysis_pipeline_guardrail_not_food_raises(
         patch("meal_analysis.api.pipeline.meal_analysis", new_callable=AsyncMock) as m_meal,
         patch("meal_analysis.api.pipeline.safety_checks", new_callable=AsyncMock) as m_safety,
     ):
-        m_guard.return_value = guardrail_check_not_food
+        m_guard.return_value = (guardrail_check_not_food, 0, 0)
 
         with pytest.raises(GuardrailRejection) as exc_info:
             await run_analysis_pipeline(
@@ -137,9 +137,9 @@ async def test_run_analysis_pipeline_safety_failure_raises(
         patch("meal_analysis.api.pipeline.meal_analysis", new_callable=AsyncMock) as m_meal,
         patch("meal_analysis.api.pipeline.safety_checks", new_callable=AsyncMock) as m_safety,
     ):
-        m_guard.return_value = guardrail_check_passed
-        m_meal.return_value = meal_analysis_result
-        m_safety.return_value = safety_checks_failed
+        m_guard.return_value = (guardrail_check_passed, 0, 0)
+        m_meal.return_value = (meal_analysis_result, 0, 0)
+        m_safety.return_value = (safety_checks_failed, 0, 0)
 
         with pytest.raises(SafetyRejection) as exc_info:
             await run_analysis_pipeline(
