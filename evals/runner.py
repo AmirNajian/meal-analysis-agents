@@ -68,6 +68,9 @@ async def run_one(
             response=result.response,
             input_tokens=result.input_tokens,
             output_tokens=result.output_tokens,
+            guardrail_latency_ms=result.guardrail_latency_ms,
+            meal_latency_ms=result.meal_latency_ms,
+            safety_latency_ms=result.safety_latency_ms,
         )
     except (
         GuardrailRejection,

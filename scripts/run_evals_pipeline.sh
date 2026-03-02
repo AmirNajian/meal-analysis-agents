@@ -16,6 +16,7 @@ EVAL_DATA_DIR="${EVAL_DATA_DIR:-$REPO_ROOT/data}"
 EVAL_RESULTS_DIR="${EVAL_RESULTS_DIR:-$EVAL_DATA_DIR/results}"
 EVAL_OUTPUT_PREFIX="${EVAL_OUTPUT_PREFIX:-eval_results}"
 EVAL_METRICS_FILE="${EVAL_METRICS_FILE:-$EVAL_RESULTS_DIR/eval_metrics_summary.json}"
+EVAL_TABLE_FILE="${EVAL_TABLE_FILE:-$REPO_ROOT/docs/RESULTS_TABLE.md}"
 EVAL_MAX_CONCURRENCY="${EVAL_MAX_CONCURRENCY:-10}"
 # Default: 4 production VLMs (smaller set for speed). 
 # Full set: gpt-5.2 gpt-5.2-pro gpt-5.1 gpt-5 gpt-5-mini gpt-4o gpt-4o-mini gpt-4.1 gpt-4.1-mini gpt-4-turbo
@@ -53,3 +54,9 @@ uv run python -m evals.collect_metrics \
   --data-dir "$EVAL_DATA_DIR" \
   --metrics-out "$EVAL_METRICS_FILE" \
   $EVAL_MODELS
+
+echo "[$(_ts)] Rendering results table to $EVAL_TABLE_FILE"
+mkdir -p "$(dirname "$EVAL_TABLE_FILE")"
+uv run python -m evals.render_results_table \
+  --summary "$EVAL_METRICS_FILE" \
+  -o "$EVAL_TABLE_FILE"
