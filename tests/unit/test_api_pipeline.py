@@ -51,6 +51,9 @@ async def test_run_analysis_pipeline_success(
     assert result.response.safetyChecks is safety_checks_passed
     assert result.input_tokens == 600
     assert result.output_tokens == 300
+    assert hasattr(result, "guardrail_latency_ms") and result.guardrail_latency_ms >= 0
+    assert hasattr(result, "meal_latency_ms") and result.meal_latency_ms >= 0
+    assert hasattr(result, "safety_latency_ms") and result.safety_latency_ms >= 0
 
     m_guard.assert_called_once()
     m_meal.assert_called_once()
