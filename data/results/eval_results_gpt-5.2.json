@@ -1,0 +1,4061 @@
+{
+  "results": [
+    {
+      "sample_id": "upload_1749840444495_ce8fbfbc-988e-4ee6-9e52-d7ebdf4a58bc",
+      "latency_ms": 7012.147457997344,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "These appear to be white bread rolls, which are typically refined and can raise blood glucose more quickly. Consider a smaller portion and pairing with protein, healthy fats, or fiber-rich foods to reduce glycemic impact.",
+          "meal_title": "White bread rolls",
+          "meal_description": "Three plain bread rolls made from refined wheat flour.",
+          "macros": {
+            "calories": 420.0,
+            "carbohydrates": 84.0,
+            "fats": 6.0,
+            "proteins": 12.0
+          },
+          "ingredients": [
+            {
+              "name": "refined wheat flour",
+              "impact": "orange"
+            },
+            {
+              "name": "water",
+              "impact": "green"
+            },
+            {
+              "name": "yeast",
+              "impact": "green"
+            },
+            {
+              "name": "sugar (small amount)",
+              "impact": "yellow"
+            },
+            {
+              "name": "salt",
+              "impact": "green"
+            },
+            {
+              "name": "vegetable oil or butter (small amount)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1503,
+      "output_tokens": 358,
+      "guardrail_latency_ms": 1451.560375000554,
+      "meal_latency_ms": 4229.78279200106,
+      "safety_latency_ms": 1330.7644999986223
+    },
+    {
+      "sample_id": "upload_1749840712880_d8cedf37-9bdb-4ff5-8e21-6a6a740ae409",
+      "latency_ms": 7334.837124999467,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This plate appears to include non-starchy vegetables with a grain/starch portion and a fried item. For a steadier glucose response, consider keeping the couscous portion moderate and pairing it with the vegetables and a protein source if available.",
+          "meal_title": "Couscous with mixed vegetables and fried onion ring",
+          "meal_description": "A bowl with couscous, broccoli, cauliflower, saut\u00e9ed leafy greens, a fried onion ring, and a small serving of hummus or similar dip.",
+          "macros": {
+            "calories": 520.0,
+            "carbohydrates": 64.0,
+            "fats": 18.0,
+            "proteins": 16.0
+          },
+          "ingredients": [
+            {
+              "name": "Couscous",
+              "impact": "orange"
+            },
+            {
+              "name": "Broccoli",
+              "impact": "green"
+            },
+            {
+              "name": "Cauliflower",
+              "impact": "green"
+            },
+            {
+              "name": "Leafy greens (saut\u00e9ed)",
+              "impact": "green"
+            },
+            {
+              "name": "Fried onion ring",
+              "impact": "orange"
+            },
+            {
+              "name": "Hummus (small portion)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1538,
+      "output_tokens": 398,
+      "guardrail_latency_ms": 1387.188166998385,
+      "meal_latency_ms": 4714.872332999221,
+      "safety_latency_ms": 1232.7514580028947
+    },
+    {
+      "sample_id": "upload_1749840740344_7e95ee66-1e26-4892-9ce4-b79960061c19",
+      "latency_ms": 7828.545666001446,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a small serving of saut\u00e9ed non-starchy vegetables (zucchini, carrots, mushrooms, and onion). The carbohydrate load looks modest; using a moderate amount of cooking oil and pairing with a protein can help keep the overall glycemic impact lower.",
+          "meal_title": "Saut\u00e9ed mixed vegetables",
+          "meal_description": "Cooked vegetable mix including zucchini slices, carrot sticks, mushrooms, and onions, likely saut\u00e9ed with herbs and oil.",
+          "macros": {
+            "calories": 140.0,
+            "carbohydrates": 14.0,
+            "fats": 8.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Zucchini",
+              "impact": "green"
+            },
+            {
+              "name": "Carrots",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "Onion",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cooking oil (olive or similar)",
+              "impact": "green"
+            },
+            {
+              "name": "Herbs/seasonings",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1531,
+      "output_tokens": 386,
+      "guardrail_latency_ms": 1670.5642910019378,
+      "meal_latency_ms": 4912.464249999175,
+      "safety_latency_ms": 1245.4780000007304
+    },
+    {
+      "sample_id": "upload_1749841037102_96ccbf66-4c05-45dc-8920-fd6ef54fcd0d",
+      "latency_ms": 7382.876457999373,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal appears to be rice topped with beans and a tomato-based sauce with some creamy dressing. The combination includes fiber and protein from beans, but the rice and sauce can raise carbohydrate load; a smaller rice portion and more non-starchy vegetables can lower glycemic impact.",
+          "meal_title": "Rice with black beans and tomato sauce",
+          "meal_description": "White rice topped with black beans and a tomato-based mixture, with a small amount of creamy sauce and herbs.",
+          "macros": {
+            "calories": 520.0,
+            "carbohydrates": 78.0,
+            "fats": 14.0,
+            "proteins": 16.0
+          },
+          "ingredients": [
+            {
+              "name": "White rice",
+              "impact": "red"
+            },
+            {
+              "name": "Black beans",
+              "impact": "yellow"
+            },
+            {
+              "name": "Tomato-based sauce (tomatoes/peppers/onion)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Creamy sauce (sour cream/crema/aioli)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Herbs/greens (cilantro or similar)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1531,
+      "output_tokens": 404,
+      "guardrail_latency_ms": 1394.5590420007647,
+      "meal_latency_ms": 4631.119917001342,
+      "safety_latency_ms": 1357.176375000563
+    },
+    {
+      "sample_id": "upload_1749841435404_d2ac9183-048d-4cec-9b9b-a878628e4b30",
+      "latency_ms": 6466.161457999988,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a bowl of plain yogurt topped with blueberries and red currants. It is generally a lower-glycemic choice due to protein from yogurt and fiber from berries; keep portions of fruit and any added sweeteners in mind to manage carbohydrate load.",
+          "meal_title": "Yogurt with blueberries and red currants",
+          "meal_description": "A serving of plain yogurt topped with fresh blueberries and red currants.",
+          "macros": {
+            "calories": 210.0,
+            "carbohydrates": 24.0,
+            "fats": 6.0,
+            "proteins": 12.0
+          },
+          "ingredients": [
+            {
+              "name": "Plain yogurt",
+              "impact": "green"
+            },
+            {
+              "name": "Blueberries",
+              "impact": "green"
+            },
+            {
+              "name": "Red currants",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1521,
+      "output_tokens": 330,
+      "guardrail_latency_ms": 1390.6729579975945,
+      "meal_latency_ms": 3871.188458000688,
+      "safety_latency_ms": 1204.239458002121
+    },
+    {
+      "sample_id": "upload_1749841861682_5e0c8e9d-bcff-4db4-bd59-62aa98119dec",
+      "latency_ms": 7249.916790999123,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This plate appears to be mostly non-starchy vegetables with a small portion of a creamy side. For steadier blood sugar impact, keep the creamy portion modest and consider adding a clear protein source if this is a full meal.",
+          "meal_title": "Steamed mixed vegetables with creamy side",
+          "meal_description": "A plate with sliced cooked carrots and cauliflower/broccoli florets, alongside a small serving of a creamy, pale side dish.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 18.0,
+            "fats": 14.0,
+            "proteins": 5.0
+          },
+          "ingredients": [
+            {
+              "name": "Carrots (cooked, sliced)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cauliflower (cooked)",
+              "impact": "green"
+            },
+            {
+              "name": "Broccoli (cooked)",
+              "impact": "green"
+            },
+            {
+              "name": "Creamy sauce or creamy side (possibly dairy-based)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1526,
+      "output_tokens": 359,
+      "guardrail_latency_ms": 1591.415833998326,
+      "meal_latency_ms": 4363.334042001952,
+      "safety_latency_ms": 1295.1482919997943
+    },
+    {
+      "sample_id": "upload_1749843287038_40cbba8a-21fa-447a-88ce-54e9d8f8708a",
+      "latency_ms": 7880.092583996884,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal is dominated by refined carbohydrates (white rice and flatbread), which can raise blood glucose more quickly. A smaller portion of rice/bread and more emphasis on lentils/vegetables can help balance the carbohydrate load.",
+          "meal_title": "Indian thali with paratha, rice, dal, and chutneys",
+          "meal_description": "A plated meal with paratha/flatbread, a serving of white rice, lentil curry (dal), yellow curry, green chutney, a yogurt/raita-like side, and a small portion of pickle/vegetable sides.",
+          "macros": {
+            "calories": 920.0,
+            "carbohydrates": 135.0,
+            "fats": 30.0,
+            "proteins": 26.0
+          },
+          "ingredients": [
+            {
+              "name": "Paratha/flatbread (wheat, likely with oil/ghee)",
+              "impact": "orange"
+            },
+            {
+              "name": "White rice",
+              "impact": "red"
+            },
+            {
+              "name": "Dal (lentil curry)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Yellow curry (possibly potato or lentil-based)",
+              "impact": "orange"
+            },
+            {
+              "name": "Green chutney (herb-based)",
+              "impact": "green"
+            },
+            {
+              "name": "Yogurt/raita",
+              "impact": "green"
+            },
+            {
+              "name": "Pickle/achar",
+              "impact": "yellow"
+            },
+            {
+              "name": "Vegetable side/salad garnish",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1555,
+      "output_tokens": 470,
+      "guardrail_latency_ms": 1083.1482499997946,
+      "meal_latency_ms": 5576.506041998073,
+      "safety_latency_ms": 1220.4126670003461
+    },
+    {
+      "sample_id": "upload_1749843713632_58c8331c-7aec-4895-a51b-cb92988cade5",
+      "latency_ms": 6309.549458001129,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a cup of plain water or unsweetened tea, which typically has negligible carbohydrates and minimal impact on blood glucose. If any sweetener, milk, or juice is added, the carbohydrate content and glycemic impact can increase.",
+          "meal_title": "Plain Water or Unsweetened Tea",
+          "meal_description": "A cup containing a clear, unsweetened beverage served in a ceramic mug.",
+          "macros": {
+            "calories": 0.0,
+            "carbohydrates": 0.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": [
+            {
+              "name": "Water or unsweetened tea",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1520,
+      "output_tokens": 293,
+      "guardrail_latency_ms": 1426.705582998693,
+      "meal_latency_ms": 3571.1110420015757,
+      "safety_latency_ms": 1311.6689579983358
+    },
+    {
+      "sample_id": "upload_1749850518596_ae5c6336-732a-432f-a1c1-a64db860a708",
+      "latency_ms": 7613.295084000129,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This looks like a coffee with a small piece of sweet baked bread/cake. The bread portion is likely refined carbohydrate and may raise blood glucose more quickly; pairing with protein/fiber or reducing the portion can lower overall glycemic impact.",
+          "meal_title": "Coffee with a small piece of cake/biscotti",
+          "meal_description": "A cup of coffee served with a small slice of sweet baked bread/cake on the side.",
+          "macros": {
+            "calories": 190.0,
+            "carbohydrates": 24.0,
+            "fats": 8.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Coffee (espresso/black coffee)",
+              "impact": "green"
+            },
+            {
+              "name": "Sugar (possibly in coffee)",
+              "impact": "red"
+            },
+            {
+              "name": "Milk/cream (possibly in coffee)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Sweet cake/biscotti (refined flour)",
+              "impact": "orange"
+            },
+            {
+              "name": "Butter/oil (in baked item)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1524,
+      "output_tokens": 393,
+      "guardrail_latency_ms": 1385.9226659988053,
+      "meal_latency_ms": 5007.332290999329,
+      "safety_latency_ms": 1219.9975830008043
+    },
+    {
+      "sample_id": "upload_1749865296179_d1a4da8d-8804-480e-b835-072f845e11f8",
+      "latency_ms": 7419.948624999961,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This looks like an egg and onion omelet served with a flatbread/roti. The eggs provide protein and fat that can help moderate glucose response, while the flatbread contributes most of the carbohydrates; keeping the flatbread portion modest and pairing with non-starchy vegetables can lower overall glycemic impact.",
+          "meal_title": "Egg and onion omelet with roti",
+          "meal_description": "A cooked egg omelet with chopped onions placed on top of a whole-wheat style flatbread/roti.",
+          "macros": {
+            "calories": 360.0,
+            "carbohydrates": 35.0,
+            "fats": 16.0,
+            "proteins": 18.0
+          },
+          "ingredients": [
+            {
+              "name": "Whole-wheat roti/flatbread",
+              "impact": "yellow"
+            },
+            {
+              "name": "Eggs (omelet)",
+              "impact": "green"
+            },
+            {
+              "name": "Onion",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or ghee (used for frying)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Salt and spices (optional)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1540,
+      "output_tokens": 404,
+      "guardrail_latency_ms": 1494.3424580014835,
+      "meal_latency_ms": 4689.168249999057,
+      "safety_latency_ms": 1236.4175410002645
+    },
+    {
+      "sample_id": "upload_1749869835174_55f1390a-6ea3-4033-a016-b8a4c30d28a1",
+      "latency_ms": 7500.336541997967,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be a fish-based dish with avocado and a light sauce, which is generally low in carbohydrates and higher in protein and healthy fats. If the sauce is sweetened, keeping the portion modest can help limit added sugars.",
+          "meal_title": "Fish Tartare with Avocado and Sauce",
+          "meal_description": "Diced raw fish served over a small portion of avocado with a savory sauce and garnish.",
+          "macros": {
+            "calories": 360.0,
+            "carbohydrates": 10.0,
+            "fats": 22.0,
+            "proteins": 28.0
+          },
+          "ingredients": [
+            {
+              "name": "Raw fish (tartare/sashimi-style)",
+              "impact": "green"
+            },
+            {
+              "name": "Avocado",
+              "impact": "green"
+            },
+            {
+              "name": "Soy-based or citrus savory sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Possible sweetened glaze (e.g., mirin/teriyaki-style component)",
+              "impact": "orange"
+            },
+            {
+              "name": "Green onion/scallion garnish",
+              "impact": "green"
+            },
+            {
+              "name": "Fish roe (topping)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1521,
+      "output_tokens": 418,
+      "guardrail_latency_ms": 1205.1357500022277,
+      "meal_latency_ms": 4864.128916997288,
+      "safety_latency_ms": 1431.0197080012586
+    },
+    {
+      "sample_id": "upload_1749872693154_5d23dac1-9118-4776-ad69-9853f8e513fa",
+      "latency_ms": 6562.803624998196,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a seared beef-topped sushi roll. The white rice portion can raise carbohydrate intake quickly; keeping the portion moderate and pairing with non-starchy sides can help reduce overall glycemic impact.",
+          "meal_title": "Seared beef sushi roll",
+          "meal_description": "A sushi roll made with white rice and fillings, topped with seared beef slices and jalape\u00f1o, served with wasabi and pickled ginger.",
+          "macros": {
+            "calories": 620.0,
+            "carbohydrates": 78.0,
+            "fats": 22.0,
+            "proteins": 28.0
+          },
+          "ingredients": [
+            {
+              "name": "Sushi rice (white rice, seasoned)",
+              "impact": "red"
+            },
+            {
+              "name": "Seared beef slices",
+              "impact": "green"
+            },
+            {
+              "name": "Seaweed (nori)",
+              "impact": "green"
+            },
+            {
+              "name": "Jalape\u00f1o slices",
+              "impact": "green"
+            },
+            {
+              "name": "Sauce/glaze (likely sweet soy or mayo-based)",
+              "impact": "orange"
+            },
+            {
+              "name": "Pickled ginger",
+              "impact": "yellow"
+            },
+            {
+              "name": "Wasabi",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1525,
+      "output_tokens": 411,
+      "guardrail_latency_ms": 1071.0931670000718,
+      "meal_latency_ms": 4281.024708001496,
+      "safety_latency_ms": 1210.6567080008972
+    },
+    {
+      "sample_id": "upload_1749875264239_2a7fbe6a-e779-46e6-ac22-82d88a66ea3c",
+      "latency_ms": 7675.349042001471,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This dish is centered on dairy/cheese with strawberries and a small amount of crunchy toppings. It is relatively low in carbohydrates, but the sweet fruit base and any added sugar or granola-like crumbs can raise the glycemic impact; keeping the crumb/sugar portion modest and pairing with water can help keep it more balanced.",
+          "meal_title": "Burrata with strawberries and pistachio crumble",
+          "meal_description": "A bowl of burrata or soft cheese served over sliced strawberries with a pistachio-like crumble and a pink fruit sauce or compote.",
+          "macros": {
+            "calories": 430.0,
+            "carbohydrates": 28.0,
+            "fats": 28.0,
+            "proteins": 18.0
+          },
+          "ingredients": [
+            {
+              "name": "Burrata/soft cheese",
+              "impact": "green"
+            },
+            {
+              "name": "Strawberries",
+              "impact": "yellow"
+            },
+            {
+              "name": "Fruit sauce/compote (pink base)",
+              "impact": "orange"
+            },
+            {
+              "name": "Pistachio crumble/chopped nuts",
+              "impact": "green"
+            },
+            {
+              "name": "Possible sugar/honey in topping",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1550,
+      "output_tokens": 402,
+      "guardrail_latency_ms": 1132.6665000015055,
+      "meal_latency_ms": 5226.149499998428,
+      "safety_latency_ms": 1316.483041002357
+    },
+    {
+      "sample_id": "upload_1750038317524_55c71fd4-30e1-4e8b-93f8-86e6094f31b3",
+      "latency_ms": 7355.647917000169,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a baked pasta dish with a creamy sauce and bread-crumb topping. Pasta and bread crumbs can raise blood glucose relatively quickly; a smaller portion and adding a side of non-starchy vegetables or a protein can help balance the meal.",
+          "meal_title": "Baked creamy pasta with bread-crumb topping",
+          "meal_description": "Short pasta (likely penne) baked in a creamy cheese-based sauce with a bread-crumb topping.",
+          "macros": {
+            "calories": 620.0,
+            "carbohydrates": 78.0,
+            "fats": 24.0,
+            "proteins": 22.0
+          },
+          "ingredients": [
+            {
+              "name": "Penne pasta (refined wheat)",
+              "impact": "orange"
+            },
+            {
+              "name": "Creamy cheese sauce (cheese/milk/cream)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Bread crumbs/crouton topping",
+              "impact": "orange"
+            },
+            {
+              "name": "Butter or oil (for sauce/topping)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Salt and spices",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1528,
+      "output_tokens": 398,
+      "guardrail_latency_ms": 1289.3909580016043,
+      "meal_latency_ms": 4789.488499998697,
+      "safety_latency_ms": 1276.7184589974931
+    },
+    {
+      "sample_id": "upload_1750038497319_6a3082e9-034c-4015-9eeb-9545000073c9",
+      "latency_ms": 6656.473167000513,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "These sous vide egg bites are primarily protein and fat with minimal carbohydrates, which typically has a lower impact on blood glucose. Pairing with non-starchy vegetables can add fiber and increase meal volume without adding many carbs.",
+          "meal_title": "Sous Vide Egg Bites (Bacon & Gouda)",
+          "meal_description": "Packaged Kirkland Signature sous vide egg bites made with eggs, uncured bacon, and gouda cheese.",
+          "macros": {
+            "calories": 320.0,
+            "carbohydrates": 8.0,
+            "fats": 22.0,
+            "proteins": 17.0
+          },
+          "ingredients": [
+            {
+              "name": "Eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Uncured bacon",
+              "impact": "yellow"
+            },
+            {
+              "name": "Gouda cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Milk/cream (likely in egg bite base)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Starch/thickener (possible small amount in processed egg bites)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1524,
+      "output_tokens": 391,
+      "guardrail_latency_ms": 1125.5717089989048,
+      "meal_latency_ms": 4305.225791998964,
+      "safety_latency_ms": 1225.630374996399
+    },
+    {
+      "sample_id": "upload_1750091798026_6bfd2714-28cc-4f8e-9df2-8ceb92a5a071",
+      "latency_ms": 6888.573500000348,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "These appear to be cookies/biscuits, which are typically made with refined flour and added sugar. For a lower glycemic impact, keep the portion small and consider pairing with protein or fiber (e.g., nuts or unsweetened yogurt) rather than eating them alone.",
+          "meal_title": "Jar of cookies/biscuits",
+          "meal_description": "Small round cookies stored in a glass jar, likely a sweet baked snack.",
+          "macros": {
+            "calories": 160.0,
+            "carbohydrates": 22.0,
+            "fats": 7.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Refined wheat flour",
+              "impact": "orange"
+            },
+            {
+              "name": "Sugar",
+              "impact": "red"
+            },
+            {
+              "name": "Butter or vegetable oil",
+              "impact": "yellow"
+            },
+            {
+              "name": "Egg",
+              "impact": "green"
+            },
+            {
+              "name": "Salt",
+              "impact": "green"
+            },
+            {
+              "name": "Leavening (baking powder/soda)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1524,
+      "output_tokens": 396,
+      "guardrail_latency_ms": 1227.0745829991938,
+      "meal_latency_ms": 4208.1893750000745,
+      "safety_latency_ms": 1453.2774580002297
+    },
+    {
+      "sample_id": "upload_1750097681033_c71afe76-f144-4a19-9dd3-19a1178957f4",
+      "latency_ms": 5592.94220800075,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a small serving of fruit (an orange segment and a grape). It is mostly carbohydrate with some fiber; pairing fruit with a protein or fat source can help reduce the speed of glucose rise.",
+          "meal_title": "Orange segment with a grape",
+          "meal_description": "A small portion of fruit consisting of a peeled orange segment and a single dark grape.",
+          "macros": {
+            "calories": 25.0,
+            "carbohydrates": 6.5,
+            "fats": 0.1,
+            "proteins": 0.4
+          },
+          "ingredients": [
+            {
+              "name": "Orange",
+              "impact": "green"
+            },
+            {
+              "name": "Grape",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1512,
+      "output_tokens": 305,
+      "guardrail_latency_ms": 1259.3424580009014,
+      "meal_latency_ms": 3138.741624999966,
+      "safety_latency_ms": 1194.8058340021817
+    },
+    {
+      "sample_id": "upload_1750097765140_1dccfd72-61d7-462c-b163-f5b7c348b547",
+      "latency_ms": 6646.81466699767,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal includes protein-rich p\u00e2t\u00e9/terrine and a leafy green salad, with toasted white bread as the main carbohydrate source. For a steadier glucose response, consider a smaller bread portion or swapping to a higher-fiber bread and keeping the salad portion generous.",
+          "meal_title": "P\u00e2t\u00e9 with Toast and Green Salad",
+          "meal_description": "Slices of toasted white bread served with assorted p\u00e2t\u00e9/terrine and a dressed leafy green salad.",
+          "macros": {
+            "calories": 520.0,
+            "carbohydrates": 35.0,
+            "fats": 34.0,
+            "proteins": 22.0
+          },
+          "ingredients": [
+            {
+              "name": "Toasted white bread",
+              "impact": "orange"
+            },
+            {
+              "name": "P\u00e2t\u00e9/terrine (assorted)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Leafy green salad",
+              "impact": "green"
+            },
+            {
+              "name": "Salad dressing (likely oil-based)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1530,
+      "output_tokens": 359,
+      "guardrail_latency_ms": 1185.4322079998383,
+      "meal_latency_ms": 4100.841125000443,
+      "safety_latency_ms": 1360.4924169994774
+    },
+    {
+      "sample_id": "upload_1750097815654_0a961795-6af4-447c-a0a5-71f98ea66240",
+      "latency_ms": 5106.603500000347,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "Kiwi is a whole fruit with fiber and a moderate amount of natural sugars. It is generally lower glycemic than many fruits, but portion size still influences carbohydrate intake.",
+          "meal_title": "Sliced kiwi",
+          "meal_description": "Two halves of a kiwi fruit served plain.",
+          "macros": {
+            "calories": 45.0,
+            "carbohydrates": 11.0,
+            "fats": 0.4,
+            "proteins": 0.8
+          },
+          "ingredients": [
+            {
+              "name": "Kiwi",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1494,
+      "output_tokens": 267,
+      "guardrail_latency_ms": 1127.8642079996644,
+      "meal_latency_ms": 2540.0448750006035,
+      "safety_latency_ms": 1438.6450840029283
+    },
+    {
+      "sample_id": "upload_1750097849597_00cf91d6-e95f-4880-b120-76efe150b1b8",
+      "latency_ms": 6453.318833002413,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a mixed leafy salad with non-starchy vegetables, which typically has a low carbohydrate load. If a dressing is added, choosing a lower-sugar option and moderating the amount can help keep the overall glycemic impact lower; adding a protein (e.g., chicken, tofu, eggs) can make it more balanced and filling.",
+          "meal_title": "Mixed Leafy Salad",
+          "meal_description": "A bowl of mixed leafy greens with cucumber, dark olives, and small pieces of yellow bell pepper.",
+          "macros": {
+            "calories": 110.0,
+            "carbohydrates": 9.0,
+            "fats": 6.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Mixed leafy greens (lettuce/greens)",
+              "impact": "green"
+            },
+            {
+              "name": "Cucumber",
+              "impact": "green"
+            },
+            {
+              "name": "Black olives",
+              "impact": "yellow"
+            },
+            {
+              "name": "Yellow bell pepper (diced)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1541,
+      "output_tokens": 377,
+      "guardrail_latency_ms": 1071.3035000007949,
+      "meal_latency_ms": 4083.7337500015565,
+      "safety_latency_ms": 1298.2322919997387
+    },
+    {
+      "sample_id": "upload_1750097945898_eefbeb4b-8dda-4ced-a7df-7e653d5c471b",
+      "latency_ms": 5634.648625000409,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a serving of white rice, which is primarily carbohydrate and can raise blood glucose relatively quickly. Consider a smaller portion and pairing with non-starchy vegetables, protein, and/or healthy fats to slow digestion and reduce glycemic impact.",
+          "meal_title": "Plain White Rice",
+          "meal_description": "A bowl of cooked white rice with no visible additions or sides.",
+          "macros": {
+            "calories": 205.0,
+            "carbohydrates": 45.0,
+            "fats": 0.4,
+            "proteins": 4.3
+          },
+          "ingredients": [
+            {
+              "name": "Cooked white rice",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1513,
+      "output_tokens": 288,
+      "guardrail_latency_ms": 1035.379582997848,
+      "meal_latency_ms": 3244.9574999991455,
+      "safety_latency_ms": 1354.2691670008935
+    },
+    {
+      "sample_id": "upload_1750100382667_e5dd5b7c-5a38-4304-b3a7-d8209c5d59a2",
+      "latency_ms": 7647.806708002463,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This bowl appears to be mostly non-starchy vegetables with a protein portion and a small serving of a starchy side. Keeping the starch portion modest and pairing it with the vegetables and protein generally supports a steadier glycemic impact.",
+          "meal_title": "Chicken with mixed greens and a small starchy side",
+          "meal_description": "A bowl with pieces of cooked chicken, mixed leafy greens, a small scoop of a starchy side (appears like mashed potato or polenta), and a few pickled vegetables.",
+          "macros": {
+            "calories": 420.0,
+            "carbohydrates": 24.0,
+            "fats": 22.0,
+            "proteins": 32.0
+          },
+          "ingredients": [
+            {
+              "name": "Cooked chicken pieces",
+              "impact": "green"
+            },
+            {
+              "name": "Mixed leafy greens (lettuce)",
+              "impact": "green"
+            },
+            {
+              "name": "Pickled vegetables (e.g., radish/turnip)",
+              "impact": "green"
+            },
+            {
+              "name": "Starchy side (mashed potato or polenta)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Oil-based dressing or sauce",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1541,
+      "output_tokens": 413,
+      "guardrail_latency_ms": 1003.8759999988542,
+      "meal_latency_ms": 5325.524041996687,
+      "safety_latency_ms": 1318.3575000002747
+    },
+    {
+      "sample_id": "upload_1750176632186_7794b8b1-1eec-489d-a7d2-8ff1d8e94e22",
+      "latency_ms": 7583.321166999667,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal is high in protein and fat with minimal carbohydrates. The sausage and eggs are likely to have a low immediate glycemic impact, while ketchup can add a small amount of fast-acting sugar; keeping the ketchup portion small and adding a non-starchy vegetable side can improve fiber balance.",
+          "meal_title": "Sausage patty with scrambled eggs and ketchup",
+          "meal_description": "A breakfast plate with a sausage patty and scrambled eggs, served with a small portion of ketchup, alongside a dark beverage (likely coffee or tea).",
+          "macros": {
+            "calories": 360.0,
+            "carbohydrates": 6.0,
+            "fats": 28.0,
+            "proteins": 21.0
+          },
+          "ingredients": [
+            {
+              "name": "Sausage patty",
+              "impact": "yellow"
+            },
+            {
+              "name": "Scrambled eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Ketchup",
+              "impact": "orange"
+            },
+            {
+              "name": "Black coffee or tea (unsweetened)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1545,
+      "output_tokens": 371,
+      "guardrail_latency_ms": 1056.2652080006956,
+      "meal_latency_ms": 5143.655457999557,
+      "safety_latency_ms": 1383.355833000678
+    },
+    {
+      "sample_id": "upload_1750180230407_6e49bf45-0e0b-4817-9cb1-2f8e10df6977",
+      "latency_ms": 5649.377500001719,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a milk-based coffee drink. If it is unsweetened, it typically has a low carbohydrate load; added sugar syrups or sweetened creamers can raise the glycemic impact.",
+          "meal_title": "Milk coffee (latte/cappuccino)",
+          "meal_description": "A mug of coffee with milk and a light foam layer.",
+          "macros": {
+            "calories": 80.0,
+            "carbohydrates": 8.0,
+            "fats": 3.0,
+            "proteins": 4.0
+          },
+          "ingredients": [
+            {
+              "name": "Coffee",
+              "impact": "green"
+            },
+            {
+              "name": "Milk",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1509,
+      "output_tokens": 295,
+      "guardrail_latency_ms": 1121.1431669980811,
+      "meal_latency_ms": 3292.1454169991193,
+      "safety_latency_ms": 1236.0376249998808
+    },
+    {
+      "sample_id": "upload_1750180679848_2b308ff1-fe70-46bb-b6a4-e1ef01c9d181",
+      "latency_ms": 7623.623833002057,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a burger on a bun with cheese and small amounts of vegetables. The bun can contribute a moderate-to-high carbohydrate load, while the patty and cheese add protein and fat that may slow glucose rise. If possible, consider a smaller bun portion or pairing with non-starchy sides to reduce overall carbohydrate impact.",
+          "meal_title": "Cheeseburger on a sesame bun",
+          "meal_description": "A burger with a beef patty, melted cheese, and salad greens/tomato served on a sesame bun; fries appear to be served on the side.",
+          "macros": {
+            "calories": 850.0,
+            "carbohydrates": 65.0,
+            "fats": 48.0,
+            "proteins": 40.0
+          },
+          "ingredients": [
+            {
+              "name": "Sesame burger bun",
+              "impact": "orange"
+            },
+            {
+              "name": "Beef patty",
+              "impact": "green"
+            },
+            {
+              "name": "Cheese slice",
+              "impact": "yellow"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Arugula/leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "Sauce/condiments (likely)",
+              "impact": "yellow"
+            },
+            {
+              "name": "French fries (side)",
+              "impact": "red"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1552,
+      "output_tokens": 453,
+      "guardrail_latency_ms": 1152.3859999979322,
+      "meal_latency_ms": 5143.044458000077,
+      "safety_latency_ms": 1328.1431659997907
+    },
+    {
+      "sample_id": "upload_1750180959631_d9fa7e84-e4ef-4c30-8388-142ae1861f79",
+      "latency_ms": 5795.509750001656,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be an alcoholic beverage. Alcoholic drinks can add calories and may affect blood glucose; keeping the serving modest and avoiding added sugars can help reduce glycemic impact.",
+          "meal_title": "Glass of white wine",
+          "meal_description": "A single serving of pale white wine in a stemmed glass.",
+          "macros": {
+            "calories": 120.0,
+            "carbohydrates": 4.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": [
+            {
+              "name": "White wine (fermented grape juice, alcohol)",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1500,
+      "output_tokens": 276,
+      "guardrail_latency_ms": 1080.1572499985923,
+      "meal_latency_ms": 3428.299709001294,
+      "safety_latency_ms": 1287.0086669972807
+    },
+    {
+      "sample_id": "upload_1750182735800_604d3797-d9eb-436f-997f-1d202a9bbcb4",
+      "latency_ms": 7708.215624999866,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a mixed green salad with non-starchy vegetables and some added toppings. It is generally lower in carbohydrates and higher in fiber; watch portions of higher-carb add-ins (such as fruit or croutons) and higher-fat dressings if included.",
+          "meal_title": "Mixed Green Salad Bowl",
+          "meal_description": "A bowl of leafy greens and mixed vegetables, including cabbage and peas, with shaved cheese and crunchy toppings, likely served with a light dressing.",
+          "macros": {
+            "calories": 320.0,
+            "carbohydrates": 24.0,
+            "fats": 18.0,
+            "proteins": 14.0
+          },
+          "ingredients": [
+            {
+              "name": "Mixed leafy greens (spinach/lettuce)",
+              "impact": "green"
+            },
+            {
+              "name": "Red cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "Green peas",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cucumber",
+              "impact": "green"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Apple pieces (possible)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Shaved cheese (parmesan/asiago)",
+              "impact": "green"
+            },
+            {
+              "name": "Croutons or crunchy topping",
+              "impact": "orange"
+            },
+            {
+              "name": "Olive-oil based dressing (possible)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1532,
+      "output_tokens": 453,
+      "guardrail_latency_ms": 1128.0862920029904,
+      "meal_latency_ms": 5242.5689160008915,
+      "safety_latency_ms": 1337.5088749999122
+    },
+    {
+      "sample_id": "upload_1750182831517_fa06a30c-cffc-40b8-9ac3-abc35e1d1635",
+      "latency_ms": 7923.96829199788,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a mixed salad with leafy greens and non-starchy vegetables, which are generally lower in carbohydrates and higher in fiber. If a sweet dressing or croutons are added, the carbohydrate impact can increase; keeping dressing portions moderate can help maintain a steadier glycemic impact.",
+          "meal_title": "Mixed greens salad with vegetables and light toppings",
+          "meal_description": "A bowl of leafy greens (spinach/lettuce) with shredded purple cabbage, mixed vegetables, and small crunchy toppings, likely served with a light dressing.",
+          "macros": {
+            "calories": 260.0,
+            "carbohydrates": 18.0,
+            "fats": 14.0,
+            "proteins": 9.0
+          },
+          "ingredients": [
+            {
+              "name": "Leafy greens (spinach/lettuce mix)",
+              "impact": "green"
+            },
+            {
+              "name": "Purple cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "Cucumber",
+              "impact": "green"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Edamame/green peas (small amount)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Shredded cheese (e.g., parmesan)",
+              "impact": "green"
+            },
+            {
+              "name": "Croutons or crunchy bread topping (small amount)",
+              "impact": "orange"
+            },
+            {
+              "name": "Salad dressing (oil-based or vinaigrette, small amount)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1545,
+      "output_tokens": 488,
+      "guardrail_latency_ms": 1293.7142500013579,
+      "meal_latency_ms": 5462.614083000517,
+      "safety_latency_ms": 1167.5853750020906
+    },
+    {
+      "sample_id": "upload_1750184236286_fe8af98c-e6e5-4246-8ab1-0ca74e1de489",
+      "latency_ms": 7387.966250000318,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This looks like a sandwich/burger on a refined bun, which can raise blood glucose more quickly. Keeping the bun portion smaller and emphasizing the protein and vegetables can help lower the overall glycemic impact.",
+          "meal_title": "Sesame bun sandwich with tomato and lettuce",
+          "meal_description": "A sandwich on a sesame-topped bun with visible lettuce and tomato; the filling likely includes a protein patty or similar main filling.",
+          "macros": {
+            "calories": 430.0,
+            "carbohydrates": 42.0,
+            "fats": 18.0,
+            "proteins": 22.0
+          },
+          "ingredients": [
+            {
+              "name": "Sesame bun (refined wheat)",
+              "impact": "orange"
+            },
+            {
+              "name": "Sesame seeds",
+              "impact": "green"
+            },
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Protein filling (patty/deli meat or similar)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Sauce/condiments (possible)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1522,
+      "output_tokens": 389,
+      "guardrail_latency_ms": 1029.1913750006643,
+      "meal_latency_ms": 4878.159042000334,
+      "safety_latency_ms": 1480.5599579995032
+    },
+    {
+      "sample_id": "upload_1750184275147_d931eee9-5024-4f89-94e5-64dc9a094c5a",
+      "latency_ms": 6709.300582999276,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal is protein-forward with mostly non-starchy vegetables, which can support steadier glucose response. The pea portion and the creamy sauce add more carbohydrates and fat; keeping peas and sauce moderate can reduce glycemic impact.",
+          "meal_title": "Sausage with mixed vegetables and creamy sauce",
+          "meal_description": "A grilled sausage served with peas, carrots, zucchini, leeks, and saut\u00e9ed onions, topped with a creamy pan sauce.",
+          "macros": {
+            "calories": 650.0,
+            "carbohydrates": 30.0,
+            "fats": 45.0,
+            "proteins": 28.0
+          },
+          "ingredients": [
+            {
+              "name": "Sausage",
+              "impact": "yellow"
+            },
+            {
+              "name": "Green peas",
+              "impact": "yellow"
+            },
+            {
+              "name": "Carrots",
+              "impact": "yellow"
+            },
+            {
+              "name": "Zucchini",
+              "impact": "green"
+            },
+            {
+              "name": "Leeks",
+              "impact": "green"
+            },
+            {
+              "name": "Onions",
+              "impact": "green"
+            },
+            {
+              "name": "Creamy sauce/gravy",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1526,
+      "output_tokens": 415,
+      "guardrail_latency_ms": 1134.3430829983845,
+      "meal_latency_ms": 4197.964999999385,
+      "safety_latency_ms": 1376.9537919979484
+    },
+    {
+      "sample_id": "upload_1750184400484_91309b18-e132-459d-8b77-58d388eb7c92",
+      "latency_ms": 5545.839499998692,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Watermelon is a hydrating fruit with natural sugars. A modest portion is typically easier to fit into blood-sugar management, and pairing it with a protein or healthy fat can help reduce the overall glycemic impact of the snack.",
+          "meal_title": "Watermelon pieces",
+          "meal_description": "Three small pieces of fresh watermelon.",
+          "macros": {
+            "calories": 70.0,
+            "carbohydrates": 18.0,
+            "fats": 0.3,
+            "proteins": 1.4
+          },
+          "ingredients": [
+            {
+              "name": "Watermelon",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1504,
+      "output_tokens": 277,
+      "guardrail_latency_ms": 1006.0817089979537,
+      "meal_latency_ms": 3392.076250001992,
+      "safety_latency_ms": 1147.6227499988454
+    },
+    {
+      "sample_id": "upload_1750184519401_0a00994e-1755-4b0c-993b-3fce1d692ca1",
+      "latency_ms": 6365.472915997088,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a pasta dish with cubes of cheese and herbs. The pasta portion is likely the main source of carbohydrates and may raise blood glucose more quickly; a smaller portion and adding non-starchy vegetables or additional protein can help balance the meal.",
+          "meal_title": "Penne pasta with cheese and herbs",
+          "meal_description": "Cooked penne tossed with herb seasoning and cubes of cheese, shown in a pan.",
+          "macros": {
+            "calories": 620.0,
+            "carbohydrates": 70.0,
+            "fats": 24.0,
+            "proteins": 24.0
+          },
+          "ingredients": [
+            {
+              "name": "Penne pasta",
+              "impact": "orange"
+            },
+            {
+              "name": "Cheese cubes (likely feta or similar)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Olive oil or cooking oil",
+              "impact": "yellow"
+            },
+            {
+              "name": "Herbs/seasoning (pepper, dried herbs)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1523,
+      "output_tokens": 369,
+      "guardrail_latency_ms": 1156.5983330001472,
+      "meal_latency_ms": 3987.8036660011276,
+      "safety_latency_ms": 1221.0154580025119
+    },
+    {
+      "sample_id": "upload_1750184967001_dcbf0de0-d8c9-473a-96c8-b568b7b5b6ea",
+      "latency_ms": 5778.217249997397,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be a small serving of fruit (green grapes and a fig). Fruit provides vitamins and hydration but also contains natural sugars; keeping portions moderate or pairing with a protein or fat source can help reduce glycemic impact.",
+          "meal_title": "Green Grapes and Fig",
+          "meal_description": "A small bowl containing a cluster of green grapes and one fresh fig.",
+          "macros": {
+            "calories": 115.0,
+            "carbohydrates": 30.0,
+            "fats": 0.5,
+            "proteins": 1.5
+          },
+          "ingredients": [
+            {
+              "name": "Green grapes",
+              "impact": "yellow"
+            },
+            {
+              "name": "Fresh fig",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1512,
+      "output_tokens": 304,
+      "guardrail_latency_ms": 1513.251833999675,
+      "meal_latency_ms": 3144.590291998611,
+      "safety_latency_ms": 1120.3373339994869
+    },
+    {
+      "sample_id": "upload_1750185016838_9f1b1b2d-edab-473c-8a09-a7ade40c25a4",
+      "latency_ms": 7605.033542000456,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This looks like a slice of vegetable quiche with a pastry crust. The crust contributes most of the carbohydrates, while eggs and cheese add protein and fat that can slow glucose rise. For a lower glycemic impact, keep portions moderate and pair with a non-starchy salad or vegetables.",
+          "meal_title": "Vegetable quiche slice",
+          "meal_description": "A slice of quiche with eggs and cheese, filled with vegetables such as green bell pepper, red pepper, and onion, baked in a pastry crust.",
+          "macros": {
+            "calories": 360.0,
+            "carbohydrates": 22.0,
+            "fats": 25.0,
+            "proteins": 14.0
+          },
+          "ingredients": [
+            {
+              "name": "Pastry crust",
+              "impact": "orange"
+            },
+            {
+              "name": "Eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Green bell pepper",
+              "impact": "green"
+            },
+            {
+              "name": "Red bell pepper",
+              "impact": "green"
+            },
+            {
+              "name": "Onion",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cream or milk (custard base)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1540,
+      "output_tokens": 432,
+      "guardrail_latency_ms": 1112.8562089979823,
+      "meal_latency_ms": 5125.177625002834,
+      "safety_latency_ms": 1366.949499999464
+    },
+    {
+      "sample_id": "upload_1750185057801_517dd09d-f8aa-4e48-93d1-820958817b61",
+      "latency_ms": 5197.145082998759,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "Grapes contain natural sugars and carbohydrates; keeping the portion modest and pairing with a protein or healthy fat (if needed) can help reduce a rapid glucose rise.",
+          "meal_title": "Black grapes",
+          "meal_description": "A small serving of black grapes on the vine.",
+          "macros": {
+            "calories": 52.0,
+            "carbohydrates": 14.0,
+            "fats": 0.2,
+            "proteins": 0.5
+          },
+          "ingredients": [
+            {
+              "name": "Black grapes",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1493,
+      "output_tokens": 266,
+      "guardrail_latency_ms": 1277.0408329997736,
+      "meal_latency_ms": 2665.9504999988712,
+      "safety_latency_ms": 1253.986250001617
+    },
+    {
+      "sample_id": "upload_1750258584589_12758bd6-3c31-4ee6-bc2a-564be686406a",
+      "latency_ms": 7034.717292001005,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be a seeded whole-grain sandwich with sliced meat, greens, and pickles. The bread contributes most of the carbohydrates; pairing with protein and non-starchy vegetables helps moderate glycemic impact. Portion size and choosing higher-fiber bread can further reduce carbohydrate load.",
+          "meal_title": "Seeded deli sandwich",
+          "meal_description": "A seeded whole-grain roll filled with sliced deli meat, leafy greens, and pickles.",
+          "macros": {
+            "calories": 430.0,
+            "carbohydrates": 45.0,
+            "fats": 14.0,
+            "proteins": 26.0
+          },
+          "ingredients": [
+            {
+              "name": "Seeded whole-grain roll",
+              "impact": "yellow"
+            },
+            {
+              "name": "Deli meat (e.g., turkey/chicken)",
+              "impact": "green"
+            },
+            {
+              "name": "Leafy greens (lettuce/arugula)",
+              "impact": "green"
+            },
+            {
+              "name": "Pickles",
+              "impact": "green"
+            },
+            {
+              "name": "Spread/condiment (likely mayonnaise or similar)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1527,
+      "output_tokens": 383,
+      "guardrail_latency_ms": 1157.5042080003186,
+      "meal_latency_ms": 4406.561457999487,
+      "safety_latency_ms": 1470.6037500000093
+    },
+    {
+      "sample_id": "upload_1750262216722_694c7c7e-8827-45c3-af60-5558775251dd",
+      "latency_ms": 6668.27179199754,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a leafy green salad with a creamy dressing and seed/nut topping. It is generally low in carbohydrates; keeping dressing and toppings portion-controlled can help limit added fats and calories.",
+          "meal_title": "Leafy Green Salad with Creamy Dressing",
+          "meal_description": "Chopped lettuce greens topped with a creamy dressing and a sprinkle of seeds/nuts and seasoning.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 10.0,
+            "fats": 18.0,
+            "proteins": 6.0
+          },
+          "ingredients": [
+            {
+              "name": "Lettuce/leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "Creamy salad dressing",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mixed seeds (e.g., sunflower/sesame)",
+              "impact": "green"
+            },
+            {
+              "name": "Seasoning (pepper/herbs)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1513,
+      "output_tokens": 359,
+      "guardrail_latency_ms": 1149.3729159992654,
+      "meal_latency_ms": 4214.249541000754,
+      "safety_latency_ms": 1304.5939169969643
+    },
+    {
+      "sample_id": "upload_1750263222856_8d684828-73ea-4ad9-9259-39c31e29f465",
+      "latency_ms": 7810.395333999622,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This plate is high in protein and fats from cheese and cured meats, with a moderate carbohydrate contribution from the slice of bread. For a steadier glucose response, keeping the bread portion modest and pairing with non-starchy vegetables or fruit (if available) can add fiber and balance the meal.",
+          "meal_title": "Bread with cheeses, cured meats, and egg",
+          "meal_description": "A plate with a slice of rustic bread, a boiled egg, assorted cheeses, and slices of cured ham/prosciutto.",
+          "macros": {
+            "calories": 720.0,
+            "carbohydrates": 26.0,
+            "fats": 52.0,
+            "proteins": 41.0
+          },
+          "ingredients": [
+            {
+              "name": "Rustic whole-grain bread slice",
+              "impact": "yellow"
+            },
+            {
+              "name": "Boiled egg",
+              "impact": "green"
+            },
+            {
+              "name": "Semi-soft cheese (spiced, e.g., pepper/chili flecks)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Fresh cheese (feta/ricotta-style)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cured ham slices",
+              "impact": "yellow"
+            },
+            {
+              "name": "Prosciutto/cured pork slices",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1541,
+      "output_tokens": 438,
+      "guardrail_latency_ms": 1243.6607499985257,
+      "meal_latency_ms": 5289.422959001968,
+      "safety_latency_ms": 1277.1501249990251
+    },
+    {
+      "sample_id": "upload_1750386301376_71400aa0-7658-40cd-9027-9a62f8489da7",
+      "latency_ms": 8921.76733299857,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a thin-crust pizza with tomato sauce, cheese, and mixed toppings. The crust and sauce contribute most of the carbohydrates, which can raise blood glucose, while the cheese and meat add protein and fat that may slow absorption. Consider a smaller portion and pairing with a non-starchy vegetable side if available.",
+          "meal_title": "Thin-Crust Mixed Topping Pizza",
+          "meal_description": "A thin-crust pizza topped with tomato sauce, melted cheese, and mixed toppings such as mushrooms, onions, herbs/greens, and likely sausage or shredded meat.",
+          "macros": {
+            "calories": 700.0,
+            "carbohydrates": 78.0,
+            "fats": 28.0,
+            "proteins": 32.0
+          },
+          "ingredients": [
+            {
+              "name": "Wheat pizza crust",
+              "impact": "orange"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mozzarella/cheese blend",
+              "impact": "yellow"
+            },
+            {
+              "name": "Sausage or shredded meat",
+              "impact": "green"
+            },
+            {
+              "name": "Mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "Onions",
+              "impact": "yellow"
+            },
+            {
+              "name": "Herbs/leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "Olive oil (possible)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1553,
+      "output_tokens": 451,
+      "guardrail_latency_ms": 1219.877292001911,
+      "meal_latency_ms": 6425.213459002407,
+      "safety_latency_ms": 1276.6193749994272
+    },
+    {
+      "sample_id": "upload_1750389951709_09f3f23e-5f56-4581-866f-37234067ea72",
+      "latency_ms": 7131.676625002001,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a creamy mixed drink/cocktail that may contain added sugar and provides carbohydrates with limited fiber. Consider a smaller portion and pairing with a protein- or fiber-rich food to reduce the overall glycemic impact.",
+          "meal_title": "Creamy cocktail with edible flower garnish",
+          "meal_description": "A pale, creamy beverage served in a coupe glass, garnished with a small yellow edible flower.",
+          "macros": {
+            "calories": 260.0,
+            "carbohydrates": 22.0,
+            "fats": 10.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Cream or coconut cream",
+              "impact": "yellow"
+            },
+            {
+              "name": "Sugar or sweetened syrup",
+              "impact": "red"
+            },
+            {
+              "name": "Alcohol (e.g., rum/vodka/liqueur)",
+              "impact": "orange"
+            },
+            {
+              "name": "Citrus juice (e.g., lemon/lime)",
+              "impact": "green"
+            },
+            {
+              "name": "Edible flower garnish",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1520,
+      "output_tokens": 391,
+      "guardrail_latency_ms": 1129.5667499980482,
+      "meal_latency_ms": 4830.475582999497,
+      "safety_latency_ms": 1171.5932080005587
+    },
+    {
+      "sample_id": "upload_1750709492155_4ebddef6-d4df-46cd-9649-4a335bdbef6b",
+      "latency_ms": 5819.471957998758,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be sliced oranges. Oranges provide natural carbohydrates and fiber; keeping the portion moderate or pairing with a protein or fat source can help reduce the glycemic impact compared with eating fruit alone.",
+          "meal_title": "Sliced oranges",
+          "meal_description": "Orange wedges served on a plate.",
+          "macros": {
+            "calories": 90.0,
+            "carbohydrates": 22.0,
+            "fats": 0.3,
+            "proteins": 1.5
+          },
+          "ingredients": [
+            {
+              "name": "Orange",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1498,
+      "output_tokens": 270,
+      "guardrail_latency_ms": 1119.9285840011726,
+      "meal_latency_ms": 3406.4303750019462,
+      "safety_latency_ms": 1293.069415998616
+    },
+    {
+      "sample_id": "upload_1750709512018_7cb970d1-5843-42fe-9f82-10279f27a01a",
+      "latency_ms": 5177.543874997355,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a raw carrot stick. It is low in calories and has a relatively low glycemic impact, with some fiber. Pairing with a protein or healthy fat can further reduce glucose impact if needed.",
+          "meal_title": "Raw carrot stick",
+          "meal_description": "A single raw carrot piece served plain.",
+          "macros": {
+            "calories": 20.0,
+            "carbohydrates": 5.0,
+            "fats": 0.1,
+            "proteins": 0.5
+          },
+          "ingredients": [
+            {
+              "name": "Carrot (raw)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1502,
+      "output_tokens": 277,
+      "guardrail_latency_ms": 1330.3752909996547,
+      "meal_latency_ms": 2639.627124997787,
+      "safety_latency_ms": 1207.5004580001405
+    },
+    {
+      "sample_id": "upload_1752265287016_4c47aab8-77a8-42e6-a937-2a4b5be3c7d8",
+      "latency_ms": 1326.2399999985064,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265511713_bc7c0828-8da5-4880-bd18-4f7ad8a3b18d",
+      "latency_ms": 6936.956249999639,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "red",
+          "guidance_message": "This meal combines white rice and French fries, which are both high in rapidly absorbed carbohydrates, with grilled meat. The overall carbohydrate load and lower fiber content may lead to a higher glycemic impact; smaller portions of rice/fries or swapping in non-starchy vegetables can reduce that impact.",
+          "meal_title": "Grilled meat with white rice and French fries",
+          "meal_description": "Plate with grilled meat pieces served alongside white rice and French fries, with a lime/lemon wedge.",
+          "macros": {
+            "calories": 980.0,
+            "carbohydrates": 105.0,
+            "fats": 38.0,
+            "proteins": 48.0
+          },
+          "ingredients": [
+            {
+              "name": "White rice",
+              "impact": "red"
+            },
+            {
+              "name": "French fries (potatoes, fried)",
+              "impact": "red"
+            },
+            {
+              "name": "Grilled meat (beef/lamb/pork)",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil (used for frying/grilling)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Lime/lemon wedge",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1534,
+      "output_tokens": 401,
+      "guardrail_latency_ms": 1022.0918329978304,
+      "meal_latency_ms": 4329.764666999836,
+      "safety_latency_ms": 1585.047125001438
+    },
+    {
+      "sample_id": "upload_1752265789773_34d75fc4-0e04-488f-b3f3-d88ffb030604",
+      "latency_ms": 5316.366458999255,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265818634_e1c146f8-2cbf-4033-ac9f-9b4869fd1d4f",
+      "latency_ms": 1036.1196249978093,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265866541_68a737f3-abd3-461c-9b6b-85cb1dfc31c7",
+      "latency_ms": 1082.409041999199,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265899911_dcb7943d-bbe6-4f7c-9c86-2b162eb3f61d",
+      "latency_ms": 7353.14925000057,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a pizza slice with a refined-flour crust and tomato sauce, which can be higher in carbohydrates and may raise blood glucose more quickly. Pairing with a side salad or non-starchy vegetables and keeping portion size moderate can help balance the meal.",
+          "meal_title": "Slice of ham and mushroom pizza",
+          "meal_description": "A slice of pizza with tomato sauce, melted cheese, ham, mushrooms, and a black olive on a wheat crust.",
+          "macros": {
+            "calories": 330.0,
+            "carbohydrates": 36.0,
+            "fats": 13.0,
+            "proteins": 15.0
+          },
+          "ingredients": [
+            {
+              "name": "Pizza crust (refined wheat)",
+              "impact": "orange"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mozzarella cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Ham",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "Black olive",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1531,
+      "output_tokens": 402,
+      "guardrail_latency_ms": 1135.3516669987584,
+      "meal_latency_ms": 4662.45833299763,
+      "safety_latency_ms": 1555.2954169979785
+    },
+    {
+      "sample_id": "upload_1753052864483_2e9f35f0-e28e-4cb0-9e0e-161c00ce4e6d",
+      "latency_ms": 8204.357874998095,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This looks like a mixed salad with fruit and some higher-carb pieces (such as croutons or bread cubes). For a steadier glucose impact, consider a smaller portion of the higher-carb add-ins and include a protein source (e.g., chicken, eggs, tofu) if not already present.",
+          "meal_title": "Mixed salad with fruit and crouton-like cubes",
+          "meal_description": "A small bowl of leafy greens and sliced fruit (apple and strawberry) with light-colored cubes that resemble croutons or bread pieces, likely tossed with a creamy dressing.",
+          "macros": {
+            "calories": 280.0,
+            "carbohydrates": 32.0,
+            "fats": 14.0,
+            "proteins": 6.0
+          },
+          "ingredients": [
+            {
+              "name": "Leafy greens (lettuce/mixed greens)",
+              "impact": "green"
+            },
+            {
+              "name": "Apple slices",
+              "impact": "yellow"
+            },
+            {
+              "name": "Strawberries",
+              "impact": "green"
+            },
+            {
+              "name": "Croutons/bread cubes",
+              "impact": "orange"
+            },
+            {
+              "name": "Creamy dressing (e.g., mayo-based)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1552,
+      "output_tokens": 401,
+      "guardrail_latency_ms": 1067.5574580018292,
+      "meal_latency_ms": 5675.45091699867,
+      "safety_latency_ms": 1461.302166000678
+    },
+    {
+      "sample_id": "upload_1753053053316_3dad93e8-c0b5-4fb7-8155-80469e473fe9",
+      "latency_ms": 5599.958791000972,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal appears to be white bread slices with a generous spread of butter. Refined bread can raise blood glucose more quickly, and the butter adds fat without much fiber or protein. Consider smaller portions, choosing whole-grain bread, and adding a protein or high-fiber topping to balance the meal.",
+          "meal_title": "Butter on sliced bread",
+          "meal_description": "Several slices of white bread topped with butter on a plate.",
+          "macros": {
+            "calories": 650.0,
+            "carbohydrates": 75.0,
+            "fats": 30.0,
+            "proteins": 15.0
+          },
+          "ingredients": [
+            {
+              "name": "White bread slices",
+              "impact": "orange"
+            },
+            {
+              "name": "Butter",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1524,
+      "output_tokens": 312,
+      "guardrail_latency_ms": 1098.0330839993258,
+      "meal_latency_ms": 3246.8469999985246,
+      "safety_latency_ms": 1255.0246660030098
+    },
+    {
+      "sample_id": "upload_1753053088887_e0087c65-7b21-4e50-9878-19401e3fbe93",
+      "latency_ms": 7047.899500001222,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal combines protein from eggs with low-carb tomatoes. If tracking blood glucose, the main considerations are portion size and any added seasoning (such as sugar-containing sauces). Adding a fiber-rich side (like leafy greens) can further support a steadier carbohydrate load.",
+          "meal_title": "Soft-cooked eggs with sliced tomatoes",
+          "meal_description": "Two soft-cooked eggs served with sliced fresh tomatoes, lightly seasoned.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 8.0,
+            "fats": 15.0,
+            "proteins": 13.0
+          },
+          "ingredients": [
+            {
+              "name": "Eggs (soft-cooked)",
+              "impact": "green"
+            },
+            {
+              "name": "Tomatoes (sliced)",
+              "impact": "green"
+            },
+            {
+              "name": "Seasoning (salt/pepper or similar)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1521,
+      "output_tokens": 342,
+      "guardrail_latency_ms": 1164.8137920019508,
+      "meal_latency_ms": 4739.29408299955,
+      "safety_latency_ms": 1143.7388749982347
+    },
+    {
+      "sample_id": "upload_1753053107804_3f319949-c893-46d1-b54e-378b675e43f8",
+      "latency_ms": 6027.195250000659,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be sliced whole-grain bread, which is a concentrated source of carbohydrates and may raise blood glucose depending on portion size. Pairing with protein, healthy fats, and fiber-rich foods can help moderate the overall glycemic impact.",
+          "meal_title": "Sliced whole-grain bread",
+          "meal_description": "Two slices of whole-grain bread on a cutting board.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 40.0,
+            "fats": 3.5,
+            "proteins": 8.0
+          },
+          "ingredients": [
+            {
+              "name": "Whole-grain bread (2 slices)",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1514,
+      "output_tokens": 290,
+      "guardrail_latency_ms": 1155.3582080014166,
+      "meal_latency_ms": 3381.483624998509,
+      "safety_latency_ms": 1490.3108750004321
+    },
+    {
+      "sample_id": "upload_1753053145042_b9a83e6d-33f1-46f0-a73f-cd7f73e5c3c0",
+      "latency_ms": 4837.407542003348,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053184717_40b4257a-d26b-4f61-a684-e939291e0d99",
+      "latency_ms": 4982.248708001862,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be a whole apple. It provides carbohydrates along with fiber, which can moderate glucose impact. Pairing with a protein or healthy fat and keeping to a single serving can help reduce rapid blood sugar rise.",
+          "meal_title": "Whole Red Apple",
+          "meal_description": "A single whole red apple, likely eaten raw.",
+          "macros": {
+            "calories": 95.0,
+            "carbohydrates": 25.0,
+            "fats": 0.3,
+            "proteins": 0.5
+          },
+          "ingredients": [
+            {
+              "name": "Apple",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1504,
+      "output_tokens": 276,
+      "guardrail_latency_ms": 1176.9203750009183,
+      "meal_latency_ms": 2752.4322919998667,
+      "safety_latency_ms": 1052.8485419999924
+    },
+    {
+      "sample_id": "upload_1753053217022_73c60e40-9950-4c69-8625-9eb92923f379",
+      "latency_ms": 5235.311458000069,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be a serving of grapes. Grapes contain natural sugars and can raise blood glucose, especially in larger portions; keeping the portion moderate and pairing with a protein or fat (if desired) can help reduce the overall glycemic impact of the snack.",
+          "meal_title": "Red grapes",
+          "meal_description": "A bowl of fresh red/purple grapes on stems.",
+          "macros": {
+            "calories": 110.0,
+            "carbohydrates": 29.0,
+            "fats": 0.3,
+            "proteins": 1.1
+          },
+          "ingredients": [
+            {
+              "name": "Grapes (red/purple)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1513,
+      "output_tokens": 291,
+      "guardrail_latency_ms": 1043.6981669990928,
+      "meal_latency_ms": 3089.1336249987944,
+      "safety_latency_ms": 1102.42825000023
+    },
+    {
+      "sample_id": "upload_1753053277090_02101e96-ba76-4f39-8980-65db616ad82f",
+      "latency_ms": 5289.680708003289,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This looks like a small plate of fresh fruit (apple and banana). Fruit provides fiber and micronutrients, but the carbohydrates can add up; pairing with a protein or healthy fat and keeping portions moderate can help reduce glucose spikes.",
+          "meal_title": "Sliced apple and banana",
+          "meal_description": "A small serving of sliced apple with a few banana rounds on a plate.",
+          "macros": {
+            "calories": 110.0,
+            "carbohydrates": 28.0,
+            "fats": 0.5,
+            "proteins": 1.2
+          },
+          "ingredients": [
+            {
+              "name": "Apple slices",
+              "impact": "yellow"
+            },
+            {
+              "name": "Banana slices",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1513,
+      "output_tokens": 306,
+      "guardrail_latency_ms": 969.8897499984014,
+      "meal_latency_ms": 3025.804249999055,
+      "safety_latency_ms": 1293.9358339972387
+    },
+    {
+      "sample_id": "upload_1753053311667_d3574386-8d95-4b91-b5c6-0ee2fecb639a",
+      "latency_ms": 7650.424957999348,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a slice of cheese pizza. The crust and tomato sauce contribute most of the carbohydrates, which can raise blood glucose, while cheese adds protein and fat that may slow digestion. If included, smaller portions and pairing with a non-starchy vegetable side can help lower the overall glycemic impact of the meal.",
+          "meal_title": "Slice of cheese pizza with herbs",
+          "meal_description": "A single slice of pizza with tomato sauce, melted cheese, and dried herb seasoning on top.",
+          "macros": {
+            "calories": 285.0,
+            "carbohydrates": 34.0,
+            "fats": 11.0,
+            "proteins": 12.0
+          },
+          "ingredients": [
+            {
+              "name": "Wheat pizza crust",
+              "impact": "red"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cheese (mozzarella blend)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Herbs/seasoning (oregano/Italian seasoning)",
+              "impact": "green"
+            },
+            {
+              "name": "Oil (in crust or on top)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1537,
+      "output_tokens": 404,
+      "guardrail_latency_ms": 1088.5832080020919,
+      "meal_latency_ms": 4980.011542000284,
+      "safety_latency_ms": 1581.7885420001403
+    },
+    {
+      "sample_id": "upload_1753053337006_b38485b7-124a-401e-bf24-65359c9e90d0",
+      "latency_ms": 5602.949790998537,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a serving of boiled potatoes, which are relatively high in rapidly digestible starch. To reduce glycemic impact, consider a smaller portion and pairing with non-starchy vegetables and a protein or healthy fat.",
+          "meal_title": "Boiled Potatoes",
+          "meal_description": "Peeled boiled potatoes served plain on a plate.",
+          "macros": {
+            "calories": 420.0,
+            "carbohydrates": 96.0,
+            "fats": 0.5,
+            "proteins": 11.0
+          },
+          "ingredients": [
+            {
+              "name": "Potatoes (boiled, peeled)",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1506,
+      "output_tokens": 280,
+      "guardrail_latency_ms": 1152.941832999204,
+      "meal_latency_ms": 2950.0155419991643,
+      "safety_latency_ms": 1499.9424580018967
+    },
+    {
+      "sample_id": "upload_1753053995329_8844fe76-9209-488e-adf3-7a13fe0c6f81",
+      "latency_ms": 6283.997375001491,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be mostly protein and non-starchy vegetables, which tends to have a lower glycemic impact. If blood sugar sensitivity is a concern, consider keeping the vegetable portion non-starchy and be mindful of any added sauces or marinades that may contain sugar.",
+          "meal_title": "Chicken with saut\u00e9ed zucchini and scrambled eggs",
+          "meal_description": "Cooked chicken pieces served with saut\u00e9ed zucchini/squash and a small portion of scrambled eggs.",
+          "macros": {
+            "calories": 420.0,
+            "carbohydrates": 8.0,
+            "fats": 20.0,
+            "proteins": 45.0
+          },
+          "ingredients": [
+            {
+              "name": "Chicken (cooked pieces, likely saut\u00e9ed/seasoned)",
+              "impact": "green"
+            },
+            {
+              "name": "Zucchini/summer squash (saut\u00e9ed)",
+              "impact": "green"
+            },
+            {
+              "name": "Scrambled eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or butter (used for saut\u00e9ing/scrambling)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Seasoning/spices (possible paprika/pepper/salt)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1530,
+      "output_tokens": 414,
+      "guardrail_latency_ms": 1001.6259160001937,
+      "meal_latency_ms": 4096.77124999871,
+      "safety_latency_ms": 1185.5465420012479
+    },
+    {
+      "sample_id": "upload_1753054028270_f5833fb2-5b4f-45b5-9da8-a2cd7b10c97d",
+      "latency_ms": 7150.796542002354,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a flatbread-style pizza with a meat topping. The crust and overall portion can raise carbohydrate intake; pairing with a non-starchy side (e.g., salad/vegetables) and moderating portion size can help lower the overall glycemic impact.",
+          "meal_title": "Meat-topped flatbread pizza",
+          "meal_description": "A thin-crust pizza/flatbread cut into slices, topped with minced meat and small amounts of cheese or sauce.",
+          "macros": {
+            "calories": 820.0,
+            "carbohydrates": 78.0,
+            "fats": 34.0,
+            "proteins": 38.0
+          },
+          "ingredients": [
+            {
+              "name": "Wheat flatbread/pizza crust",
+              "impact": "orange"
+            },
+            {
+              "name": "Minced meat topping",
+              "impact": "green"
+            },
+            {
+              "name": "Cheese (small to moderate amount)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Tomato-based sauce/spices",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cooking oil",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1532,
+      "output_tokens": 394,
+      "guardrail_latency_ms": 1140.8112499993877,
+      "meal_latency_ms": 4815.28887499735,
+      "safety_latency_ms": 1194.6636669999862
+    },
+    {
+      "sample_id": "upload_1753054127030_3f2421d7-8517-4a68-a37e-f2c3fae607db",
+      "latency_ms": 5750.348708999809,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a non-starchy vegetable salad that is generally low in carbohydrates. If the dressing is sweetened or used in a larger amount, it can increase the carbohydrate and calorie impact.",
+          "meal_title": "Mixed green salad with shredded vegetables",
+          "meal_description": "A small portion of lettuce and shredded cucumber or cabbage with carrot, lightly dressed.",
+          "macros": {
+            "calories": 70.0,
+            "carbohydrates": 8.0,
+            "fats": 4.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Lettuce (leafy greens)",
+              "impact": "green"
+            },
+            {
+              "name": "Shredded cucumber and/or cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "Shredded carrot",
+              "impact": "yellow"
+            },
+            {
+              "name": "Salad dressing (likely oil/vinegar or light vinaigrette)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1508,
+      "output_tokens": 358,
+      "guardrail_latency_ms": 1074.5138749989565,
+      "meal_latency_ms": 3502.7232079992245,
+      "safety_latency_ms": 1173.0590829974972
+    },
+    {
+      "sample_id": "upload_1753054171499_5bc0643b-9294-4412-b80f-3b9c75b2e29b",
+      "latency_ms": 6987.95175000123,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a non-starchy salad with tomatoes and mixed greens, which is generally low in carbohydrates and higher in fiber. If a dressing with added sugar or a large amount of oil is used, it can increase calories and affect overall balance.",
+          "meal_title": "Mixed greens and tomato salad",
+          "meal_description": "A bowl of leafy greens (lettuce and mixed salad leaves) topped with chopped tomatoes; dressing is not clearly visible.",
+          "macros": {
+            "calories": 90.0,
+            "carbohydrates": 10.0,
+            "fats": 2.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Mixed leafy greens (lettuce/salad mix)",
+              "impact": "green"
+            },
+            {
+              "name": "Tomatoes",
+              "impact": "green"
+            },
+            {
+              "name": "Possible dressing (oil/vinegar or similar, not clearly visible)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1526,
+      "output_tokens": 351,
+      "guardrail_latency_ms": 1159.9568329984322,
+      "meal_latency_ms": 4517.570999996678,
+      "safety_latency_ms": 1310.3658750005707
+    },
+    {
+      "sample_id": "upload_1753068426109_e9f92f5b-5160-494e-9ff7-32be49b9dca2",
+      "latency_ms": 8264.85141699959,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This plate appears to include a mix of non-starchy vegetables and several starchy components (corn, potatoes, and pasta), which can raise carbohydrate load. Keeping portions of the starches smaller and emphasizing the vegetables and protein can help moderate glycemic impact.",
+          "meal_title": "Mixed plate with vegetables, pasta, potatoes, and corn",
+          "meal_description": "A bowl with cucumber and tomato salad with feta, corn kernels, diced potatoes, cooked pasta, leafy greens (spinach), and mixed vegetables (carrots, peas, broccoli).",
+          "macros": {
+            "calories": 620.0,
+            "carbohydrates": 86.0,
+            "fats": 18.0,
+            "proteins": 24.0
+          },
+          "ingredients": [
+            {
+              "name": "Cooked pasta",
+              "impact": "orange"
+            },
+            {
+              "name": "Corn",
+              "impact": "orange"
+            },
+            {
+              "name": "Potatoes",
+              "impact": "orange"
+            },
+            {
+              "name": "Cucumber",
+              "impact": "green"
+            },
+            {
+              "name": "Tomatoes",
+              "impact": "green"
+            },
+            {
+              "name": "Feta cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Leafy greens (spinach)",
+              "impact": "green"
+            },
+            {
+              "name": "Broccoli",
+              "impact": "green"
+            },
+            {
+              "name": "Carrots",
+              "impact": "yellow"
+            },
+            {
+              "name": "Peas",
+              "impact": "yellow"
+            },
+            {
+              "name": "Chicken (shredded)",
+              "impact": "green"
+            },
+            {
+              "name": "Beetroot (pickled or cooked strips)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1546,
+      "output_tokens": 540,
+      "guardrail_latency_ms": 1103.1228749998263,
+      "meal_latency_ms": 5968.144209000457,
+      "safety_latency_ms": 1193.5359580020304
+    },
+    {
+      "sample_id": "upload_1753199632104_3a898757-6efe-49de-ab61-6195be57723c",
+      "latency_ms": 5186.95149999985,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "Carrot is a non-starchy vegetable with relatively low net carbohydrates and good fiber. Portion size and pairing with protein or healthy fat can further reduce glucose impact.",
+          "meal_title": "Carrot",
+          "meal_description": "A peeled raw carrot piece.",
+          "macros": {
+            "calories": 30.0,
+            "carbohydrates": 7.0,
+            "fats": 0.1,
+            "proteins": 0.7
+          },
+          "ingredients": [
+            {
+              "name": "Carrot",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1488,
+      "output_tokens": 261,
+      "guardrail_latency_ms": 963.8117909998982,
+      "meal_latency_ms": 2807.318708000821,
+      "safety_latency_ms": 1415.777040998364
+    },
+    {
+      "sample_id": "upload_1753199710361_657a23e2-1ed3-4b67-86cb-e5b5b76d0cc5",
+      "latency_ms": 6762.608167002327,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a light broth-based soup with minimal carbohydrates. If it contains noodles, keeping the noodle portion small can help maintain a lower glycemic impact.",
+          "meal_title": "Broth Soup (possibly with a few noodles and scallions)",
+          "meal_description": "A clear brown broth served in a paper cup with a few visible scallion pieces and what looks like small amounts of noodles or seaweed.",
+          "macros": {
+            "calories": 40.0,
+            "carbohydrates": 6.0,
+            "fats": 1.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Broth (soy/miso-style)",
+              "impact": "green"
+            },
+            {
+              "name": "Scallions/green onions",
+              "impact": "green"
+            },
+            {
+              "name": "Small amount of noodles (if present)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Seaweed (if present)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1520,
+      "output_tokens": 351,
+      "guardrail_latency_ms": 1407.7628330014704,
+      "meal_latency_ms": 4024.55245800229,
+      "safety_latency_ms": 1330.2481249993434
+    },
+    {
+      "sample_id": "upload_1753200023630_697c8163-ee91-4c75-85b8-ad4a947e9e74",
+      "latency_ms": 7793.763375000708,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This looks like a slice of cheese pizza with cured meat and olives. The crust is a refined carbohydrate that can raise blood sugar more quickly, while the cheese and meat add fat and protein that may slow digestion. If having this meal, consider balancing with a non-starchy vegetable side and being mindful of portion size.",
+          "meal_title": "Slice of cheese pizza with cured meat and olives",
+          "meal_description": "A single slice of pizza with tomato sauce, melted mozzarella, a small amount of cured meat (ham or bacon), and black olive pieces on a white plate.",
+          "macros": {
+            "calories": 320.0,
+            "carbohydrates": 34.0,
+            "fats": 14.0,
+            "proteins": 14.0
+          },
+          "ingredients": [
+            {
+              "name": "Refined wheat crust",
+              "impact": "red"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mozzarella cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cured meat (ham/bacon)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Black olives",
+              "impact": "green"
+            },
+            {
+              "name": "Herbs/seasoning",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1552,
+      "output_tokens": 411,
+      "guardrail_latency_ms": 1130.9954159987683,
+      "meal_latency_ms": 5564.089666997461,
+      "safety_latency_ms": 1098.6233749972598
+    },
+    {
+      "sample_id": "upload_1753200276846_5e3f6aab-de91-48e1-849a-eebc0300e207",
+      "latency_ms": 6883.9524169998185,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a salad with lean protein and non-starchy vegetables, which tends to have a lower glycemic impact. The main factor to watch is the amount and type of creamy dressing, since it can add significant calories and fat.",
+          "meal_title": "Chicken salad with creamy dressing",
+          "meal_description": "A bowl of leafy greens and cucumber topped with sliced chicken and a creamy dressing, with small pieces that appear to be cheese or crouton-like toppings.",
+          "macros": {
+            "calories": 430.0,
+            "carbohydrates": 14.0,
+            "fats": 28.0,
+            "proteins": 32.0
+          },
+          "ingredients": [
+            {
+              "name": "Grilled chicken breast",
+              "impact": "green"
+            },
+            {
+              "name": "Leafy greens (lettuce/mixed greens)",
+              "impact": "green"
+            },
+            {
+              "name": "Cucumber slices",
+              "impact": "green"
+            },
+            {
+              "name": "Creamy dressing (ranch/caesar-style)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cheese pieces (possible feta/crumbled cheese)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Croutons or toasted chips (possible)",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1531,
+      "output_tokens": 409,
+      "guardrail_latency_ms": 1134.2364580013964,
+      "meal_latency_ms": 4519.569832998968,
+      "safety_latency_ms": 1230.0874579996162
+    },
+    {
+      "sample_id": "upload_1753203870259_fa36a429-304f-4b3c-b6e0-3519beaece88",
+      "latency_ms": 5074.318208000477,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753210424880_8af29a21-30dc-4b8a-b26b-24215e050a3f",
+      "latency_ms": 7922.828499999014,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a burger on a sesame bun. The refined bun contributes most of the carbohydrates and may raise blood glucose more quickly; pairing with a higher-fiber bun, extra non-starchy vegetables, and a moderate bun portion can help lower the overall glycemic impact.",
+          "meal_title": "Sesame Bun Burger with Vegetables",
+          "meal_description": "A burger served on a sesame-topped bun with visible tomato and lettuce.",
+          "macros": {
+            "calories": 520.0,
+            "carbohydrates": 45.0,
+            "fats": 26.0,
+            "proteins": 28.0
+          },
+          "ingredients": [
+            {
+              "name": "Sesame burger bun (white bread)",
+              "impact": "orange"
+            },
+            {
+              "name": "Sesame seeds",
+              "impact": "green"
+            },
+            {
+              "name": "Beef or meat patty",
+              "impact": "green"
+            },
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Sauce/condiments (possible)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1524,
+      "output_tokens": 387,
+      "guardrail_latency_ms": 1206.0299580007268,
+      "meal_latency_ms": 5496.943375001138,
+      "safety_latency_ms": 1219.8064170006546
+    },
+    {
+      "sample_id": "upload_1753211834887_fce7ded2-46f9-47f1-ad3e-667e7d7a06c3",
+      "latency_ms": 6218.0892920005135,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be a lean white fish fillet served with a large portion of sauerkraut or cooked shredded cabbage. It is low in carbohydrates and higher in protein and fiber; if the cabbage is fermented or salted, sodium may be higher, so portion and seasoning can be considered.",
+          "meal_title": "White fish with sauerkraut/cabbage",
+          "meal_description": "A cooked white fish fillet paired with a generous serving of shredded fermented or cooked cabbage.",
+          "macros": {
+            "calories": 260.0,
+            "carbohydrates": 12.0,
+            "fats": 10.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "White fish fillet (e.g., cod/haddock)",
+              "impact": "green"
+            },
+            {
+              "name": "Sauerkraut or cooked shredded cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or butter (small amount)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1533,
+      "output_tokens": 360,
+      "guardrail_latency_ms": 1068.6824999975215,
+      "meal_latency_ms": 4079.038167001272,
+      "safety_latency_ms": 1070.3112919982232
+    },
+    {
+      "sample_id": "upload_1753211882695_715dc254-cac3-4122-a437-3f9d756e85b7",
+      "latency_ms": 5907.4197500012815,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This looks like a protein-forward meal with a low-carbohydrate side. For steadier glucose impact, keep added sugars low and include some non-starchy vegetables if you want more volume and fiber.",
+          "meal_title": "White fish with sauerkraut",
+          "meal_description": "A cooked white fish fillet served alongside a generous portion of sauerkraut (fermented shredded cabbage).",
+          "macros": {
+            "calories": 240.0,
+            "carbohydrates": 10.0,
+            "fats": 6.0,
+            "proteins": 32.0
+          },
+          "ingredients": [
+            {
+              "name": "White fish fillet (e.g., cod/pollock)",
+              "impact": "green"
+            },
+            {
+              "name": "Sauerkraut (fermented cabbage)",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or butter (small amount)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1515,
+      "output_tokens": 343,
+      "guardrail_latency_ms": 902.0109579978453,
+      "meal_latency_ms": 3695.5262090014003,
+      "safety_latency_ms": 1309.8269580004853
+    },
+    {
+      "sample_id": "upload_1753212036729_b69c6c19-248c-45b9-be7e-5e50eda48a04",
+      "latency_ms": 7147.750332998839,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This appears to be a bowl of muesli/granola with milk or yogurt. The oats provide fiber, but the portion and any added sweeteners or dried fruit can raise carbohydrate impact; pairing with extra protein and choosing unsweetened versions can help moderate the overall glycemic load.",
+          "meal_title": "Muesli with milk",
+          "meal_description": "A bowl of rolled oats/muesli cereal mixed with milk (or yogurt), with visible grains and seeds.",
+          "macros": {
+            "calories": 330.0,
+            "carbohydrates": 48.0,
+            "fats": 10.0,
+            "proteins": 13.0
+          },
+          "ingredients": [
+            {
+              "name": "Rolled oats/muesli base",
+              "impact": "yellow"
+            },
+            {
+              "name": "Milk or yogurt",
+              "impact": "yellow"
+            },
+            {
+              "name": "Seeds (e.g., chia/flax)",
+              "impact": "green"
+            },
+            {
+              "name": "Nuts (if included)",
+              "impact": "green"
+            },
+            {
+              "name": "Dried fruit or added sweetener (if included)",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1533,
+      "output_tokens": 401,
+      "guardrail_latency_ms": 1235.819541998353,
+      "meal_latency_ms": 4450.444375001098,
+      "safety_latency_ms": 1461.430625000503
+    }
+  ],
+  "meta": {
+    "model": "gpt-5.2",
+    "max_concurrency": 10,
+    "timestamp": "2026-03-03T00:54:56Z"
+  }
+}

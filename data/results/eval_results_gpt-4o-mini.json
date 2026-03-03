@@ -1,0 +1,2864 @@
+{
+  "results": [
+    {
+      "sample_id": "upload_1749840444495_ce8fbfbc-988e-4ee6-9e52-d7ebdf4a58bc",
+      "latency_ms": 6923.626499999955,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749840712880_d8cedf37-9bdb-4ff5-8e21-6a6a740ae409",
+      "latency_ms": 9788.317542002915,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a mix of vegetables and a fried element. Moderation is advised due to the fried component.",
+          "meal_title": "Vegetable Medley with Fried Element",
+          "meal_description": "A plate featuring steamed broccoli, cauliflower, and saut\u00e9ed greens served with a portion of fried food and a grain-based side.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 45.0,
+            "fats": 15.0,
+            "proteins": 10.0
+          },
+          "ingredients": [
+            {
+              "name": "broccoli",
+              "impact": "green"
+            },
+            {
+              "name": "cauliflower",
+              "impact": "green"
+            },
+            {
+              "name": "saut\u00e9ed greens",
+              "impact": "green"
+            },
+            {
+              "name": "fried element",
+              "impact": "red"
+            },
+            {
+              "name": "grain-based side",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17886,
+      "output_tokens": 326,
+      "guardrail_latency_ms": 2092.3151669994695,
+      "meal_latency_ms": 5444.015291999676,
+      "safety_latency_ms": 2251.939166999364
+    },
+    {
+      "sample_id": "upload_1749840740344_7e95ee66-1e26-4892-9ce4-b79960061c19",
+      "latency_ms": 8498.601667000912,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal includes a variety of vegetables which are generally beneficial. Portion control is always advised.",
+          "meal_title": "Vegetable Medley",
+          "meal_description": "A mix of saut\u00e9ed vegetables including carrots and other greens.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 20.0,
+            "fats": 5.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "carrots",
+              "impact": "green"
+            },
+            {
+              "name": "green vegetables",
+              "impact": "green"
+            },
+            {
+              "name": "onions",
+              "impact": "yellow"
+            },
+            {
+              "name": "herbs and spices",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17866,
+      "output_tokens": 289,
+      "guardrail_latency_ms": 2221.0744580006576,
+      "meal_latency_ms": 4627.601667001727,
+      "safety_latency_ms": 1649.8822499997914
+    },
+    {
+      "sample_id": "upload_1749841037102_96ccbf66-4c05-45dc-8920-fd6ef54fcd0d",
+      "latency_ms": 8188.5300840003765,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749841435404_d2ac9183-048d-4cec-9b9b-a878628e4b30",
+      "latency_ms": 8007.4329169983685,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal is low in glycemic impact and contains healthy fruits.",
+          "meal_title": "Berry Yogurt Bowl",
+          "meal_description": "A bowl of yogurt topped with fresh berries.",
+          "macros": {
+            "calories": 120.0,
+            "carbohydrates": 15.0,
+            "fats": 3.0,
+            "proteins": 7.0
+          },
+          "ingredients": [
+            {
+              "name": "Yogurt",
+              "impact": "green"
+            },
+            {
+              "name": "Blueberries",
+              "impact": "green"
+            },
+            {
+              "name": "Red Currants",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17859,
+      "output_tokens": 265,
+      "guardrail_latency_ms": 2212.5674999988405,
+      "meal_latency_ms": 4228.561374999117,
+      "safety_latency_ms": 1566.255290999834
+    },
+    {
+      "sample_id": "upload_1749841861682_5e0c8e9d-bcff-4db4-bd59-62aa98119dec",
+      "latency_ms": 7588.8445419986965,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal contains a variety of vegetables, which are generally low in glycemic impact.",
+          "meal_title": "Vegetable Medley",
+          "meal_description": "A combination of steamed carrots and broccoli with a creamy base.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 20.0,
+            "fats": 5.0,
+            "proteins": 5.0
+          },
+          "ingredients": [
+            {
+              "name": "carrots",
+              "impact": "green"
+            },
+            {
+              "name": "broccoli",
+              "impact": "green"
+            },
+            {
+              "name": "cream sauce",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17865,
+      "output_tokens": 270,
+      "guardrail_latency_ms": 1586.169666999922,
+      "meal_latency_ms": 4326.940625000134,
+      "safety_latency_ms": 1675.687499999185
+    },
+    {
+      "sample_id": "upload_1749843287038_40cbba8a-21fa-447a-88ce-54e9d8f8708a",
+      "latency_ms": 8781.985041998269,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a variety of components with mixed glycemic impacts. Portion control is advised.",
+          "meal_title": "Traditional Indian Thali",
+          "meal_description": "A platter containing flatbreads, rice, lentil dishes, yogurt, and some condiments.",
+          "macros": {
+            "calories": 800.0,
+            "carbohydrates": 110.0,
+            "fats": 25.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "Whole Wheat Roti",
+              "impact": "yellow"
+            },
+            {
+              "name": "Rice",
+              "impact": "orange"
+            },
+            {
+              "name": "Dal (Lentils)",
+              "impact": "green"
+            },
+            {
+              "name": "Yogurt",
+              "impact": "green"
+            },
+            {
+              "name": "Pickles",
+              "impact": "orange"
+            },
+            {
+              "name": "Green Chutney",
+              "impact": "yellow"
+            },
+            {
+              "name": "Ghee (Clarified Butter)",
+              "impact": "red"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17875,
+      "output_tokens": 354,
+      "guardrail_latency_ms": 1571.5351660001033,
+      "meal_latency_ms": 5353.667250001308,
+      "safety_latency_ms": 1856.7443329993694
+    },
+    {
+      "sample_id": "upload_1749843713632_58c8331c-7aec-4895-a51b-cb92988cade5",
+      "latency_ms": 6629.614292000042,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": false,
+          "recommendation": "green",
+          "guidance_message": "This item contains no significant calories or macronutrients.",
+          "meal_title": "Clear Liquid",
+          "meal_description": "A bowl of clear liquid, likely water or broth.",
+          "macros": {
+            "calories": 0.0,
+            "carbohydrates": 0.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": []
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17857,
+      "output_tokens": 211,
+      "guardrail_latency_ms": 1541.2784580003063,
+      "meal_latency_ms": 3257.2315840006922,
+      "safety_latency_ms": 1831.0471670010884
+    },
+    {
+      "sample_id": "upload_1749850518596_ae5c6336-732a-432f-a1c1-a64db860a708",
+      "latency_ms": 6883.675417000632,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749865296179_d1a4da8d-8804-480e-b835-072f845e11f8",
+      "latency_ms": 8326.25179200113,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749869835174_55f1390a-6ea3-4033-a016-b8a4c30d28a1",
+      "latency_ms": 7189.9483329980285,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Consider portion control due to the ingredients present.",
+          "meal_title": "Savory Protein Dish",
+          "meal_description": "A dish composed of protein and greens, combined with a sauce.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 20.0,
+            "fats": 15.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "protein",
+              "impact": "yellow"
+            },
+            {
+              "name": "greens",
+              "impact": "green"
+            },
+            {
+              "name": "sauce",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17859,
+      "output_tokens": 261,
+      "guardrail_latency_ms": 1469.0492500012624,
+      "meal_latency_ms": 3855.739208000159,
+      "safety_latency_ms": 1865.1310410023143
+    },
+    {
+      "sample_id": "upload_1749872693154_5d23dac1-9118-4776-ad69-9853f8e513fa",
+      "latency_ms": 8552.567292001186,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749875264239_2a7fbe6a-e779-46e6-ac22-82d88a66ea3c",
+      "latency_ms": 8530.540584000846,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains fruits and dairy, with some added sugars. Enjoy in moderation.",
+          "meal_title": "Strawberry and Yogurt Dessert",
+          "meal_description": "A dessert featuring strawberries topped with a creamy yogurt-like substance and a sprinkle of crushed nuts.",
+          "macros": {
+            "calories": 250.0,
+            "carbohydrates": 30.0,
+            "fats": 10.0,
+            "proteins": 8.0
+          },
+          "ingredients": [
+            {
+              "name": "strawberries",
+              "impact": "green"
+            },
+            {
+              "name": "yogurt",
+              "impact": "yellow"
+            },
+            {
+              "name": "crushed nuts",
+              "impact": "yellow"
+            },
+            {
+              "name": "sugar",
+              "impact": "red"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17872,
+      "output_tokens": 297,
+      "guardrail_latency_ms": 2365.9272080003575,
+      "meal_latency_ms": 4546.498667001288,
+      "safety_latency_ms": 1618.0682919984974
+    },
+    {
+      "sample_id": "upload_1750038317524_55c71fd4-30e1-4e8b-93f8-86e6094f31b3",
+      "latency_ms": 7923.814375000802,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750038497319_6a3082e9-034c-4015-9eeb-9545000073c9",
+      "latency_ms": 7435.398834000807,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Moderate portion control may be advised due to the protein and fat content.",
+          "meal_title": "Sous Vide Egg Bites with Uncured Bacon and Gouda",
+          "meal_description": "A savory dish made with cage-free eggs, featuring bacon and gouda cheese.",
+          "macros": {
+            "calories": 280.0,
+            "carbohydrates": 8.0,
+            "fats": 20.0,
+            "proteins": 19.0
+          },
+          "ingredients": [
+            {
+              "name": "Eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Bacon",
+              "impact": "orange"
+            },
+            {
+              "name": "Gouda Cheese",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17877,
+      "output_tokens": 283,
+      "guardrail_latency_ms": 1340.6371250021039,
+      "meal_latency_ms": 4468.0781249990105,
+      "safety_latency_ms": 1626.6598750007688
+    },
+    {
+      "sample_id": "upload_1750091798026_6bfd2714-28cc-4f8e-9df2-8ceb92a5a071",
+      "latency_ms": 7258.913707999454,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097681033_c71afe76-f144-4a19-9dd3-19a1178957f4",
+      "latency_ms": 7087.675249997119,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097765140_1dccfd72-61d7-462c-b163-f5b7c348b547",
+      "latency_ms": 6929.7634579997975,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal has a moderate glycemic impact, consider portion control.",
+          "meal_title": "P\u00e2t\u00e9 with Toast and Salad",
+          "meal_description": "A serving of p\u00e2t\u00e9 accompanied by slices of toast and a side of mixed greens.",
+          "macros": {
+            "calories": 400.0,
+            "carbohydrates": 30.0,
+            "fats": 20.0,
+            "proteins": 25.0
+          },
+          "ingredients": [
+            {
+              "name": "P\u00e2t\u00e9",
+              "impact": "orange"
+            },
+            {
+              "name": "Toast",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mixed Greens",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17870,
+      "output_tokens": 274,
+      "guardrail_latency_ms": 1936.4061250016675,
+      "meal_latency_ms": 3393.7280000027386,
+      "safety_latency_ms": 1599.6064169994497
+    },
+    {
+      "sample_id": "upload_1750097815654_0a961795-6af4-447c-a0a5-71f98ea66240",
+      "latency_ms": 6644.9761249969015,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal contains kiwi, which is generally low in glycemic impact and high in fiber.",
+          "meal_title": "Kiwi",
+          "meal_description": "Freshly cut kiwi fruit, a nutritious snack option.",
+          "macros": {
+            "calories": 42.0,
+            "carbohydrates": 10.0,
+            "fats": 0.4,
+            "proteins": 0.8
+          },
+          "ingredients": [
+            {
+              "name": "kiwi",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17863,
+      "output_tokens": 240,
+      "guardrail_latency_ms": 1897.869083997648,
+      "meal_latency_ms": 3130.203166998399,
+      "safety_latency_ms": 1616.8757079976785
+    },
+    {
+      "sample_id": "upload_1750097849597_00cf91d6-e95f-4880-b120-76efe150b1b8",
+      "latency_ms": 7776.39658300177,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal contains a variety of leafy greens and vegetables, which are generally low in glycemic impact.",
+          "meal_title": "Mixed Green Salad",
+          "meal_description": "A fresh salad made with a mix of leafy greens and diced yellow bell peppers.",
+          "macros": {
+            "calories": 50.0,
+            "carbohydrates": 10.0,
+            "fats": 1.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "yellow bell peppers",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17872,
+      "output_tokens": 262,
+      "guardrail_latency_ms": 2009.9282920018595,
+      "meal_latency_ms": 3586.0991250010557,
+      "safety_latency_ms": 2180.3162500000326
+    },
+    {
+      "sample_id": "upload_1750097945898_eefbeb4b-8dda-4ced-a7df-7e653d5c471b",
+      "latency_ms": 7252.744958001131,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "Portion control is advised for this meal component.",
+          "meal_title": "Steamed White Rice",
+          "meal_description": "A serving of plain steamed white rice.",
+          "macros": {
+            "calories": 205.0,
+            "carbohydrates": 45.0,
+            "fats": 0.4,
+            "proteins": 4.3
+          },
+          "ingredients": [
+            {
+              "name": "White Rice",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17855,
+      "output_tokens": 231,
+      "guardrail_latency_ms": 2014.3125829999917,
+      "meal_latency_ms": 3303.754000000481,
+      "safety_latency_ms": 1934.635249999701
+    },
+    {
+      "sample_id": "upload_1750100382667_e5dd5b7c-5a38-4304-b3a7-d8209c5d59a2",
+      "latency_ms": 7763.935250000941,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a mix of protein and vegetables but also includes elements that require portion control.",
+          "meal_title": "Savory Chicken and Greens Bowl",
+          "meal_description": "A balanced bowl featuring seasoned chicken, greens, and a side of savory spices.",
+          "macros": {
+            "calories": 450.0,
+            "carbohydrates": 30.0,
+            "fats": 20.0,
+            "proteins": 40.0
+          },
+          "ingredients": [
+            {
+              "name": "Chicken",
+              "impact": "green"
+            },
+            {
+              "name": "Rice or Polenta",
+              "impact": "yellow"
+            },
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Avocado",
+              "impact": "yellow"
+            },
+            {
+              "name": "Sauce or Dressing",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17873,
+      "output_tokens": 313,
+      "guardrail_latency_ms": 1542.541082999378,
+      "meal_latency_ms": 4564.866166001593,
+      "safety_latency_ms": 1656.4899579971097
+    },
+    {
+      "sample_id": "upload_1750176632186_7794b8b1-1eec-489d-a7d2-8ff1d8e94e22",
+      "latency_ms": 6927.513999999064,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "Consider portion control and balance with other food choices.",
+          "meal_title": "Eggs with Sausage and Ketchup",
+          "meal_description": "A plate featuring scrambled eggs, a sausage patty, a dollop of ketchup, and a cup of black coffee.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 10.0,
+            "fats": 25.0,
+            "proteins": 20.0
+          },
+          "ingredients": [
+            {
+              "name": "scrambled eggs",
+              "impact": "green"
+            },
+            {
+              "name": "sausage patty",
+              "impact": "orange"
+            },
+            {
+              "name": "ketchup",
+              "impact": "red"
+            },
+            {
+              "name": "black coffee",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17874,
+      "output_tokens": 298,
+      "guardrail_latency_ms": 1454.657459002192,
+      "meal_latency_ms": 3875.615958000708,
+      "safety_latency_ms": 1597.1908749997965
+    },
+    {
+      "sample_id": "upload_1750180230407_6e49bf45-0e0b-4817-9cb1-2f8e10df6977",
+      "latency_ms": 6426.427374997729,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": false,
+          "recommendation": "red",
+          "guidance_message": "Beverages can sometimes lead to fluctuations in blood sugar levels. Monitor intake and avoid sugary additives.",
+          "meal_title": "Coffee",
+          "meal_description": "A cup of coffee served in a themed mug.",
+          "macros": {
+            "calories": 2.0,
+            "carbohydrates": 0.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": [
+            {
+              "name": "Coffee",
+              "impact": "red"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17864,
+      "output_tokens": 235,
+      "guardrail_latency_ms": 1645.3749169995717,
+      "meal_latency_ms": 3191.370749998896,
+      "safety_latency_ms": 1589.6288330004609
+    },
+    {
+      "sample_id": "upload_1750180679848_2b308ff1-fe70-46bb-b6a4-e1ef01c9d181",
+      "latency_ms": 8051.477416000125,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750180959631_d9fa7e84-e4ef-4c30-8388-142ae1861f79",
+      "latency_ms": 6436.957959002029,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750182735800_604d3797-d9eb-436f-997f-1d202a9bbcb4",
+      "latency_ms": 7734.27479199745,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal is rich in vegetables and low in glycemic impact.",
+          "meal_title": "Mixed Green Salad",
+          "meal_description": "A salad containing various greens, vegetables, and a light dressing.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 10.0,
+            "fats": 7.0,
+            "proteins": 5.0
+          },
+          "ingredients": [
+            {
+              "name": "spinach",
+              "impact": "green"
+            },
+            {
+              "name": "lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "purple cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "peas",
+              "impact": "green"
+            },
+            {
+              "name": "apple",
+              "impact": "yellow"
+            },
+            {
+              "name": "nuts",
+              "impact": "yellow"
+            },
+            {
+              "name": "salad dressing",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17862,
+      "output_tokens": 328,
+      "guardrail_latency_ms": 1488.303916001314,
+      "meal_latency_ms": 4549.5080840009905,
+      "safety_latency_ms": 1696.4111670022248
+    },
+    {
+      "sample_id": "upload_1750182831517_fa06a30c-cffc-40b8-9ac3-abc35e1d1635",
+      "latency_ms": 7958.764125000016,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal is rich in vegetables and fiber, which can support healthy blood sugar levels.",
+          "meal_title": "Mixed Green Salad",
+          "meal_description": "A salad featuring a variety of greens, including spinach and purple cabbage, complemented by mixed vegetables.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 15.0,
+            "fats": 8.0,
+            "proteins": 5.0
+          },
+          "ingredients": [
+            {
+              "name": "spinach",
+              "impact": "green"
+            },
+            {
+              "name": "purple cabbage",
+              "impact": "green"
+            },
+            {
+              "name": "mixed greens",
+              "impact": "green"
+            },
+            {
+              "name": "peas",
+              "impact": "green"
+            },
+            {
+              "name": "dressing",
+              "impact": "yellow"
+            },
+            {
+              "name": "croutons",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17872,
+      "output_tokens": 324,
+      "guardrail_latency_ms": 1527.542458003154,
+      "meal_latency_ms": 4655.45262500018,
+      "safety_latency_ms": 1775.7139580025978
+    },
+    {
+      "sample_id": "upload_1750184236286_fe8af98c-e6e5-4246-8ab1-0ca74e1de489",
+      "latency_ms": 7309.981791997416,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal may cause a moderate increase in blood sugar levels. Consider portion control if including in your diet.",
+          "meal_title": "Sesame Seed Burger",
+          "meal_description": "A sesame seed bun with lettuce, tomato, and typical burger fillings.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 30.0,
+            "fats": 15.0,
+            "proteins": 20.0
+          },
+          "ingredients": [
+            {
+              "name": "Sesame Seed Bun",
+              "impact": "orange"
+            },
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Tomato",
+              "impact": "green"
+            },
+            {
+              "name": "Burger Patty",
+              "impact": "yellow"
+            },
+            {
+              "name": "Condiments",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17871,
+      "output_tokens": 311,
+      "guardrail_latency_ms": 1273.330916003033,
+      "meal_latency_ms": 4442.016832999798,
+      "safety_latency_ms": 1594.5894159995078
+    },
+    {
+      "sample_id": "upload_1750184275147_d931eee9-5024-4f89-94e5-64dc9a094c5a",
+      "latency_ms": 7943.801124998572,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a mix of vegetables and protein; moderation is advised.",
+          "meal_title": "Grilled Sausage with Vegetables",
+          "meal_description": "A serving of grilled sausage accompanied by saut\u00e9ed various vegetables including carrots, peas, and eggplant.",
+          "macros": {
+            "calories": 450.0,
+            "carbohydrates": 30.0,
+            "fats": 25.0,
+            "proteins": 25.0
+          },
+          "ingredients": [
+            {
+              "name": "grilled sausage",
+              "impact": "orange"
+            },
+            {
+              "name": "carrots",
+              "impact": "green"
+            },
+            {
+              "name": "peas",
+              "impact": "green"
+            },
+            {
+              "name": "eggplant",
+              "impact": "green"
+            },
+            {
+              "name": "onions",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17874,
+      "output_tokens": 310,
+      "guardrail_latency_ms": 1827.3647499991057,
+      "meal_latency_ms": 4524.52695899774,
+      "safety_latency_ms": 1591.8574999996054
+    },
+    {
+      "sample_id": "upload_1750184400484_91309b18-e132-459d-8b77-58d388eb7c92",
+      "latency_ms": 7874.489792000531,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Watermelon can be enjoyed in moderation due to its higher natural sugar content.",
+          "meal_title": "Fresh Watermelon",
+          "meal_description": "Sliced pieces of fresh watermelon, a hydrating and refreshing fruit.",
+          "macros": {
+            "calories": 46.0,
+            "carbohydrates": 11.6,
+            "fats": 0.2,
+            "proteins": 0.9
+          },
+          "ingredients": [
+            {
+              "name": "Watermelon",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17865,
+      "output_tokens": 243,
+      "guardrail_latency_ms": 1455.8968750025088,
+      "meal_latency_ms": 4277.383625001676,
+      "safety_latency_ms": 2141.153917000338
+    },
+    {
+      "sample_id": "upload_1750184519401_0a00994e-1755-4b0c-993b-3fce1d692ca1",
+      "latency_ms": 7730.5311659984,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184967001_dcbf0de0-d8c9-473a-96c8-b568b7b5b6ea",
+      "latency_ms": 7588.306666999415,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Fruits can provide important nutrients but should be consumed in moderation due to their natural sugars.",
+          "meal_title": "Mixed Grapes and Fig Bowl",
+          "meal_description": "A bowl containing green grapes and a fresh fig.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 35.0,
+            "fats": 0.5,
+            "proteins": 1.0
+          },
+          "ingredients": [
+            {
+              "name": "green grapes",
+              "impact": "yellow"
+            },
+            {
+              "name": "fig",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17867,
+      "output_tokens": 256,
+      "guardrail_latency_ms": 1567.085415998008,
+      "meal_latency_ms": 3934.4439169981342,
+      "safety_latency_ms": 2086.7251250019763
+    },
+    {
+      "sample_id": "upload_1750185016838_9f1b1b2d-edab-473c-8a09-a7ade40c25a4",
+      "latency_ms": 8580.424458999914,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a mix of vegetables and a crust, which can have varying effects on blood sugar levels. Moderation and portion control are advised.",
+          "meal_title": "Vegetable Pizza Slice",
+          "meal_description": "A slice of pizza topped with various vegetables including bell peppers and mushrooms, set on a crust.",
+          "macros": {
+            "calories": 250.0,
+            "carbohydrates": 30.0,
+            "fats": 10.0,
+            "proteins": 12.0
+          },
+          "ingredients": [
+            {
+              "name": "pizza crust",
+              "impact": "orange"
+            },
+            {
+              "name": "bell peppers",
+              "impact": "green"
+            },
+            {
+              "name": "mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "olive oil",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17884,
+      "output_tokens": 322,
+      "guardrail_latency_ms": 1550.1132499994128,
+      "meal_latency_ms": 5106.541958000889,
+      "safety_latency_ms": 1923.7143749996903
+    },
+    {
+      "sample_id": "upload_1750185057801_517dd09d-f8aa-4e48-93d1-820958817b61",
+      "latency_ms": 7782.449166999868,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Grapes can be enjoyed in moderation due to their natural sugars but should be consumed with portion control.",
+          "meal_title": "Fresh Grapes",
+          "meal_description": "A small serving of fresh black grapes, rich in vitamins and antioxidants.",
+          "macros": {
+            "calories": 104.0,
+            "carbohydrates": 27.0,
+            "fats": 0.2,
+            "proteins": 1.1
+          },
+          "ingredients": [
+            {
+              "name": "Grapes",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17871,
+      "output_tokens": 248,
+      "guardrail_latency_ms": 2448.3809579978697,
+      "meal_latency_ms": 3504.063917000167,
+      "safety_latency_ms": 1829.9507919982716
+    },
+    {
+      "sample_id": "upload_1750258584589_12758bd6-3c31-4ee6-bc2a-564be686406a",
+      "latency_ms": 8448.115709001286,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750262216722_694c7c7e-8827-45c3-af60-5558775251dd",
+      "latency_ms": 7954.973707997851,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal features mainly leafy greens and seeds, contributing to a low glycemic impact.",
+          "meal_title": "Simple Green Salad",
+          "meal_description": "A salad composed primarily of lettuce with a sprinkle of seeds and herbs for flavor.",
+          "macros": {
+            "calories": 80.0,
+            "carbohydrates": 10.0,
+            "fats": 5.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Mixed Seeds",
+              "impact": "yellow"
+            },
+            {
+              "name": "Herbs",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17869,
+      "output_tokens": 274,
+      "guardrail_latency_ms": 1614.212790998863,
+      "meal_latency_ms": 4429.698833999282,
+      "safety_latency_ms": 1911.0064169981342
+    },
+    {
+      "sample_id": "upload_1750263222856_8d684828-73ea-4ad9-9259-39c31e29f465",
+      "latency_ms": 8992.92504099867,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Enjoy in moderation with balance from other food groups.",
+          "meal_title": "Italian Cold Cuts and Cheese Plate",
+          "meal_description": "A selection of cured meats and cheeses accompanied by whole grain bread.",
+          "macros": {
+            "calories": 600.0,
+            "carbohydrates": 30.0,
+            "fats": 40.0,
+            "proteins": 35.0
+          },
+          "ingredients": [
+            {
+              "name": "Whole Grain Bread",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cured Ham",
+              "impact": "orange"
+            },
+            {
+              "name": "Salami",
+              "impact": "orange"
+            },
+            {
+              "name": "Mozzarella Cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Spicy Cheese",
+              "impact": "orange"
+            },
+            {
+              "name": "Ricotta Cheese",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17862,
+      "output_tokens": 320,
+      "guardrail_latency_ms": 2429.3459999971674,
+      "meal_latency_ms": 5008.298124997964,
+      "safety_latency_ms": 1555.225916999916
+    },
+    {
+      "sample_id": "upload_1750386301376_71400aa0-7658-40cd-9027-9a62f8489da7",
+      "latency_ms": 9122.79212499925,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750389951709_09f3f23e-5f56-4581-866f-37234067ea72",
+      "latency_ms": 6705.215792000672,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750709492155_4ebddef6-d4df-46cd-9649-4a335bdbef6b",
+      "latency_ms": 6289.788916998077,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750709512018_7cb970d1-5843-42fe-9f82-10279f27a01a",
+      "latency_ms": 6153.457374999562,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "Enjoy this food as part of a balanced diet.",
+          "meal_title": "Carrot",
+          "meal_description": "A raw carrot providing essential nutrients and fiber.",
+          "macros": {
+            "calories": 41.0,
+            "carbohydrates": 10.0,
+            "fats": 0.2,
+            "proteins": 0.9
+          },
+          "ingredients": [
+            {
+              "name": "Carrot",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17854,
+      "output_tokens": 230,
+      "guardrail_latency_ms": 1411.8056250008522,
+      "meal_latency_ms": 3207.8488340011972,
+      "safety_latency_ms": 1533.7503749979078
+    },
+    {
+      "sample_id": "upload_1752265287016_4c47aab8-77a8-42e6-a937-2a4b5be3c7d8",
+      "latency_ms": 1209.2050419996667,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265511713_bc7c0828-8da5-4880-bd18-4f7ad8a3b18d",
+      "latency_ms": 7778.993583997362,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "Consider portion control and pair with vegetables to balance the meal.",
+          "meal_title": "Grilled Meat with Rice and Fries",
+          "meal_description": "A plate of grilled meat served with rice and French fries, accompanied by a slice of lime.",
+          "macros": {
+            "calories": 800.0,
+            "carbohydrates": 100.0,
+            "fats": 40.0,
+            "proteins": 50.0
+          },
+          "ingredients": [
+            {
+              "name": "Grilled Meat",
+              "impact": "yellow"
+            },
+            {
+              "name": "Rice",
+              "impact": "orange"
+            },
+            {
+              "name": "French Fries",
+              "impact": "red"
+            },
+            {
+              "name": "Lime",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17871,
+      "output_tokens": 291,
+      "guardrail_latency_ms": 2012.1555830010038,
+      "meal_latency_ms": 4189.175041999988,
+      "safety_latency_ms": 1577.6127079989237
+    },
+    {
+      "sample_id": "upload_1752265789773_34d75fc4-0e04-488f-b3f3-d88ffb030604",
+      "latency_ms": 1826.7580840001756,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: not food",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265818634_e1c146f8-2cbf-4033-ac9f-9b4869fd1d4f",
+      "latency_ms": 1694.9597499988158,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265866541_68a737f3-abd3-461c-9b6b-85cb1dfc31c7",
+      "latency_ms": 1483.848666997801,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265899911_dcb7943d-bbe6-4f7c-9c86-2b162eb3f61d",
+      "latency_ms": 8206.100458002766,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "Consider portion control as this meal may have a higher glycemic impact.",
+          "meal_title": "Pizza Slice",
+          "meal_description": "A slice of pizza topped with cheese, ham, vegetables, and a tomato base.",
+          "macros": {
+            "calories": 285.0,
+            "carbohydrates": 36.0,
+            "fats": 10.0,
+            "proteins": 12.0
+          },
+          "ingredients": [
+            {
+              "name": "Pizza crust",
+              "impact": "orange"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Ham",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "Bell peppers",
+              "impact": "green"
+            },
+            {
+              "name": "Olives",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17866,
+      "output_tokens": 335,
+      "guardrail_latency_ms": 1161.2649999988207,
+      "meal_latency_ms": 4873.060124999029,
+      "safety_latency_ms": 2171.724332998565
+    },
+    {
+      "sample_id": "upload_1753052864483_2e9f35f0-e28e-4cb0-9e0e-161c00ce4e6d",
+      "latency_ms": 7741.592708000098,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal contains a variety of vegetables and fruits, which are generally beneficial for blood sugar management.",
+          "meal_title": "Mixed Salad",
+          "meal_description": "A salad featuring assorted vegetables and fruits, including lettuce, apples, and tomatoes.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 20.0,
+            "fats": 5.0,
+            "proteins": 4.0
+          },
+          "ingredients": [
+            {
+              "name": "lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "apple",
+              "impact": "yellow"
+            },
+            {
+              "name": "tomato",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17870,
+      "output_tokens": 273,
+      "guardrail_latency_ms": 1445.2286250016186,
+      "meal_latency_ms": 4276.505499998166,
+      "safety_latency_ms": 2019.8026250000112
+    },
+    {
+      "sample_id": "upload_1753053053316_3dad93e8-c0b5-4fb7-8155-80469e473fe9",
+      "latency_ms": 7575.511666000239,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053088887_e0087c65-7b21-4e50-9878-19401e3fbe93",
+      "latency_ms": 7708.6687499977415,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal features protein-rich eggs and fresh tomatoes, contributing to a balanced dish.",
+          "meal_title": "Eggs with Fresh Tomatoes",
+          "meal_description": "A dish composed of poached eggs served alongside sliced fresh tomatoes.",
+          "macros": {
+            "calories": 300.0,
+            "carbohydrates": 10.0,
+            "fats": 20.0,
+            "proteins": 20.0
+          },
+          "ingredients": [
+            {
+              "name": "Eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Tomatoes",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17866,
+      "output_tokens": 255,
+      "guardrail_latency_ms": 1937.1721249990514,
+      "meal_latency_ms": 4198.582208002335,
+      "safety_latency_ms": 1572.8603750030743
+    },
+    {
+      "sample_id": "upload_1753053107804_3f319949-c893-46d1-b54e-378b675e43f8",
+      "latency_ms": 8621.823208999558,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "Whole grain bread can be a moderate choice for meals with portion control.",
+          "meal_title": "Whole Grain Bread",
+          "meal_description": "Two slices of whole grain bread, suitable for sandwiches or toasting.",
+          "macros": {
+            "calories": 140.0,
+            "carbohydrates": 24.0,
+            "fats": 2.0,
+            "proteins": 6.0
+          },
+          "ingredients": [
+            {
+              "name": "Whole grain flour",
+              "impact": "yellow"
+            },
+            {
+              "name": "Water",
+              "impact": "green"
+            },
+            {
+              "name": "Yeast",
+              "impact": "green"
+            },
+            {
+              "name": "Salt",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17864,
+      "output_tokens": 283,
+      "guardrail_latency_ms": 2081.069458999991,
+      "meal_latency_ms": 4905.291291997855,
+      "safety_latency_ms": 1635.4172079991258
+    },
+    {
+      "sample_id": "upload_1753053145042_b9a83e6d-33f1-46f0-a73f-cd7f73e5c3c0",
+      "latency_ms": 7550.241875000211,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": false,
+          "recommendation": "green",
+          "guidance_message": "Water is a calorie-free beverage that helps with hydration and is recommended.",
+          "meal_title": "Water",
+          "meal_description": "A serving of water with ice, ideal for hydration.",
+          "macros": {
+            "calories": 0.0,
+            "carbohydrates": 0.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": [
+            {
+              "name": "Water",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17859,
+      "output_tokens": 230,
+      "guardrail_latency_ms": 2757.58549999955,
+      "meal_latency_ms": 3227.048749999085,
+      "safety_latency_ms": 1565.5531250013155
+    },
+    {
+      "sample_id": "upload_1753053184717_40b4257a-d26b-4f61-a684-e939291e0d99",
+      "latency_ms": 7208.147375000408,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "A healthy choice, high in fiber and vitamins.",
+          "meal_title": "Red Apple",
+          "meal_description": "A fresh red apple, providing natural sweetness and nutrients.",
+          "macros": {
+            "calories": 95.0,
+            "carbohydrates": 25.0,
+            "fats": 0.3,
+            "proteins": 0.5
+          },
+          "ingredients": [
+            {
+              "name": "Apple",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17856,
+      "output_tokens": 231,
+      "guardrail_latency_ms": 1445.9144590000506,
+      "meal_latency_ms": 3579.289792000054,
+      "safety_latency_ms": 2182.9073330009123
+    },
+    {
+      "sample_id": "upload_1753053217022_73c60e40-9950-4c69-8625-9eb92923f379",
+      "latency_ms": 7924.552749998838,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053277090_02101e96-ba76-4f39-8980-65db616ad82f",
+      "latency_ms": 8746.606540997163,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053311667_d3574386-8d95-4b91-b5c6-0ee2fecb639a",
+      "latency_ms": 9259.254874999897,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053337006_b38485b7-124a-401e-bf24-65359c9e90d0",
+      "latency_ms": 7120.787875002861,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "Portions should be monitored due to the higher glycemic index of potatoes.",
+          "meal_title": "Boiled Potatoes",
+          "meal_description": "A serving of boiled potatoes, commonly used as a side dish or base for meals.",
+          "macros": {
+            "calories": 130.0,
+            "carbohydrates": 30.0,
+            "fats": 0.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "Potatoes",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17869,
+      "output_tokens": 241,
+      "guardrail_latency_ms": 1402.1841249996214,
+      "meal_latency_ms": 3623.3184170014283,
+      "safety_latency_ms": 2095.230916998844
+    },
+    {
+      "sample_id": "upload_1753053995329_8844fe76-9209-488e-adf3-7a13fe0c6f81",
+      "latency_ms": 8075.414083999931,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal contains lean protein and vegetables, which are beneficial. Portion control is advised.",
+          "meal_title": "Protein and Vegetable Plate",
+          "meal_description": "A meal consisting of saut\u00e9ed chicken, scrambled eggs, and mixed vegetables.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 10.0,
+            "fats": 20.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "chicken",
+              "impact": "green"
+            },
+            {
+              "name": "eggs",
+              "impact": "green"
+            },
+            {
+              "name": "zucchini",
+              "impact": "green"
+            },
+            {
+              "name": "bell peppers",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17869,
+      "output_tokens": 290,
+      "guardrail_latency_ms": 1760.8609170019918,
+      "meal_latency_ms": 4515.008041002147,
+      "safety_latency_ms": 1799.4927079998888
+    },
+    {
+      "sample_id": "upload_1753054028270_f5833fb2-5b4f-45b5-9da8-a2cd7b10c97d",
+      "latency_ms": 7707.9643750003015,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal has a higher glycemic impact and should be consumed with caution. Consider portion control.",
+          "meal_title": "Savory Flatbread",
+          "meal_description": "A flatbread topped with savory meat and seasonings, providing a filling option.",
+          "macros": {
+            "calories": 400.0,
+            "carbohydrates": 50.0,
+            "fats": 20.0,
+            "proteins": 15.0
+          },
+          "ingredients": [
+            {
+              "name": "flatbread",
+              "impact": "orange"
+            },
+            {
+              "name": "ground meat",
+              "impact": "yellow"
+            },
+            {
+              "name": "cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "spices",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17872,
+      "output_tokens": 292,
+      "guardrail_latency_ms": 1351.2537499991595,
+      "meal_latency_ms": 4633.830999999191,
+      "safety_latency_ms": 1722.82987500148
+    },
+    {
+      "sample_id": "upload_1753054127030_3f2421d7-8517-4a68-a37e-f2c3fae607db",
+      "latency_ms": 7617.277790999651,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753054171499_5bc0643b-9294-4412-b80f-3b9c75b2e29b",
+      "latency_ms": 7926.87512500197,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal is primarily composed of leafy greens and vegetables, which are low in calories and high in fiber.",
+          "meal_title": "Mixed Green Salad",
+          "meal_description": "A fresh salad made from a variety of leafy greens and chopped tomatoes.",
+          "macros": {
+            "calories": 50.0,
+            "carbohydrates": 10.0,
+            "fats": 1.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "spinach",
+              "impact": "green"
+            },
+            {
+              "name": "tomatoes",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17871,
+      "output_tokens": 275,
+      "guardrail_latency_ms": 1688.1091670002206,
+      "meal_latency_ms": 4373.768583001947,
+      "safety_latency_ms": 1864.9431250014459
+    },
+    {
+      "sample_id": "upload_1753068426109_e9f92f5b-5160-494e-9ff7-32be49b9dca2",
+      "latency_ms": 9752.979000000778,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains a variety of ingredients with mixed glycemic impacts. It is advisable to be mindful of portions.",
+          "meal_title": "Colorful Mixed Bowl",
+          "meal_description": "A mixed dish featuring a variety of vegetables, fruits, and chicken, combined for a balanced meal.",
+          "macros": {
+            "calories": 600.0,
+            "carbohydrates": 80.0,
+            "fats": 15.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "chicken",
+              "impact": "green"
+            },
+            {
+              "name": "cucumbers",
+              "impact": "green"
+            },
+            {
+              "name": "tomatoes",
+              "impact": "green"
+            },
+            {
+              "name": "corn",
+              "impact": "yellow"
+            },
+            {
+              "name": "carrots",
+              "impact": "yellow"
+            },
+            {
+              "name": "broccoli",
+              "impact": "green"
+            },
+            {
+              "name": "spinach",
+              "impact": "green"
+            },
+            {
+              "name": "pineapple",
+              "impact": "orange"
+            },
+            {
+              "name": "noodles",
+              "impact": "orange"
+            },
+            {
+              "name": "feta cheese",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17879,
+      "output_tokens": 397,
+      "guardrail_latency_ms": 1481.4587499968184,
+      "meal_latency_ms": 6566.286957997363,
+      "safety_latency_ms": 1705.175874998531
+    },
+    {
+      "sample_id": "upload_1753199632104_3a898757-6efe-49de-ab61-6195be57723c",
+      "latency_ms": 7869.909875000303,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "Carrots are a nutritious vegetable, low in calories and high in fiber.",
+          "meal_title": "Raw Carrot",
+          "meal_description": "A fresh, raw carrot, providing a crunchy texture and natural sweetness.",
+          "macros": {
+            "calories": 41.0,
+            "carbohydrates": 10.0,
+            "fats": 0.2,
+            "proteins": 0.9
+          },
+          "ingredients": [
+            {
+              "name": "Carrot",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17865,
+      "output_tokens": 241,
+      "guardrail_latency_ms": 1708.3675409994612,
+      "meal_latency_ms": 3967.1677080004883,
+      "safety_latency_ms": 2194.3190829988453
+    },
+    {
+      "sample_id": "upload_1753199710361_657a23e2-1ed3-4b67-86cb-e5b5b76d0cc5",
+      "latency_ms": 7070.263999998133,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be a broth-based soup, which can be a low-calorie option. Monitor portion sizes for overall meal balance.",
+          "meal_title": "Broth Soup",
+          "meal_description": "A simple broth soup with possible green onion garnish.",
+          "macros": {
+            "calories": 40.0,
+            "carbohydrates": 5.0,
+            "fats": 1.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Broth",
+              "impact": "green"
+            },
+            {
+              "name": "Green Onions",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17873,
+      "output_tokens": 262,
+      "guardrail_latency_ms": 1529.4918750005309,
+      "meal_latency_ms": 3838.3276669992483,
+      "safety_latency_ms": 1702.3917919977976
+    },
+    {
+      "sample_id": "upload_1753200023630_697c8163-ee91-4c75-85b8-ad4a947e9e74",
+      "latency_ms": 7826.312665998557,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This meal may lead to a moderate increase in blood sugar levels; portion control is advisable.",
+          "meal_title": "Pizza Slice",
+          "meal_description": "A slice of pizza with various toppings, typically including a bread crust, sauce, cheese, and proteins.",
+          "macros": {
+            "calories": 285.0,
+            "carbohydrates": 36.0,
+            "fats": 12.0,
+            "proteins": 11.0
+          },
+          "ingredients": [
+            {
+              "name": "Pizza crust",
+              "impact": "orange"
+            },
+            {
+              "name": "Cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Ham",
+              "impact": "green"
+            },
+            {
+              "name": "Olives",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17874,
+      "output_tokens": 310,
+      "guardrail_latency_ms": 1229.6523330005584,
+      "meal_latency_ms": 4367.548707999958,
+      "safety_latency_ms": 2229.0579580003396
+    },
+    {
+      "sample_id": "upload_1753200276846_5e3f6aab-de91-48e1-849a-eebc0300e207",
+      "latency_ms": 7731.858791001287,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal includes a variety of ingredients that can have mixed impacts on blood sugar levels. Consider portion sizes.",
+          "meal_title": "Chicken Salad",
+          "meal_description": "A mixed salad featuring greens, cucumbers, grilled chicken, and a creamy dressing.",
+          "macros": {
+            "calories": 350.0,
+            "carbohydrates": 15.0,
+            "fats": 20.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "grilled chicken",
+              "impact": "green"
+            },
+            {
+              "name": "lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "cucumbers",
+              "impact": "green"
+            },
+            {
+              "name": "feta cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "creamy dressing",
+              "impact": "orange"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17873,
+      "output_tokens": 313,
+      "guardrail_latency_ms": 1700.5897500021092,
+      "meal_latency_ms": 4479.595292003069,
+      "safety_latency_ms": 1551.6198330005864
+    },
+    {
+      "sample_id": "upload_1753203870259_fa36a429-304f-4b3c-b6e0-3519beaece88",
+      "latency_ms": 7495.893708000949,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This meal contains fruits that are healthy but should be consumed in moderation due to their natural sugar content.",
+          "meal_title": "Mixed Grapes and Fig",
+          "meal_description": "A serving of green grapes accompanied by a fresh fig, offering a sweet and nutritious snack.",
+          "macros": {
+            "calories": 150.0,
+            "carbohydrates": 36.0,
+            "fats": 0.5,
+            "proteins": 1.5
+          },
+          "ingredients": [
+            {
+              "name": "Green Grapes",
+              "impact": "yellow"
+            },
+            {
+              "name": "Fig",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 17876,
+      "output_tokens": 268,
+      "guardrail_latency_ms": 1622.4605000024894,
+      "meal_latency_ms": 4386.808416998974,
+      "safety_latency_ms": 1486.568416999944
+    },
+    {
+      "sample_id": "upload_1753210424880_8af29a21-30dc-4b8a-b26b-24215e050a3f",
+      "latency_ms": 9974.938624996867,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753211834887_fce7ded2-46f9-47f1-ad3e-667e7d7a06c3",
+      "latency_ms": 7256.833457999164,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753211882695_715dc254-cac3-4122-a437-3f9d756e85b7",
+      "latency_ms": 7024.86779100218,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753212036729_b69c6c19-248c-45b9-be7e-5e50eda48a04",
+      "latency_ms": 7580.388624999614,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    }
+  ],
+  "meta": {
+    "model": "gpt-4o-mini",
+    "max_concurrency": 10,
+    "timestamp": "2026-03-03T00:57:40Z"
+  }
+}

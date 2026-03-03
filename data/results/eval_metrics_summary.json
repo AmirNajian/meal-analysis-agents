@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-03-03T00:57:41Z",
+  "output_prefix": "eval_results",
+  "data_dir": "/Users/amir/Repo/poc/meal-analysis-agents/data",
+  "models": {
+    "gpt-5.2": {
+      "guardrails_pct": 100.0,
+      "safety_pct": 87.9,
+      "meal_pct": 95.5,
+      "run_composite": 94.1,
+      "p50_latency_ms": 6736.0,
+      "avg_input_tokens": 1524.8,
+      "avg_output_tokens": 367.6,
+      "p50_guardrail_latency_ms": 1138.1,
+      "p50_meal_latency_ms": 4317.5,
+      "p50_safety_latency_ms": 1290.0
+    },
+    "gpt-5.1": {
+      "guardrails_pct": 100.0,
+      "safety_pct": 85.7,
+      "meal_pct": 94.1,
+      "run_composite": 92.8,
+      "p50_latency_ms": 6849.0,
+      "avg_input_tokens": 1324.1,
+      "avg_output_tokens": 369.2,
+      "p50_guardrail_latency_ms": 1616.4,
+      "p50_meal_latency_ms": 3702.9,
+      "p50_safety_latency_ms": 1271.6
+    },
+    "gpt-4o": {
+      "guardrails_pct": 100.0,
+      "safety_pct": 88.0,
+      "meal_pct": 94.7,
+      "run_composite": 93.8,
+      "p50_latency_ms": 7033.5,
+      "avg_input_tokens": 1379.5,
+      "avg_output_tokens": 278.1,
+      "p50_guardrail_latency_ms": 1684.2,
+      "p50_meal_latency_ms": 4718.1,
+      "p50_safety_latency_ms": 778.4
+    },
+    "gpt-4o-mini": {
+      "guardrails_pct": 100.0,
+      "safety_pct": 82.5,
+      "meal_pct": 97.7,
+      "run_composite": 93.6,
+      "p50_latency_ms": 7731.2,
+      "avg_input_tokens": 17868.4,
+      "avg_output_tokens": 281.0,
+      "p50_guardrail_latency_ms": 1600.2,
+      "p50_meal_latency_ms": 4347.2,
+      "p50_safety_latency_ms": 1703.8
+    }
+  }
+}

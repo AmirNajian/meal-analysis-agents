@@ -1,0 +1,1743 @@
+{
+  "results": [
+    {
+      "sample_id": "upload_1749840444495_ce8fbfbc-988e-4ee6-9e52-d7ebdf4a58bc",
+      "latency_ms": 7964.740749997873,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749840712880_d8cedf37-9bdb-4ff5-8e21-6a6a740ae409",
+      "latency_ms": 7639.273291999416,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749840740344_7e95ee66-1e26-4892-9ce4-b79960061c19",
+      "latency_ms": 7630.799667000247,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749841037102_96ccbf66-4c05-45dc-8920-fd6ef54fcd0d",
+      "latency_ms": 7681.872207998822,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749841435404_d2ac9183-048d-4cec-9b9b-a878628e4b30",
+      "latency_ms": 7507.706291999057,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This berry and yogurt combination appears to provide a balance of protein, fiber, and natural sugars. Portion awareness and choosing unsweetened yogurt can support more stable blood glucose responses.",
+          "meal_title": "Yogurt with Mixed Berries",
+          "meal_description": "A bowl of plain yogurt topped with fresh blueberries and red currants.",
+          "macros": {
+            "calories": 160.0,
+            "carbohydrates": 22.0,
+            "fats": 4.0,
+            "proteins": 9.0
+          },
+          "ingredients": [
+            {
+              "name": "Plain yogurt",
+              "impact": "green"
+            },
+            {
+              "name": "Blueberries",
+              "impact": "yellow"
+            },
+            {
+              "name": "Red currants",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1305,
+      "output_tokens": 330,
+      "guardrail_latency_ms": 2899.2941670003347,
+      "meal_latency_ms": 3307.2248749995197,
+      "safety_latency_ms": 1301.1435420012276
+    },
+    {
+      "sample_id": "upload_1749841861682_5e0c8e9d-bcff-4db4-bd59-62aa98119dec",
+      "latency_ms": 7749.877166999795,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749843287038_40cbba8a-21fa-447a-88ce-54e9d8f8708a",
+      "latency_ms": 7960.917332999088,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749843713632_58c8331c-7aec-4895-a51b-cb92988cade5",
+      "latency_ms": 7198.434917001578,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749850518596_ae5c6336-732a-432f-a1c1-a64db860a708",
+      "latency_ms": 7150.957374997233,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749865296179_d1a4da8d-8804-480e-b835-072f845e11f8",
+      "latency_ms": 1808.9135000009264,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749869835174_55f1390a-6ea3-4033-a016-b8a4c30d28a1",
+      "latency_ms": 8651.541167000687,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be a fish and avocado dish with sauce, which is generally lower in carbohydrates and higher in protein and fats. Consider the sauce quantity and any added sugars when estimating its effect on blood glucose.",
+          "meal_title": "Tuna Tartare with Avocado and Roe",
+          "meal_description": "A bowl of diced raw tuna served over mashed avocado and greens, topped with fish roe and dressed with a savory sauce.",
+          "macros": {
+            "calories": 420.0,
+            "carbohydrates": 10.0,
+            "fats": 30.0,
+            "proteins": 28.0
+          },
+          "ingredients": [
+            {
+              "name": "Raw tuna",
+              "impact": "green"
+            },
+            {
+              "name": "Avocado",
+              "impact": "green"
+            },
+            {
+              "name": "Fish roe",
+              "impact": "green"
+            },
+            {
+              "name": "Leafy greens or seaweed",
+              "impact": "green"
+            },
+            {
+              "name": "Soy-based or savory dressing/sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Oil in dressing",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1324,
+      "output_tokens": 391,
+      "guardrail_latency_ms": 2187.7252499980386,
+      "meal_latency_ms": 5212.411875003454,
+      "safety_latency_ms": 1251.3560000006692
+    },
+    {
+      "sample_id": "upload_1749872693154_5d23dac1-9118-4776-ad69-9853f8e513fa",
+      "latency_ms": 8959.134708999045,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1749875264239_2a7fbe6a-e779-46e6-ac22-82d88a66ea3c",
+      "latency_ms": 6603.6668329979875,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This dish combines fresh fruit with a creamy topping and nuts, which can affect blood glucose differently. The fruit and any added sugars contribute carbohydrates, while the dairy and nuts add fat and protein that may slow glucose absorption. Consider portion size and how it fits into your overall carbohydrate goals.",
+          "meal_title": "Strawberries with Cream and Pistachios",
+          "meal_description": "A bowl of sliced fresh strawberries on a fruit granita or crushed ice base, topped with a dollop of creamy cheese or yogurt and sprinkled with crushed pistachios.",
+          "macros": {
+            "calories": 280.0,
+            "carbohydrates": 28.0,
+            "fats": 15.0,
+            "proteins": 8.0
+          },
+          "ingredients": [
+            {
+              "name": "Strawberries",
+              "impact": "yellow"
+            },
+            {
+              "name": "Fruit granita or sweet crushed ice (likely with added sugar)",
+              "impact": "orange"
+            },
+            {
+              "name": "Creamy cheese or yogurt topping",
+              "impact": "yellow"
+            },
+            {
+              "name": "Pistachios",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1348,
+      "output_tokens": 390,
+      "guardrail_latency_ms": 1511.4214999994147,
+      "meal_latency_ms": 4053.0380829986825,
+      "safety_latency_ms": 1039.1510000008566
+    },
+    {
+      "sample_id": "upload_1750038317524_55c71fd4-30e1-4e8b-93f8-86e6094f31b3",
+      "latency_ms": 7091.427374998602,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750038497319_6a3082e9-034c-4015-9eeb-9545000073c9",
+      "latency_ms": 6853.08462499961,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This egg-based meal is relatively low in carbohydrates and higher in protein and fat. It may fit into a blood-glucose-conscious plan when portion size is considered and balanced with non-starchy vegetables or other fiber sources.",
+          "meal_title": "Sous Vide Egg Bites with Uncured Bacon and Gouda",
+          "meal_description": "Packaged sous vide egg bites made with cage-free eggs, uncured bacon, and gouda cheese, providing a high-protein, low-carbohydrate breakfast option.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 3.0,
+            "fats": 15.0,
+            "proteins": 17.0
+          },
+          "ingredients": [
+            {
+              "name": "Eggs",
+              "impact": "green"
+            },
+            {
+              "name": "Uncured bacon",
+              "impact": "yellow"
+            },
+            {
+              "name": "Gouda cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cream or milk (in egg mixture)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Butter or oil (for richness)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Salt",
+              "impact": "yellow"
+            },
+            {
+              "name": "Spices and flavorings",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1340,
+      "output_tokens": 427,
+      "guardrail_latency_ms": 2162.9836249994696,
+      "meal_latency_ms": 3594.190042000264,
+      "safety_latency_ms": 1095.8564579996164
+    },
+    {
+      "sample_id": "upload_1750091798026_6bfd2714-28cc-4f8e-9df2-8ceb92a5a071",
+      "latency_ms": 6558.847917000094,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097681033_c71afe76-f144-4a19-9dd3-19a1178957f4",
+      "latency_ms": 5850.753707996773,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097765140_1dccfd72-61d7-462c-b163-f5b7c348b547",
+      "latency_ms": 6902.22270799859,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097815654_0a961795-6af4-447c-a0a5-71f98ea66240",
+      "latency_ms": 5949.787749999814,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This kiwi serving provides natural sugars with fiber and vitamin C; it can fit into a balanced eating pattern when portions are considered and combined with other nutrient-dense foods as needed.",
+          "meal_title": "Fresh Kiwi Halves",
+          "meal_description": "Two halves of a fresh green kiwi fruit with the skin on, served on a patterned tablecloth.",
+          "macros": {
+            "calories": 40.0,
+            "carbohydrates": 10.0,
+            "fats": 0.3,
+            "proteins": 1.0
+          },
+          "ingredients": [
+            {
+              "name": "Kiwi fruit",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1309,
+      "output_tokens": 297,
+      "guardrail_latency_ms": 1329.287167001894,
+      "meal_latency_ms": 3287.5268749994575,
+      "safety_latency_ms": 1332.9184999965946
+    },
+    {
+      "sample_id": "upload_1750097849597_00cf91d6-e95f-4880-b120-76efe150b1b8",
+      "latency_ms": 7427.056374999665,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750097945898_eefbeb4b-8dda-4ced-a7df-7e653d5c471b",
+      "latency_ms": 5797.602250000637,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750100382667_e5dd5b7c-5a38-4304-b3a7-d8209c5d59a2",
+      "latency_ms": 7994.450291000248,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750176632186_7794b8b1-1eec-489d-a7d2-8ff1d8e94e22",
+      "latency_ms": 7103.586083001574,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750180230407_6e49bf45-0e0b-4817-9cb1-2f8e10df6977",
+      "latency_ms": 5421.465125000395,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This appears to be a plain coffee, which is generally low in calories and carbohydrates. If any milk, cream, or sweetener is added, consider the portion and type used to manage overall carbohydrate and calorie intake.",
+          "meal_title": "Black Coffee in Mug",
+          "meal_description": "A hot beverage served in a mug, likely plain black coffee or espresso with a light crema on top.",
+          "macros": {
+            "calories": 5.0,
+            "carbohydrates": 0.0,
+            "fats": 0.0,
+            "proteins": 0.0
+          },
+          "ingredients": [
+            {
+              "name": "coffee",
+              "impact": "green"
+            },
+            {
+              "name": "water",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1318,
+      "output_tokens": 314,
+      "guardrail_latency_ms": 1503.8601659980486,
+      "meal_latency_ms": 2388.3884999995644,
+      "safety_latency_ms": 1529.177417000028
+    },
+    {
+      "sample_id": "upload_1750180679848_2b308ff1-fe70-46bb-b6a4-e1ef01c9d181",
+      "latency_ms": 8731.186332999641,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750180959631_d9fa7e84-e4ef-4c30-8388-142ae1861f79",
+      "latency_ms": 6308.013792000565,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750182735800_604d3797-d9eb-436f-997f-1d202a9bbcb4",
+      "latency_ms": 7317.200833997049,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750182831517_fa06a30c-cffc-40b8-9ac3-abc35e1d1635",
+      "latency_ms": 6844.828000001144,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184236286_fe8af98c-e6e5-4246-8ab1-0ca74e1de489",
+      "latency_ms": 8973.955916997511,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184275147_d931eee9-5024-4f89-94e5-64dc9a094c5a",
+      "latency_ms": 6719.43066699896,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184400484_91309b18-e132-459d-8b77-58d388eb7c92",
+      "latency_ms": 6250.065374999394,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184519401_0a00994e-1755-4b0c-993b-3fce1d692ca1",
+      "latency_ms": 1154.2862079986662,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750184967001_dcbf0de0-d8c9-473a-96c8-b568b7b5b6ea",
+      "latency_ms": 6805.174875000375,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750185016838_9f1b1b2d-edab-473c-8a09-a7ade40c25a4",
+      "latency_ms": 6914.116291998653,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This slice of savory pie or quiche appears to include a refined-flour crust with cheese and vegetables, which can be higher in carbohydrates and fats; consider portion size and pairing with additional non-starchy vegetables or lean protein if desired.",
+          "meal_title": "Vegetable Quiche Slice",
+          "meal_description": "A slice of savory quiche with a baked pastry crust, egg and cheese filling, and toppings such as green bell peppers, red bell peppers, and mushrooms.",
+          "macros": {
+            "calories": 320.0,
+            "carbohydrates": 24.0,
+            "fats": 20.0,
+            "proteins": 11.0
+          },
+          "ingredients": [
+            {
+              "name": "pastry crust (refined flour)",
+              "impact": "orange"
+            },
+            {
+              "name": "eggs",
+              "impact": "green"
+            },
+            {
+              "name": "cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "green bell peppers",
+              "impact": "green"
+            },
+            {
+              "name": "red bell peppers",
+              "impact": "green"
+            },
+            {
+              "name": "mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "cooking oil or butter",
+              "impact": "yellow"
+            },
+            {
+              "name": "cream or milk in filling",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1333,
+      "output_tokens": 436,
+      "guardrail_latency_ms": 1465.9968749983818,
+      "meal_latency_ms": 4231.41137499988,
+      "safety_latency_ms": 1216.6501250030706
+    },
+    {
+      "sample_id": "upload_1750185057801_517dd09d-f8aa-4e48-93d1-820958817b61",
+      "latency_ms": 5766.81224999993,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This serving of dark grapes provides natural sugars along with fiber and micronutrients. It may fit into a balanced meal when portions are measured and combined with protein or healthy fats.",
+          "meal_title": "Fresh Dark Grapes",
+          "meal_description": "A small bunch of fresh dark grapes served in a clear container.",
+          "macros": {
+            "calories": 70.0,
+            "carbohydrates": 18.0,
+            "fats": 0.2,
+            "proteins": 0.6
+          },
+          "ingredients": [
+            {
+              "name": "Dark grapes",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1301,
+      "output_tokens": 287,
+      "guardrail_latency_ms": 1504.9929169981624,
+      "meal_latency_ms": 3232.5337090005632,
+      "safety_latency_ms": 1029.2453340007341
+    },
+    {
+      "sample_id": "upload_1750258584589_12758bd6-3c31-4ee6-bc2a-564be686406a",
+      "latency_ms": 6570.633290997648,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750262216722_694c7c7e-8827-45c3-af60-5558775251dd",
+      "latency_ms": 8085.65012499821,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750263222856_8d684828-73ea-4ad9-9259-39c31e29f465",
+      "latency_ms": 8606.486917000439,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750386301376_71400aa0-7658-40cd-9027-9a62f8489da7",
+      "latency_ms": 7424.578209000174,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This pizza appears to be high in refined carbohydrates and cheese, which may have a notable impact on blood glucose levels. Consider portion control, balancing it with non-starchy vegetables or protein during the day, and monitoring personal responses.",
+          "meal_title": "Thin-Crust Vegetable and Cheese Pizza",
+          "meal_description": "A thin-crust pizza topped with tomato sauce, cheese, red onions, spinach or other greens, and possible mushrooms, served on a metal tray with several slices remaining.",
+          "macros": {
+            "calories": 320.0,
+            "carbohydrates": 34.0,
+            "fats": 14.0,
+            "proteins": 14.0
+          },
+          "ingredients": [
+            {
+              "name": "Thin pizza crust (refined flour)",
+              "impact": "red"
+            },
+            {
+              "name": "Tomato sauce",
+              "impact": "yellow"
+            },
+            {
+              "name": "Mozzarella/cheese blend",
+              "impact": "yellow"
+            },
+            {
+              "name": "Red onions",
+              "impact": "green"
+            },
+            {
+              "name": "Spinach or leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "Mushrooms",
+              "impact": "green"
+            },
+            {
+              "name": "Olive oil or cooking oil",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1336,
+      "output_tokens": 427,
+      "guardrail_latency_ms": 2010.3638750006212,
+      "meal_latency_ms": 4360.260042001755,
+      "safety_latency_ms": 1053.9073330000974
+    },
+    {
+      "sample_id": "upload_1750389951709_09f3f23e-5f56-4581-866f-37234067ea72",
+      "latency_ms": 6433.951709001121,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This cocktail appears to contain alcohol and added sugars, which may lead to a faster rise in blood glucose. It may be helpful to consider portion size, drink slowly, and pair with food higher in fiber or protein when choosing similar beverages.",
+          "meal_title": "Creamy White Cocktail in Coupe Glass",
+          "meal_description": "A pale, creamy white cocktail served in a coupe glass, garnished with a small yellow edible flower.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 18.0,
+            "fats": 4.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Alcohol (e.g., vodka or gin)",
+              "impact": "orange"
+            },
+            {
+              "name": "Sweetened liqueur or simple syrup",
+              "impact": "red"
+            },
+            {
+              "name": "Cream or coconut cream",
+              "impact": "yellow"
+            },
+            {
+              "name": "Citrus juice (e.g., lemon or lime, if present)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Edible flower garnish",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1325,
+      "output_tokens": 399,
+      "guardrail_latency_ms": 1625.3928339974664,
+      "meal_latency_ms": 3452.6849590001802,
+      "safety_latency_ms": 1355.8234170013748
+    },
+    {
+      "sample_id": "upload_1750709492155_4ebddef6-d4df-46cd-9649-4a335bdbef6b",
+      "latency_ms": 5925.553917000798,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1750709512018_7cb970d1-5843-42fe-9f82-10279f27a01a",
+      "latency_ms": 6702.826832999563,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265287016_4c47aab8-77a8-42e6-a937-2a4b5be3c7d8",
+      "latency_ms": 1466.62679200017,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265511713_bc7c0828-8da5-4880-bd18-4f7ad8a3b18d",
+      "latency_ms": 7688.415999997233,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265789773_34d75fc4-0e04-488f-b3f3-d88ffb030604",
+      "latency_ms": 5627.314583001862,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265818634_e1c146f8-2cbf-4033-ac9f-9b4869fd1d4f",
+      "latency_ms": 1900.7498749997467,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265866541_68a737f3-abd3-461c-9b6b-85cb1dfc31c7",
+      "latency_ms": 1230.3568339993944,
+      "success": false,
+      "response": null,
+      "error_class": "GuardrailRejection",
+      "error_message": "Input guardrails failed: humans detected",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1752265899911_dcb7943d-bbe6-4f7c-9c86-2b162eb3f61d",
+      "latency_ms": 6624.68845800322,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753052864483_2e9f35f0-e28e-4cb0-9e0e-161c00ce4e6d",
+      "latency_ms": 7359.5816249981,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "yellow",
+          "guidance_message": "This salad appears to contain mixed vegetables with a creamy dressing and possibly cheese or another fat source, which may increase calories and fats; consider portion size and pairing with additional non-starchy vegetables if needed.",
+          "meal_title": "Creamy Mixed Vegetable Salad",
+          "meal_description": "A small bowl of salad containing lettuce, tomato pieces, and other chopped vegetables with a creamy dressing, possibly including cheese or boiled egg.",
+          "macros": {
+            "calories": 220.0,
+            "carbohydrates": 12.0,
+            "fats": 15.0,
+            "proteins": 8.0
+          },
+          "ingredients": [
+            {
+              "name": "Lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "Tomatoes",
+              "impact": "green"
+            },
+            {
+              "name": "Other mixed vegetables (e.g., cucumber or bell pepper)",
+              "impact": "green"
+            },
+            {
+              "name": "Creamy dressing (mayonnaise or similar)",
+              "impact": "orange"
+            },
+            {
+              "name": "Cheese or boiled egg pieces",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1322,
+      "output_tokens": 388,
+      "guardrail_latency_ms": 1736.4801250005257,
+      "meal_latency_ms": 4351.432999999815,
+      "safety_latency_ms": 1271.6322079977544
+    },
+    {
+      "sample_id": "upload_1753053053316_3dad93e8-c0b5-4fb7-8155-80469e473fe9",
+      "latency_ms": 5716.689125001722,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053088887_e0087c65-7b21-4e50-9878-19401e3fbe93",
+      "latency_ms": 6274.430833000224,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053107804_3f319949-c893-46d1-b54e-378b675e43f8",
+      "latency_ms": 8371.85295800009,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053145042_b9a83e6d-33f1-46f0-a73f-cd7f73e5c3c0",
+      "latency_ms": 5542.510458999459,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053184717_40b4257a-d26b-4f61-a684-e939291e0d99",
+      "latency_ms": 6423.351624998759,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This apple provides natural carbohydrates along with fiber and can fit into a balanced eating plan when portions and overall carbohydrate intake for the day are considered.",
+          "meal_title": "Whole Red Apple",
+          "meal_description": "A single fresh red apple served whole, with skin, on an outdoor table.",
+          "macros": {
+            "calories": 95.0,
+            "carbohydrates": 25.0,
+            "fats": 0.3,
+            "proteins": 0.5
+          },
+          "ingredients": [
+            {
+              "name": "Apple",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1297,
+      "output_tokens": 282,
+      "guardrail_latency_ms": 2095.018791998882,
+      "meal_latency_ms": 3028.844417000073,
+      "safety_latency_ms": 1299.4383330005803
+    },
+    {
+      "sample_id": "upload_1753053217022_73c60e40-9950-4c69-8625-9eb92923f379",
+      "latency_ms": 6175.500834000559,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053277090_02101e96-ba76-4f39-8980-65db616ad82f",
+      "latency_ms": 5750.49716599824,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053311667_d3574386-8d95-4b91-b5c6-0ee2fecb639a",
+      "latency_ms": 7196.339250000165,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053337006_b38485b7-124a-401e-bf24-65359c9e90d0",
+      "latency_ms": 5183.609708001313,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753053995329_8844fe76-9209-488e-adf3-7a13fe0c6f81",
+      "latency_ms": 6699.844167000265,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753054028270_f5833fb2-5b4f-45b5-9da8-a2cd7b10c97d",
+      "latency_ms": 6963.962624999112,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "orange",
+          "guidance_message": "This appears to be a meat-topped flatbread or pizza-style dish that is relatively high in refined carbohydrates and fats. Pairing it with non-starchy vegetables, limiting portion size, and balancing it with protein-rich or higher-fiber foods in other meals can help manage its overall impact on blood sugar.",
+          "meal_title": "Meat-Topped Flatbread (Pizza-Style)",
+          "meal_description": "A round flatbread cut into slices, topped with a minced meat mixture and melted cheese, served on a plate with small side dishes visible in the background.",
+          "macros": {
+            "calories": 650.0,
+            "carbohydrates": 65.0,
+            "fats": 30.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "Flatbread crust (refined wheat flour)",
+              "impact": "orange"
+            },
+            {
+              "name": "Minced meat (likely beef or lamb)",
+              "impact": "yellow"
+            },
+            {
+              "name": "Cheese",
+              "impact": "yellow"
+            },
+            {
+              "name": "Tomato or tomato sauce",
+              "impact": "green"
+            },
+            {
+              "name": "Onion",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or butter",
+              "impact": "orange"
+            },
+            {
+              "name": "Herbs and spices",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1351,
+      "output_tokens": 449,
+      "guardrail_latency_ms": 1616.3916250006878,
+      "meal_latency_ms": 4329.088708000199,
+      "safety_latency_ms": 1018.4284579991072
+    },
+    {
+      "sample_id": "upload_1753054127030_3f2421d7-8517-4a68-a37e-f2c3fae607db",
+      "latency_ms": 6598.96420899895,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This salad appears to be mostly non-starchy vegetables with a light dressing, which generally has a modest impact on blood glucose. Be mindful of the amount and type of dressing used, as added sugars or large portions of oil can change its effect.",
+          "meal_title": "Mixed Green Salad with Shredded Vegetables",
+          "meal_description": "A small portion of mixed leafy greens with shredded carrots and cabbage or broccoli stems, lightly dressed and seasoned.",
+          "macros": {
+            "calories": 60.0,
+            "carbohydrates": 7.0,
+            "fats": 3.0,
+            "proteins": 2.0
+          },
+          "ingredients": [
+            {
+              "name": "Lettuce or mixed leafy greens",
+              "impact": "green"
+            },
+            {
+              "name": "Shredded carrots",
+              "impact": "yellow"
+            },
+            {
+              "name": "Shredded cabbage or broccoli stems",
+              "impact": "green"
+            },
+            {
+              "name": "Vinaigrette or salad dressing",
+              "impact": "yellow"
+            },
+            {
+              "name": "Seasonings or seeds (e.g., pepper, herbs, possible seeds)",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1329,
+      "output_tokens": 398,
+      "guardrail_latency_ms": 1459.2985409981338,
+      "meal_latency_ms": 4141.892125000595,
+      "safety_latency_ms": 997.7404169985675
+    },
+    {
+      "sample_id": "upload_1753054171499_5bc0643b-9294-4412-b80f-3b9c75b2e29b",
+      "latency_ms": 6815.949375002674,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This salad appears to be mostly non-starchy vegetables, which generally have a lower impact on blood glucose and can be included as part of a balanced meal. Pairing it with a source of protein and healthy fats can help make the meal more filling and balanced overall.",
+          "meal_title": "Mixed Green Salad with Tomatoes",
+          "meal_description": "A plate of mixed leafy greens and lettuce topped with chopped fresh tomatoes and possibly a light dressing.",
+          "macros": {
+            "calories": 60.0,
+            "carbohydrates": 10.0,
+            "fats": 2.0,
+            "proteins": 3.0
+          },
+          "ingredients": [
+            {
+              "name": "lettuce",
+              "impact": "green"
+            },
+            {
+              "name": "mixed salad greens (spinach, spring mix)",
+              "impact": "green"
+            },
+            {
+              "name": "tomatoes",
+              "impact": "green"
+            },
+            {
+              "name": "onion (small amount, if present)",
+              "impact": "green"
+            },
+            {
+              "name": "salad dressing (light amount, type unspecified)",
+              "impact": "yellow"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1327,
+      "output_tokens": 393,
+      "guardrail_latency_ms": 1558.3751659978589,
+      "meal_latency_ms": 3869.146582997928,
+      "safety_latency_ms": 1388.3756659997744
+    },
+    {
+      "sample_id": "upload_1753068426109_e9f92f5b-5160-494e-9ff7-32be49b9dca2",
+      "latency_ms": 8257.232165997266,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753199632104_3a898757-6efe-49de-ab61-6195be57723c",
+      "latency_ms": 6497.194249997847,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This peeled carrot is a non-starchy vegetable with fiber and moderate natural sugars, and it can fit into many meal plans when balanced with protein or healthy fats.",
+          "meal_title": "Peeled Carrot Snack",
+          "meal_description": "A single peeled raw carrot segment served on its own, likely to be eaten as a simple snack or side vegetable.",
+          "macros": {
+            "calories": 30.0,
+            "carbohydrates": 7.0,
+            "fats": 0.1,
+            "proteins": 0.6
+          },
+          "ingredients": [
+            {
+              "name": "Carrot",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1310,
+      "output_tokens": 291,
+      "guardrail_latency_ms": 1307.499332997395,
+      "meal_latency_ms": 3650.35191700008,
+      "safety_latency_ms": 1539.2910830014443
+    },
+    {
+      "sample_id": "upload_1753199710361_657a23e2-1ed3-4b67-86cb-e5b5b76d0cc5",
+      "latency_ms": 7576.918750000914,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753200023630_697c8163-ee91-4c75-85b8-ad4a947e9e74",
+      "latency_ms": 12846.523625001282,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753200276846_5e3f6aab-de91-48e1-849a-eebc0300e207",
+      "latency_ms": 6610.747792001348,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753203870259_fa36a429-304f-4b3c-b6e0-3519beaece88",
+      "latency_ms": 6201.214958000492,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753210424880_8af29a21-30dc-4b8a-b26b-24215e050a3f",
+      "latency_ms": 6936.465874998248,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753211834887_fce7ded2-46f9-47f1-ad3e-667e7d7a06c3",
+      "latency_ms": 6914.06866699981,
+      "success": true,
+      "response": {
+        "guardrailCheck": {
+          "is_food": true,
+          "no_pii": true,
+          "no_humans": true,
+          "no_captcha": true
+        },
+        "mealAnalysis": {
+          "is_food": true,
+          "recommendation": "green",
+          "guidance_message": "This meal appears to be primarily fish with a generous portion of sauerkraut, which is generally low in carbohydrates and may have a modest impact on blood glucose. Consider any added fats, sauces, or sides and individual responses to fermented foods when planning portions.",
+          "meal_title": "White Fish Fillet with Sauerkraut",
+          "meal_description": "A simple plate featuring a baked or steamed white fish fillet served alongside a large portion of sauerkraut on a blue dish.",
+          "macros": {
+            "calories": 260.0,
+            "carbohydrates": 10.0,
+            "fats": 11.0,
+            "proteins": 30.0
+          },
+          "ingredients": [
+            {
+              "name": "White fish fillet (e.g., cod or tilapia)",
+              "impact": "green"
+            },
+            {
+              "name": "Sauerkraut (fermented cabbage)",
+              "impact": "green"
+            },
+            {
+              "name": "Cooking oil or butter",
+              "impact": "yellow"
+            },
+            {
+              "name": "Salt and seasonings",
+              "impact": "green"
+            }
+          ]
+        },
+        "safetyChecks": {
+          "no_insuline_guidance": true,
+          "no_carb_content": true,
+          "no_emotional_or_judgmental_language": true,
+          "no_risky_ingredient_substitutions": true,
+          "no_treatment_recommendation": true,
+          "no_medical_diagnosis": true
+        }
+      },
+      "error_class": null,
+      "error_message": null,
+      "input_tokens": 1335,
+      "output_tokens": 378,
+      "guardrail_latency_ms": 1757.2023749999062,
+      "meal_latency_ms": 3702.8874999996333,
+      "safety_latency_ms": 1453.9225000007718
+    },
+    {
+      "sample_id": "upload_1753211882695_715dc254-cac3-4122-a437-3f9d756e85b7",
+      "latency_ms": 8485.53554099999,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    },
+    {
+      "sample_id": "upload_1753212036729_b69c6c19-248c-45b9-be7e-5e50eda48a04",
+      "latency_ms": 6997.239917000115,
+      "success": false,
+      "response": null,
+      "error_class": "SafetyRejection",
+      "error_message": "Output safety check failed",
+      "input_tokens": null,
+      "output_tokens": null,
+      "guardrail_latency_ms": null,
+      "meal_latency_ms": null,
+      "safety_latency_ms": null
+    }
+  ],
+  "meta": {
+    "model": "gpt-5.1",
+    "max_concurrency": 10,
+    "timestamp": "2026-03-03T00:55:48Z"
+  }
+}
